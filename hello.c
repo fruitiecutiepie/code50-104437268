@@ -7,4 +7,3 @@ int main(void)
     string last_name = get_string("What's your last name? ");
     printf("Hello, %s %s\n", first_name, last_name);
 }
-
