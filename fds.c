@@ -2,5 +2,5 @@
 
 int main(void)
 {
-    printf("hello, CS50!\n");
+    printf("hello, fds!\n");
 }
