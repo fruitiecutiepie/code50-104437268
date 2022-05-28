@@ -2,5 +2,5 @@
 
 int main(void)
 {
-    printf("Hi $\n");
+    printf("Hi %li times\n", 3.0);
 }
