@@ -2,5 +2,7 @@
 
 int main(void)
 {
-    printf("Hi %li times\n", 3.0);
+    int counter = 0;
+    counter++;
+    printf("Hi %i times\n", counter);
 }
