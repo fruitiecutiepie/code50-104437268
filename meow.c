@@ -6,8 +6,7 @@ void meow(int n);
 int main(void)
 {
     {
-        int times = get_int("How many times do you want to meow? ");
-        meow(times);
+        meow(get_int("How many times do you want to \"meow\"? "));
     }
 }
 
