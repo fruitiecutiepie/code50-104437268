@@ -2,9 +2,10 @@
 
 int main(void)
 {
-    int counter = 0
-    while (true)
+    int i = 0
+    while (i)
     {
         printf("meow\n");
+        i += 1;
     }
 }
