@@ -2,7 +2,9 @@
 
 int main(void)
 {
-    int counter = 0;
-    counter++;
-    printf("Hi %i times\n", counter);
+    for (int i = 0; i < 4; i++)
+    {
+        printf("?");
+    }
+    printf("\n");
 }
