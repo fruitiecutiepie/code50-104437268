@@ -22,16 +22,17 @@ int main(void)
     //     printf("\n");
     // }
 
-    // Return left side of pyramid
     // For each row
     for (k = 0; k < height; k++)
     {
+        // For each column
+        // Print space
         for (space = height; space > 0; space--)
         {
             printf(".");
         }
 
-        // For each column
+        // Print pyramid
         for (hash = 0; hash <= k; hash++)
         {
             printf("#");
