@@ -29,14 +29,14 @@ int main(void)
         // Print space
         for (space = height; space > 0; space--)
         {
-            for (j = 0; j < i; j++)
+            for (j = 0; j < space; j++)
             {
                 printf(".");
             }
         }
 
         // Print pyramid
-        for (hash = 0; hash <= k; hash++)
+        for (hash = 0; hash <= i; hash++)
         {
             printf("#");
         }
