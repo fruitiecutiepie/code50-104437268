@@ -39,7 +39,7 @@ int main(void)
             printf("#");
         }
 
-        for (j = 2; j)
+        for (j = 2; j <= i; j--)
         {
             printf("..");
         }
