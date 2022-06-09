@@ -24,7 +24,7 @@ int main(void)
 
         // Return left side of pyramid
         // For each row
-        for (k = 0; k < height; k++)
+        //for (k = 0; k < height; k++)
         {
             // For each column
             for (l = 0; l <= k; l++)
@@ -32,7 +32,7 @@ int main(void)
                 printf("#");
             }
         }
-        
+
         printf("\n");
     }
 }
