@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    int height, i, j, k;
+    int height, i, j, k, l;
     do
     {
         height = get_int("How tall do you want the pyramid to be? [1-8] ");
