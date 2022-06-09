@@ -18,8 +18,12 @@ int main(void)
         {
             printf(",");
         }
+    }
 
-        for (k = 0; k < height; k++)
+    // Return left side of pyramid
+    for (k = 0; k < height; k++)
+    {
+        for (l = 0; l <= k; l++)
         {
             printf("#");
         }
