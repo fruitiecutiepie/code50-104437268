@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    int height, i, j, space, hash;
+    int height, i, space, hash;
     do
     {
         height = get_int("How tall do you want the pyramid to be? [1-8] ");
@@ -26,13 +26,11 @@ int main(void)
     for (i = 0; i < height; i++)
     {
         // For each column
+
         // Print space
-        for (space = height; space > 0; space--)
+        for (space = height - i; space > 0; space--)
         {
-            for (j = 0; j < space; j++)
-            {
-                printf(".");
-            }
+            printf(" ");
         }
 
         // Print pyramid
@@ -40,6 +38,7 @@ int main(void)
         {
             printf("#");
         }
+
         printf("\n");
     }
 }
