@@ -10,17 +10,7 @@ int main(void)
     }
     while (height < 1 || height > 8);
 
-    // Return left side of pyramid
-    // For each row
-    for (k = 0; k < height; k++)
-    {
-        // For each column
-        for (l = 0; l <= k; l++)
-        {
-            printf("#");
-        }
-        printf("\n");
-    }
+
 
     // Return invisible space
     // For each row
@@ -29,8 +19,21 @@ int main(void)
         // For each column
         for (j = 0; j < i; j++)
         {
-            printf(" ");
+            printf(".");
         }
+
+        // Return left side of pyramid
+        // For each row
+        for (k = 0; k < height; k++)
+        {
+            // For each column
+            for (l = 0; l <= k; l++)
+            {
+                printf("#");
+            }
+            printf("\n");
+        }
+
         printf("\n");
     }
 }
