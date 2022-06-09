@@ -3,37 +3,39 @@
 
 int main(void)
 {
-    int height, i, j, k, l;
+    int height, k, space, hash;
     do
     {
         height = get_int("How tall do you want the pyramid to be? [1-8] ");
     }
     while (height < 1 || height > 8);
 
+    // // Return invisible space
+    // // For each row
+    // for (i = height; i > 0; i--)
+    // {
+    //     // For each column
+    //     for (j = 0; j < i; j++)
+    //     {
+    //         printf(".");
+    //     }
+    //     printf("\n");
+    // }
 
-
-    // Return invisible space
+    // Return left side of pyramid
     // For each row
-    for (i = height; i > 0; i--)
+    for (k = 0; k < height; k++)
     {
-        // For each column
-        for (j = 0; j < i; j++)
+        for (space = height; space > 0; space--)
         {
             printf(".");
         }
 
-        // Return left side of pyramid
-        // For each row
-        //for (k = 0; k < height; k++)
-        //{
-            // For each column
-            //for (l = 0; l <= k; l++)
-            //{
-                //printf("#");
-            //}
-        //}
-
-
+        // For each column
+        for (hash = 0; hash <= k; hash++)
+        {
+            printf("#");
+        }
         printf("\n");
     }
 }
