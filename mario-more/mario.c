@@ -25,13 +25,13 @@ int main(void)
         // Return left side of pyramid
         // For each row
         //for (k = 0; k < height; k++)
-        {
+        //{
             // For each column
-            for (l = 0; l <= k; l++)
-            {
-                printf("#");
-            }
-        }
+            //for (l = 0; l <= k; l++)
+            //{
+                //printf("#");
+            //}
+        //}
 
         printf("\n");
     }
