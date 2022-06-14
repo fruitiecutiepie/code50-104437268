@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    long credit_num, mod, number;
+    long credit_num, mod, digit;
 
     // Prompt user for a credit card number
     do
@@ -15,10 +15,11 @@ int main(void)
 
     // Convert credit card number to string
     string credit_len = (string) credit_num;
-    //printf("%c", credit_len[0]);
+
     for (mod = 100; mod < credit_num; mod *= 100)
     {
-        number = credit_num % mod;
-        printf("%li\n", number);
+        digit = credit_num % mod;
+        string second_last_digit = (string) digit;
+        printf("%s\n", second_last_digit);
     }
 }
