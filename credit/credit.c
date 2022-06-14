@@ -11,7 +11,7 @@ int main(void)
     }
     while (credit_num > LONG_MAX);
 
-    for (mod = 10; mod < credit_num; mod * 10)
+    for (mod = 100; mod < len(credit_num); mod * 100)
     {
 
     }
