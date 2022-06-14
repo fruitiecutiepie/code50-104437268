@@ -10,5 +10,9 @@ int main(void)
         credit_num = get_long("Number: ");
     }
     while (credit_num > LONG_MAX);
-    
+
+    for (mod = 10; mod < credit_num; mod * 10)
+    {
+        
+    }
 }
