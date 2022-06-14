@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    long credit_num;
+    long credit_num, mod;
     // Prompt user for a credit card number
     do
     {
@@ -13,6 +13,6 @@ int main(void)
 
     for (mod = 10; mod < credit_num; mod * 10)
     {
-        
+
     }
 }
