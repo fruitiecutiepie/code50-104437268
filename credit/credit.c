@@ -16,7 +16,7 @@ int main(void)
     for (mod = 100; mod < strlen(credit_len); mod *= 100)
     {
         number = credit_num % mod;
-        printf(number);
+        printf((const char *) number);
         printf('a');
     }
 }
