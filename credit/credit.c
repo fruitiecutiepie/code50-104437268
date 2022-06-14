@@ -11,7 +11,7 @@ int main(void)
     }
     while (credit_num > LONG_MAX);
 
-    for (mod = 100; mod < len(credit_num); mod * 100)
+    for (mod = 100; mod < strlen(credit_num); mod * 100)
     {
         printf(credit_num % mod);
     }
