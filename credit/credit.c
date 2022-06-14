@@ -8,5 +8,5 @@ int main(void)
     {
         long credit_num = get_long("Number: ");
     }
-    while (credit_num != long)
+    while (credit_num != int)
 }
