@@ -3,9 +3,10 @@
 
 int main(void)
 {
+    // Prompt user for a credit card number
     do
     {
         long credit_num = get_long("Number: ");
     }
-    while (credit_num )
+    while (credit_num != long)
 }
