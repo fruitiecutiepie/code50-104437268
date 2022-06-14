@@ -15,7 +15,7 @@ int main(void)
 
     // Convert credit card number to string
     string credit_len = (string) credit_num;
-    printf(")
+    printf("%c", credit_len[0]);
     for (mod = 100; mod < strlen(credit_len); mod *= 100)
     {
         number = credit_num % mod;
