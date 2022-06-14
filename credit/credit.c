@@ -3,10 +3,11 @@
 
 int main(void)
 {
+    long credit_num;
     // Prompt user for a credit card number
     do
     {
-        long credit_num = get_long("Number: ");
+        credit_num = get_long("Number: ");
     }
     while (credit_num > LONG_MAX);
 }
