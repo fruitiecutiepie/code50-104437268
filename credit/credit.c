@@ -19,7 +19,7 @@ int main(void)
     for (mod = 100; mod < credit_num; mod *= 100)
     {
         digit = credit_num % mod;
-        string second_last_digit = (string)digit;
-        printf("%s\n", (string)digit);
+        char second_last_digit = (char)digit;
+        printf("%c\n", second_last_digit);
     }
 }
