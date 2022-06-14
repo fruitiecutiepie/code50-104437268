@@ -4,8 +4,7 @@
 
 int main(void)
 {
-    long credit_num, mod;
-    string number;
+    long credit_num, mod, number;
     // Prompt user for a credit card number
     do
     {
