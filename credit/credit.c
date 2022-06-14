@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    long credit_num, mod;
+    long credit_num, mod, number;
     // Prompt user for a credit card number
     do
     {
@@ -12,11 +12,11 @@ int main(void)
     }
     while (credit_num > LONG_MAX);
 
-    printf(credit_num[0]);
     string credit_len = (string) credit_num;
     for (mod = 100; mod < strlen(credit_len); mod *= 100)
     {
-        printf(credit_num % mod);
+        number = credit_num % mod;
+        printf(number);
         printf('a');
     }
 }
