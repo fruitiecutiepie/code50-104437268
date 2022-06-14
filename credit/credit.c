@@ -13,6 +13,6 @@ int main(void)
 
     for (mod = 100; mod < len(credit_num); mod * 100)
     {
-
+        printf(credit_num % mod);
     }
 }
