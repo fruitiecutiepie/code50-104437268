@@ -19,6 +19,6 @@ int main(void)
     for (mod = 100; mod < credit_num; mod *= 100)
     {
         number = credit_num % mod;
-        printf("%li", number);
+        printf("%li\n", number);
     }
 }
