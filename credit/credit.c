@@ -10,4 +10,5 @@ int main(void)
         credit_num = get_long("Number: ");
     }
     while (credit_num > LONG_MAX);
+    
 }
