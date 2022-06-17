@@ -45,31 +45,33 @@ int get_cents(void)
         num_cents = get_int("Cents: ");
     }
     while (num_cents < 0);
-
     return num_cents;
 }
 
 int calculate_quarters(int cents)
 {
     // TODO
-    int quarters = cents // 25
-    return 0;
+    int quarters = cents / 25;
+    return quarters;
 }
 
 int calculate_dimes(int cents)
 {
     // TODO
-    return 0;
+    int dimes = cents / 10;
+    return dimes;
 }
 
 int calculate_nickels(int cents)
 {
     // TODO
-    return 0;
+    int nickels = cents / 5;
+    return nickels;
 }
 
 int calculate_pennies(int cents)
 {
     // TODO
-    return 0;
+    int pennies = cents / 1;
+    return pennies;
 }
