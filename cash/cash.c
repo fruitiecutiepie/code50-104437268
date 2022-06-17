@@ -40,9 +40,9 @@ int get_cents(void)
     // TODO
     do
     {
-        cents = get_int("Cents: ");
+        int cents = get_int("Cents: ");
     }
-    while (cents != 0)
+    while (int cents != int 0)
     return 0;
 }
 
