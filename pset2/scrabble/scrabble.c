@@ -42,7 +42,7 @@ int compute_score(string word)
     {
         if (word[i] >= 65 && word[i] <= 122)
         {
-            
+            m
         }
     }
 }
