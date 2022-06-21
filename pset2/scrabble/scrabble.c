@@ -36,9 +36,9 @@ int main(void)
 int compute_score(string word)
 {
     // TODO: Compute and return score for string
-    score 
+    score
     for (i = 0, n = strlen(word); i < n; i++)
     {
-        if word[i] < 65 || word[i] > 122
+        if (word[i] < 65 || word[i] > 122)
     }
 }
