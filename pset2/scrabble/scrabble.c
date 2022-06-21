@@ -44,8 +44,10 @@ int compute_score(string word)
         {
             if (tolower(word[i]) == 'a')
             {
-                
+                score += POINTS[0]
             }
         }
     }
+
+    return score;
 }
