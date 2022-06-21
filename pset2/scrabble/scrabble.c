@@ -19,6 +19,10 @@ int main(void)
     int score2 = compute_score(word2);
 
     // TODO: Print the winner
+    if (score1 > s)
+    {
+        score1
+    }
 }
 
 int compute_score(string word)
@@ -26,6 +30,6 @@ int compute_score(string word)
     // TODO: Compute and return score for string
     for (i = 0, m = strlen(word); i < m; i++)
     {
-        for (j = 0, n = strlen(POINTS)); j < 
+        if word[i] == 'a' || 'A'
     }
 }
