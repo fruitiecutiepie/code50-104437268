@@ -26,6 +26,6 @@ int compute_score(string word)
     // TODO: Compute and return score for string
     for (i = 0, m = strlen(word); i < m; i++)
     {
-        for (j = 0, n = strlen())
+        for (j = 0, n = strlen(POINTS)); j < 
     }
 }
