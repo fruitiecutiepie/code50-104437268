@@ -32,10 +32,13 @@ int main(int argc, string argv[])
     for (int i = 0, int l = strlen(argv[1]); i < l; i++)
     {
         string seen[];
-        if ()
+        for (int j = 0; j < l; j++)
         {
-            printf("Key must not contain repeated characters.\n");
-            return 1;
+            if (strcasecmp(seen[j], argv[1][i]))
+            {
+                printf("Key must not contain repeated characters.\n");
+                return 1;
+            }
         }
         seen[i] = agrv[1][i];
     }
