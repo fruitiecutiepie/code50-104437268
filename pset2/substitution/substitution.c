@@ -31,9 +31,9 @@ int main(int argc, string argv[])
     }
 
     // Check for repeated characters (case-insensitive)
-    for (int i = 0, l = strlen(key); i < l; i++)
+    for (int i = 0, len = strlen(key); i < l; i++)
     {
-        for (int j = i + 1; j < l; j++)
+        for (int j = i + 1; j < len; j++)
         {
             if (key[i] == key[j])
             {
