@@ -5,6 +5,8 @@
 
 int main(int argc, string argv[])
 {
+    // Validate key
+
     // Check for one command-line argument
     if (argc != 1)
     {
@@ -20,14 +22,18 @@ int main(int argc, string argv[])
     }
 
     // Check for non-alphabetic characters
-    if (not isalpha(argv[1] == 0))
+    if (isalpha(argv[1] == 0))
     {
         printf("Key must only contain alphabetic characters.\n");
         return 1;
     }
 
     // Check for repeated characters (case-insensitive)
-    if 
+    if ()
+    {
+        printf("Key must not contain repeated characters.\n");
+        return 1;
+    }
 
     // Get plaintext
 
