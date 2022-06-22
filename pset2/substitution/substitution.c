@@ -37,13 +37,13 @@ int main(int argc, string argv[])
 
         for (int j = 0; j < len; j++)
         {
-            if (strcasecmp(seen[j], argv[1][i]))
+            if (strcasecmp(seen[j], &argv[1][i]))
             {
                 printf("Key must not contain repeated characters.\n");
                 return 1;
             }
         }
-        seen[i] = agrv[1][i];
+        seen[i] = argv[1][i];
     }
 
     // Get plaintext
