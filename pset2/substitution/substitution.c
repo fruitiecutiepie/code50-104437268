@@ -56,8 +56,11 @@ int main(int argc, string argv[])
     {
         if (isalpha(plaintext[i]))
         {
-            key
-            printf("%c", )
+            if (isupper(plaintext[i]))
+            {
+                key[plaintext[i] - 65]
+                printf("%c", )
+            }
         }
         else
         {
