@@ -22,7 +22,7 @@ int main(int argc, string argv[])
         printf("Key must contain 26 characters.\n");
         return 1;
     }
-
+printf("%i\n", isalpha(key));
     // Check for non-alphabetic characters
     for (int i = 0, len = strlen(key); i < len; i++)
     {
