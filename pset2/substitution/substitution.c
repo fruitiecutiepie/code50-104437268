@@ -29,7 +29,7 @@ int main(int argc, string argv[])
     }
 
     // Check for repeated characters (case-insensitive)
-    for (int i = 0, l = strlen(argv[1]); i < ; i++)
+    for (int i = 0, int l = strlen(argv[1]); i < l; i++)
     {
         string seen[];
         if ()
@@ -37,7 +37,7 @@ int main(int argc, string argv[])
             printf("Key must not contain repeated characters.\n");
             return 1;
         }
-        for (int i = 0; )
+        seen[i] = agrv[1][i];
     }
 
     // Get plaintext
