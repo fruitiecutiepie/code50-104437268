@@ -11,7 +11,7 @@ int main(int argc, string argv[])
     int len = strlen(key);
 
     // Check for one command-line argument
-    if (argc != 2)
+    if (argc != 2 && argc < 2)
     {
         printf("Usage: ./substitution key\n");
         return 1;
