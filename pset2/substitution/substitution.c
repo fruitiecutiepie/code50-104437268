@@ -58,8 +58,11 @@ int main(int argc, string argv[])
         {
             if (isupper(plaintext[i]))
             {
-                key[plaintext[i] - 65]
-                printf("%c", )
+                printf("%c", key[plaintext[i] - 65])
+            }
+            else
+            {
+                printf("%c", key[plaintext[i] - 65])
             }
         }
         else
