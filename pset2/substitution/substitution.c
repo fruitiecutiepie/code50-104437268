@@ -7,6 +7,7 @@
 int main(int argc, string argv[])
 {
     // Validate key
+    string key = argv[1];
 
     // Check for one command-line argument
     if (argc != 1)
@@ -16,25 +17,25 @@ int main(int argc, string argv[])
     }
 
     // Check key length
-    if (strlen(argv[1]) != 26)
+    if (strlen(key) != 26)
     {
         printf("Key must contain 26 characters.\n");
         return 1;
     }
 
     // Check for non-alphabetic characters
-    if (isalpha(argv[1] == 0))
+    if (isalpha(key == 0))
     {
         printf("Key must only contain alphabetic characters.\n");
         return 1;
     }
 
     // Check for repeated characters (case-insensitive)
-    for (int i = 0, l = strlen(argv[1]); i < l; i++)
+    for (int i = 0, l = strlen(key); i < l; i++)
     {
         for (int j = i + 1; j < l; j++)
         {
-            if (argv[1][i] == argv[1])
+            if (key[i] == key[j])
             {
                 printf("Key must not contain repeated characters.\n");
                 return 1;
