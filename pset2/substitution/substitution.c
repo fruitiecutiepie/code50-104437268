@@ -32,12 +32,12 @@ int main(int argc, string argv[])
     // Check for repeated characters (case-insensitive)
     for (int i = 0, l = strlen(argv[1]); i < l; i++)
     {
-        string seen[26];
+        char seen[26];
         int len = sizeof(seen)/sizeof(seen[0]);
 
         for (int j = 0; j < len; j++)
         {
-            if (strcasecmp(seen[j], &argv[1][i]))
+            if (strcasecmp(&seen[j], &argv[1][i]))
             {
                 printf("Key must not contain repeated characters.\n");
                 return 1;
