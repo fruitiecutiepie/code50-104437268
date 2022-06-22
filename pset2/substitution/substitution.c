@@ -53,7 +53,7 @@ int main(int argc, string argv[])
     // Encipher
     for (int i = 0; i < len; i++)
     {
-        
+        if ()
     }
 
     // Print ciphertext
