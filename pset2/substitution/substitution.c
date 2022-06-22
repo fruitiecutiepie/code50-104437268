@@ -3,11 +3,13 @@
 
 int main(int argc, string argv[])
 {
-    // Get key
-
     // Validate key
+    // Check key length
+    // Check for non-alphabetic characters
+    // Check for repeated characters (case-insensitive)
 
     // Get plaintext
+    
 
     // Encipher
 
