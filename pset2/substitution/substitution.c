@@ -29,10 +29,12 @@ int main(int argc, string argv[])
     }
 
     // Check for repeated characters (case-insensitive)
-    for (int i = 0, int l = strlen(argv[1]); i < l; i++)
+    for (int i = 0, l = strlen(argv[1]); i < l; i++)
     {
         string seen[];
-        for (int j = 0; j < l; j++)
+        int len = sizeof(x)/sizeof(x[0]);
+
+        for (int j = 0; j < len; j++)
         {
             if (strcasecmp(seen[j], argv[1][i]))
             {
