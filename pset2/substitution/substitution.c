@@ -52,7 +52,7 @@ int main(int argc, string argv[])
 
     // Encipher & print ciphertext
     printf("ciphertext: ");
-    for (int i = 0; i < len; i++)
+    for (int i = 0, l = strlen(plaintext); i < l; i++)
     {
         if (isalpha(plaintext[i]))
         {
