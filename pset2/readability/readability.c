@@ -7,7 +7,6 @@
 int count_letters(string text);
 int count_words(string text);
 int count_sentences(string text);
-int len = strlen(text);
 
 int main(void)
 {
@@ -41,6 +40,8 @@ int main(void)
         printf("Grade %i\n", grade);
     }
 }
+
+int len = strlen(text);
 
 int count_letters(string text)
 {
