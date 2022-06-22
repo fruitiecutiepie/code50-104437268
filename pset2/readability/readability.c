@@ -4,12 +4,15 @@
 #include <string.h>
 
 int count_letters(string text);
+int count_words(string text);
+int count_sentences(string text);
 
 int main(void)
 {
     string text = get_string("Text: ");
     int letters = count_letters(text);
-    printf("%i\n", letters);
+    int words = count_words(text);
+    printf("%i\n%i\n", letters, words);
 }
 
 int count_letters(string text)
@@ -23,4 +26,24 @@ int count_letters(string text)
         }
     }
     return letters;
+}
+
+int count_words(string text)
+{
+    int words = 1;
+    for (int i = 0; i < strlen(text); i++)
+    {
+        if (text[i] == ' ')
+        {
+            words++;
+        }
+    }
+    return words;
+}
+
+int count_sentences(string text)
+{
+    int sentences = 0;
+
+    return sentences;
 }
