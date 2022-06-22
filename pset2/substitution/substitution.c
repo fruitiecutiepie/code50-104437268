@@ -20,8 +20,14 @@ int main(int argc, string argv[])
     }
 
     // Check for non-alphabetic characters
-    if (isalpha(argv[1]))
+    if (not isalpha(argv[1] == 0))
+    {
+        printf("Key must only contain alphabetic characters.\n");
+        return 1;
+    }
+
     // Check for repeated characters (case-insensitive)
+    if 
 
     // Get plaintext
 
