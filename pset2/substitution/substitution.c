@@ -7,15 +7,16 @@
 int main(int argc, string argv[])
 {
     // Validate key
-    string key = argv[1];
-    int len = strlen(key);
 
     // Check for one command-line argument
-    if (argc != 2 || argc == 1)
+    if (argc != 2)
     {
         printf("Usage: ./substitution key\n");
         return 1;
     }
+
+    string key = argv[1];
+    int len = strlen(key);
 
     // Check key length
     if (strlen(key) != 26)
