@@ -10,7 +10,7 @@ int main(int argc, string argv[])
     string key = argv[1];
 
     // Check for one command-line argument
-    if (argc != 1)
+    if (argc != 2)
     {
         printf("Usage: ./substitution key\n");
         return 1;
@@ -31,7 +31,7 @@ int main(int argc, string argv[])
     }
 
     // Check for repeated characters (case-insensitive)
-    for (int i = 0, len = strlen(key); i < l; i++)
+    for (int i = 0, len = strlen(key); i < len; i++)
     {
         for (int j = i + 1; j < len; j++)
         {
