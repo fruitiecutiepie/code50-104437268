@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <strings.h>
 
 int main(int argc, string argv[])
 {
@@ -31,8 +32,8 @@ int main(int argc, string argv[])
     // Check for repeated characters (case-insensitive)
     for (int i = 0, l = strlen(argv[1]); i < l; i++)
     {
-        string seen[];
-        int len = sizeof(x)/sizeof(x[0]);
+        string seen[26];
+        int len = sizeof(seen)/sizeof(seen[0]);
 
         for (int j = 0; j < len; j++)
         {
