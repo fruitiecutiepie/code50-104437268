@@ -24,10 +24,13 @@ int main(int argc, string argv[])
     }
 
     // Check for non-alphabetic characters
-    if (isalpha(key == 0))
+    for (int i = 0, len = strlen(key); i < len; i++)
     {
-        printf("Key must only contain alphabetic characters.\n");
-        return 1;
+        if (isalpha(key[i] == 0))
+        {
+            printf("Key must only contain alphabetic characters.\n");
+            return 1;
+        }
     }
 
     // Check for repeated characters (case-insensitive)
