@@ -8,6 +8,7 @@ int main(int argc, string argv[])
 {
     // Validate key
     string key = argv[1];
+    int len = strlen(key);
 
     // Check for one command-line argument
     if (argc != 2)
@@ -24,7 +25,7 @@ int main(int argc, string argv[])
     }
 
     // Check for non-alphabetic characters
-    for (int i = 0, len = strlen(key); i < len; i++)
+    for (int i = 0; i < len; i++)
     {
         if (isalpha(key[i]) == 0)
         {
@@ -46,11 +47,12 @@ int main(int argc, string argv[])
         }
     }
 
-    // Get plaintext
-    string plaintext = get_string("plaintext: "):
-
+    // Prompt user for plaintext
+    string plaintext = get_string("plaintext:  "):
 
     // Encipher
+    for (int i = 0, )
 
     // Print ciphertext
+    printf("ciphertext: %s\n", ciphertext);
 }
