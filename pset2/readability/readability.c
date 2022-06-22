@@ -41,12 +41,10 @@ int main(void)
     }
 }
 
-int len = strlen(text);
-
 int count_letters(string text)
 {
     int letters = 0;
-    for (int i = 0; i < len; i++)
+    for (int i = 0, len = strlen(text); i < len; i++)
     {
         if (isalpha(text[i]))
         {
@@ -59,7 +57,7 @@ int count_letters(string text)
 int count_words(string text)
 {
     int words = 1;
-    for (int i = 0; i < len; i++)
+    for (int i = 0, len = strlen(text); i < len; i++)
     {
         if (text[i] == ' ')
         {
@@ -72,7 +70,7 @@ int count_words(string text)
 int count_sentences(string text)
 {
     int sentences = 0;
-    for (int i = 0; i < len; i++)
+    for (int i = 0, len = strlen(text); i < len; i++)
     {
         if (text[i] == '.' || text[i] == '!' || text[i] == '?')
         {
