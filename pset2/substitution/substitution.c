@@ -4,7 +4,11 @@
 int main(int argc, string argv[])
 {
     // Validate key
-    if argc
+    if (argc != 1)
+    {
+        printf("Usage: ./substitution key\n");
+        return 1;
+    }
 
     // Check key length
     // Check for non-alphabetic characters
