@@ -9,7 +9,10 @@ int count_sentences(string text);
 
 int main(void)
 {
+    // Prompt user for text
     string text = get_string("Text: ");
+
+    // Calculate number of letters, words, & sentences
     int letters = count_letters(text);
     int words = count_words(text);
     int sentences = count_sentences(text);
@@ -17,7 +20,8 @@ int main(void)
     // Average number of letters per 100 words
     int L = letters / words * 100
     // Average number of sentences per 100 words
-    int S = 
+    int S = sentences / words * 100
+    //
     int index = 0.0588 * L - 0.296 * S - 15.8
 
 
