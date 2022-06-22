@@ -58,7 +58,7 @@ int main(int argc, string argv[])
         {
             if (isupper(plaintext[i]))
             {
-                printf("%c", key[plaintext[i] - 65]);
+                printf("%c", toupper(key[plaintext[i] - 65]));
             }
             else
             {
