@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <math.h>
+
 
 int count_letters(string text);
 int count_words(string text);
@@ -21,11 +23,12 @@ int main(void)
     float L = letters / words * 100;
     // Average number of sentences per 100 words
     float S = sentences / words * 100;
-    //
-    float index = 0.0588 * L - 0.296 * S - 15.8
 
+    // Calculate readability based on the Coleman-Liau index
+    float index = 0.0588 * L - 0.296 * S - 15.8;
+    int grade = (int) round(index);
 
-    printf("%i\n%i\n%i\n", letters, words, sentences);
+    printf("%i\n", (int) round(index));
 }
 
 int count_letters(string text)
