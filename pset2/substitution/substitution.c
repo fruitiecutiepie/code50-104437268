@@ -50,15 +50,14 @@ int main(int argc, string argv[])
     // Prompt user for plaintext
     string plaintext = get_string("plaintext:  ");
 
-    // Encipher
+    // Encipher & print ciphertext
+    printf("ciphertext: ");
     for (int i = 0; i < len; i++)
     {
         if (isalpha(plaintext[i]))
         {
-            
+
         }
     }
-
-    // Print ciphertext
-    //printf("ciphertext: %s\n", ciphertext);
+    printf("\n");
 }
