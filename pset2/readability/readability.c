@@ -8,14 +8,14 @@ int count_letters(string text);
 int main(void)
 {
     string text = get_string("Text: ");
-    letters = count_letters(text);
+    int letters = count_letters(text);
     printf("%i\n", letters);
 }
 
 int count_letters(string text)
 {
     int letters = 0;
-    for (i = 0; i < strlen(text); i++)
+    for (int i = 0; i < strlen(text); i++)
     {
         if (isalpha(text[i]))
         {
