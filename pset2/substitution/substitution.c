@@ -56,7 +56,8 @@ int main(int argc, string argv[])
     {
         if (isalpha(plaintext[i]))
         {
-
+            key 
+            printf("%c", )
         }
         else
         {
