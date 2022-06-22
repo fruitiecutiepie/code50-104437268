@@ -33,6 +33,7 @@ int main(int argc, string argv[])
     for (int i = 0, l = strlen(argv[1]); i < l; i++)
     {
         char seen[26];
+        seen[i] = argv[1][i];
         int len = sizeof(seen)/sizeof(seen[0]);
 
         for (int j = 0; j < len; j++)
@@ -43,7 +44,6 @@ int main(int argc, string argv[])
                 return 1;
             }
         }
-        seen[i] = argv[1][i];
     }
 
     // Get plaintext
