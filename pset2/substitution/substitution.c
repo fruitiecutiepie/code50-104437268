@@ -47,6 +47,8 @@ int main(int argc, string argv[])
     }
 
     // Get plaintext
+    string plaintext = get_string("plaintext: "):
+
 
     // Encipher
 
