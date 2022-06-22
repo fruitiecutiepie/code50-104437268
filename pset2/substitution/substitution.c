@@ -35,7 +35,7 @@ int main(int argc, string argv[])
     }
 
     // Check for repeated characters (case-insensitive)
-    for (int i = 0, len = strlen(key); i < len; i++)
+    for (int i = 0; i < len; i++)
     {
         for (int j = i + 1; j < len; j++)
         {
@@ -48,11 +48,14 @@ int main(int argc, string argv[])
     }
 
     // Prompt user for plaintext
-    string plaintext = get_string("plaintext:  "):
+    string plaintext = get_string("plaintext:  ");
 
     // Encipher
-    for (int i = 0, )
+    for (int i = 0; i < len; i++)
+    {
+
+    }
 
     // Print ciphertext
-    printf("ciphertext: %s\n", ciphertext);
+    //printf("ciphertext: %s\n", ciphertext);
 }
