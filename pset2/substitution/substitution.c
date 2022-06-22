@@ -62,7 +62,7 @@ int main(int argc, string argv[])
             }
             else
             {
-                printf("%c", key[plaintext[i] - 97]);
+                printf("%c", tolower(key[plaintext[i] - 97]));
             }
         }
         else
