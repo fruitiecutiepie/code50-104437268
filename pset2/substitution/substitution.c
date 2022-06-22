@@ -4,7 +4,7 @@
 int main(int argc, string argv[])
 {
     // Validate key
-    
+    if argc
 
     // Check key length
     // Check for non-alphabetic characters
