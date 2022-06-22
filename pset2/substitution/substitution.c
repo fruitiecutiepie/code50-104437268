@@ -3,7 +3,7 @@
 
 int main(int argc, string argv[])
 {
-    // Validate key
+    // Check for one command-line argument
     if (argc != 1)
     {
         printf("Usage: ./substitution key\n");
