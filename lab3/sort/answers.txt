@@ -1,0 +1,30 @@
+sort1 uses: Bubble sort
+
+How do you know?: The sorting speed of sorted text was significantly lower than that of the rest of other file sample types.
+
+sort2 uses: Merge sort
+
+How do you know?: The sorting speed of sorted numbers was higher than that of the rest of other file sample types.
+
+sort3 uses: Selection sort
+
+How do you know?: The sorting speed of all file sample types were roughly the same (constant speed).
+
+[random5000,  reversed5000,  sorted5000]
+[random10000, reversed10000, sorted10000]
+[random50000, reversed50000, sorted50000]
+
+Sort 1 Real Time:
+0.102s, 0.107s, 0.087s
+0.301s, 0.278s, 0.064s
+7.465s, 5.655s, 0.875s
+
+Sort 2 Real Time:
+0.042s, 0.023s, 0.024s
+0.085s, 0.082s, 0.149s
+0.526s, 0.540s, 1.037s
+
+Sort 3 Real Time:
+0.080s, 0.067s, 0.049s
+0.180s, 0.181s, 0.162s
+3.251s, 3.277s, 3.462s
