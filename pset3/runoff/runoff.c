@@ -135,6 +135,7 @@ bool vote(int voter, int rank, string name)
         {
             preferences[voter][rank] = i;
         }
+        return true;
     }
     return false;
 }
@@ -145,7 +146,7 @@ void tabulate(void)
     // TODO
     for (int i = 0; i < voter_count; i++)
     {
-        
+
     }
     return;
 }
