@@ -129,9 +129,9 @@ int main(int argc, string argv[])
 bool vote(int voter, int rank, string name)
 {
     // TODO
-    if (strcmp(name, candidates[j].name))
+    if (strcmp(name, candidates.name))
     {
-        preferences[voter][j] =
+        preferences[voter][rank] =
     }
     return false;
 }
