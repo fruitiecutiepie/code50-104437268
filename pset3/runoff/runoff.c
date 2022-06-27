@@ -152,7 +152,7 @@ void tabulate(void)
             for (int i = 0; i < candidate_count; i++)
             {
                 // If candidate matches & is not eliminated, add vote
-                if (preferences[voter][rank] == i && !candidates[i].eliminated)
+                if (!candidates[i].eliminated && preferences[voter][rank] == i)
                 {
                     candidates[i].votes++;
                     break;
