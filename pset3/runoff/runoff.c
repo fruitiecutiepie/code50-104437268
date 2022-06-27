@@ -182,11 +182,12 @@ bool print_winner(void)
 int find_min(void)
 {
     // TODO
-    for (int i = 0; i < candidate_count - 1; i++)
+    int min = voter_count;
+    for (int i = 0; i < candidate_count; i++)
     {
-        if (!candidates[i].eliminated && candidates[i].votes < candidates[i + 1].votes)
+        if (!candidates[i].eliminated && candidates[i].votes < min)
         {
-            int min = candidates[i].votes;
+            min = candidates[i].votes;
         }
     }
     return 0;
