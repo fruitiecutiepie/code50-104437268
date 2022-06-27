@@ -153,14 +153,11 @@ void tabulate(void)
             // For each candidate:
             for (int i = 0 ; i < candidate_count; i++)
             {
-                // If candidate matches:
-                if (preferences[voter][rank] == i)
+                // If candidate matches & is not eliminated:
+                if (preferences[voter][rank] == i && !candidates[i].eliminated)
                 {
-                    if (!candidates[i].eliminated)
-                    {
-                        candidates[i].votes++;
-                        break;
-                    }
+                    candidates[i].votes++;
+                    break;
                 }
             }
         }
