@@ -34,8 +34,6 @@ int main(int argc, char *argv[])
     float factor = atof(argv[3]);
     uint8_t header[HEADER_SIZE];
     int16_t buffer;
-    fseek(input, 0L, SEEK_END);
-    long int input_size = ftell(input);
 
     // TODO: Copy header from input file to output file
     fread(header, sizeof(uint8_t), HEADER_SIZE, input);
