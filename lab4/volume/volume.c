@@ -35,14 +35,14 @@ int main(int argc, char *argv[])
     uint8_t header[HEADER_SIZE];
     int16_t buffer;
     fseek(input, 0L, SEEK_END);
-    long int file_size = ftell(input);
+    long int input_size = ftell(input);
 
     // TODO: Copy header from input file to output file
         fread(header, sizeof(uint8_t), HEADER_SIZE, input);
         fwrite(input, sizeof(uint8_t), HEADER_SIZE, output);
 
     // TODO: Read samples from input file and write updated data to output file
-    for (int i = 0; i < file_size, i++)
+    for (int i = 0; i < input_size; i++)
     {
         fread(&buffer, sizeof(int16_t), 2, input);
         fwrite(input, sizeof(int16_t), 2 * factor, output);
