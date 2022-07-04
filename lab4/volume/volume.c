@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
     for (int i = 0; i < input_size; i++)
     {
         fread(&buffer, sizeof(int16_t), 2, input);
-        fwrite(input, sizeof(int16_t), 2 * factor, output);
+        fwrite(input, sizeof(int16_t), 2, output);
     }
 
     // Close files
