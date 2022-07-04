@@ -38,8 +38,8 @@ int main(int argc, char *argv[])
     long int input_size = ftell(input);
 
     // TODO: Copy header from input file to output file
-        fread(header, sizeof(uint8_t), HEADER_SIZE, input);
-        fwrite(input, sizeof(uint8_t), HEADER_SIZE, output);
+    fread(header, sizeof(uint8_t), HEADER_SIZE, input);
+    fwrite(input, sizeof(uint8_t), HEADER_SIZE, output);
 
     // TODO: Read samples from input file and write updated data to output file
     for (int i = 0; i < input_size; i++)
