@@ -37,7 +37,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE image_copy[height][width];
 
-    // Copy each original pixel values of the image to image_copy
+    // Copy each original pixel values of image to image_copy
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
