@@ -35,12 +35,14 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
+    RGBTRIPLE image_copy[height][width];
+
     // Copy each original pixel values of the image to image_copy
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            RGBTRIPLE image_copy[i][j] = image[i][j];
+            image_copy[i][j] = image[i][j];
         }
     }
 
@@ -53,17 +55,14 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int avgRed = 0, avgGreen = 0, avgBlue = 0, counter = 0;
 
             // Calculate the sum of RGB values within 1 row and column of the original pixel respectively
-            while (true)
+            for (int r = -1; r <= 1; r++)
             {
-                for (int r = -1; r <= 1; r++)
+                for (int c = -1; c <= 1; c++)
                 {
-                    for (int c = -1; c <= 1; c++)
-                    {
-                        avgRed += image_copy[i + r][j + c].rgbtRed;
-                        avgGreen += image_copy[i + r][j + c].rgbtGreen;
-                        avgBlue += image_copy[i + r][j + c].rgbtBlue;
-                        counter++;
-                    }
+                    avgRed += image_copy[i + r][j + c].rgbtRed;
+                    avgGreen += image_copy[i + r][j + c].rgbtGreen;
+                    avgBlue += image_copy[i + r][j + c].rgbtBlue;
+                    counter++;
                 }
             }
 
