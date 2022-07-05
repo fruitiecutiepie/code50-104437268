@@ -39,6 +39,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            // Copy 
+            RGBTRIPLE image_copy[i][j] = image[i][j];
+
             // Initialize variables for the average of RGB values respectively & changes counter
             int avgRed = 0, avgGreen = 0, avgBlue = 0, counter = 0;
 
