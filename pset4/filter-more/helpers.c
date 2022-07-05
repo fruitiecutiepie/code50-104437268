@@ -1,5 +1,6 @@
 #include "helpers.h"
 #include <math.h>
+#include <stdio.h>
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -57,7 +58,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // Initialize boundaries of corresponding pixel
             int rmin = -1, rmax = 1, cmin = -1, cmax = 1;
 
-            if image_copy[i ]
+            printf("%i\n", image_copy[0][0].rgbtRed);
 
             // Calculate the sum of each RGB values within 1 row and column of the original pixel
             for (int r = rmin; r <= rmax; r++)
