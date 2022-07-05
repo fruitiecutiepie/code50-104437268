@@ -39,14 +39,20 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            int avgRed = 0, avgGreen = 0, avgBlue = 0, ;
+            int avgRed = 0, avgGreen = 0, avgBlue = 0, counter = 0;
+
+            // Sum RGB values within 1 row and column of the original pixel respectively
             for (int r = -1; r <= 1; r++)
             {
                 for (int c = -1; c <= 1; c++)
                 {
-                    avgRed += image[i + r][j + c].rgbtRed
+                    avgRed += image[i + r][j + c].rgbtRed;
+                    avgGreen += image[i + r][j + c].rgbtGreen;
+                    avgBlue += image[i + r][j + c].rgbtBlue;
+                    counter++;
                 }
             }
+
             int avg = round((image[i][j].rgbtRed + image[i][j].rgbtGreen + image[i][j].rgbtBlue) / 3);
             image[i][j].rgbtRed = avgRed;
             image[i][j].rgbtGreen = avgGreen;
