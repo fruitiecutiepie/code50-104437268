@@ -76,7 +76,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
 
             // Determine if the pixel is at the very right of the image
-            
+            if (j == width - 1)
+            {
+                cmax = 0;
+            }
 
             // Calculate the sum of each RGB values within 1 row and column of the original pixel
             for (int r = rmin; r <= rmax; r++)
