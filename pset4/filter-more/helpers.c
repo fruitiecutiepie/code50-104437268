@@ -57,7 +57,26 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // Initialize boundaries of corresponding pixel
             int rmin = -1, rmax = 1, cmin = -1, cmax = 1;
 
-            if (image_copy[i] = image_copy[0])
+            // Determine if the pixel is at the very top of the image
+            if (i == 0)
+            {
+                rmin = 0;
+            }
+
+            // Determine if the pixel is at the very bottom of the image
+            if (i == height - 1)
+            {
+                rmax = 0;
+            }
+
+            // Determine if the pixel is at the very left of the image
+            if (j == 0)
+            {
+                cmin = 0;
+            }
+
+            // Determine if the pixel is at the very right of the image
+            
 
             // Calculate the sum of each RGB values within 1 row and column of the original pixel
             for (int r = rmin; r <= rmax; r++)
