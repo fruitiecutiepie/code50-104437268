@@ -55,12 +55,14 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int avgRed = 0, avgGreen = 0, avgBlue = 0, counter = 0;
 
             // Initialize boundaries of corresponding pixel
-            int min = 0, max = 0;
+            int rmin = -1, rmax = 1, cmin = -1, cmax = 1;
+
+            if image_copy[i ]
 
             // Calculate the sum of each RGB values within 1 row and column of the original pixel
-            for (int r = -1; r <= 1; r++)
+            for (int r = rmin; r <= rmax; r++)
             {
-                for (int c = -1; c <= 1; c++)
+                for (int c = cmin; c <= cmax; c++)
                 {
                     avgRed += image_copy[i + r][j + c].rgbtRed;
                     avgGreen += image_copy[i + r][j + c].rgbtGreen;
