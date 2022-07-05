@@ -58,9 +58,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
 
             // Calculate the average of RGB values within 1 row and column of the original pixel respectively
-            avgRed /= counter;
-            avgGreen /= counter;
-            avgBlue /= counter;
+            avgRed = round(avgRed / counter);
+            avgGreen = round(avgGreen / counter);
+            avgBlue = round(avgBlue / counter);
 
             // Assign new RGB values to the original pixel respectively
             image[i][j].rgbtRed = avgRed;
