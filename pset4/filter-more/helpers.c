@@ -198,11 +198,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
 
             // Combine Gx and Gy into a final value
-            int Red = round(sqrt(pow(GxRed, 2) + pow(GyRed, 2)));
+            int Red = round(sqrt(pow(*GxRed, 2) + pow(GyRed, 2)));
             int Green = round(sqrt(pow(GxGreen, 2) + pow(GyGreen, 2)));
             int Blue = round(sqrt(pow(GxBlue, 2) + pow(GyBlue, 2)));
 
-            free(GyRed);
+            free(GxRed);
 
             // Limit each RGB final value to 255
             if (Red > 255)
