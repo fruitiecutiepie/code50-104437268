@@ -213,6 +213,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int Green = round(sqrt(GxGreen) + sqrt(GyGreen));
             int Blue = round(sqrt(GxBlue) + sqrt(GyBlue));
 
+            switch ()
+
             // // Assign each new RGB values to the original pixel
             image[i][j].rgbtRed = Red;
             image[i][j].rgbtGreen = Green;
