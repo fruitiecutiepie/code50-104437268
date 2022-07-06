@@ -27,7 +27,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width / 2; j++)
         {
-            // Swap the value of each pixel with that of its equivalent
+            // Swap the value of each pixel with that of its equivalent when reflected
             RGBTRIPLE tmp = image[i][j];
             image[i][j] = image[i][width - j - 1];
             image[i][width - j - 1] = tmp;
@@ -140,14 +140,16 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int rmin = -1, rmax = 1, cmin = -1, cmax = 1;
 
             // Define Gx matrix
-            int Gx[3][3] = {
+            int Gx[3][3] =
+            {
                 {-1, 0, 1},
                 {-2, 0, 2},
                 {-1, 0, 1},
             };
 
             // Define Gy matrix
-            int Gy[3][3] = {
+            int Gy[3][3] =
+            {
                 {-1, -2, -1},
                 {0, 0, 0},
                 {1, 2, 1},
