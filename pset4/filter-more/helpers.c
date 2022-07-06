@@ -35,14 +35,14 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    RGBTRIPLE image_copy[height][width];
+    RGBTRIPLE copy[height][width];
 
     // Copy each original pixel values of image to image_copy
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            image_copy[i][j] = image[i][j];
+            copy[i][j] = image[i][j];
         }
     }
 
@@ -87,9 +87,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int c = cmin; c <= cmax; c++)
                 {
-                    avgRed += image_copy[i + r][j + c].rgbtRed;
-                    avgGreen += image_copy[i + r][j + c].rgbtGreen;
-                    avgBlue += image_copy[i + r][j + c].rgbtBlue;
+                    avgRed += copy[i + r][j + c].rgbtRed;
+                    avgGreen += copy[i + r][j + c].rgbtGreen;
+                    avgBlue += copy[i + r][j + c].rgbtBlue;
                     counter++;
                 }
             }
