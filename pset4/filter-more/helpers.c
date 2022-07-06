@@ -127,7 +127,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    // For each pixel: blur according to the average RGB values of its adjacent pixels
+    // For each pixel: highlight edges by applying the Sobel operator
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
