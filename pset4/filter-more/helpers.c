@@ -185,7 +185,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 for (int c = cmin; c <= cmax; c++)
                 {
                     // Calculate the sum of each RGB's Gx value within 1 row and column of the original pixel
-                    GxRed += copy[i + r][j + c].rgbtRed * Gx[r][c];
+                    GxRed = GxRed + copy[i + r][j + c].rgbtRed * Gx[r][c];
                     GxGreen += copy[i + r][j + c].rgbtGreen * Gx[r][c];
                     GxBlue += copy[i + r][j + c].rgbtBlue * Gx[r][c];
 
