@@ -136,9 +136,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int GxRed = 0, GxGreen = 0, GxBlue = 0;
             int GyRed = 0, GyGreen = 0, GyBlue = 0;
 
-            // Initialize boundaries of each pixel &
+            // Initialize boundaries of each pixel & Gx and Gy matrix
             int rmin = -1, rmax = 1, cmin = -1, cmax = 1;
-            int
+            int grmin = 0, grmax = 3, gcmin = 0, gcmax = 3;
 
             // Define Gx matrix
             int Gx[3][3] =
@@ -159,25 +159,29 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             // Determine if the corresponding pixel is at the very top of the image
             if (i == 0)
             {
-                rmin = 0;
+                rmin++;
+                grmin++;
             }
 
             // Determine if the corresponding pixel is at the very bottom of the image
             if (i == height - 1)
             {
-                rmax = 0;
+                rmax--;
+                grmax--;
             }
 
-            // Determine if the corresponding pixel is a the very left of the image
+            // Determine if the corresponding pixel is at the very left of the image
             if (j == 0)
             {
-                cmin = 0;
+                cmin++;
+                gcmin++;
             }
 
             // Determine if the corresponding pixel is at the very right of the image
             if (j == width - 1)
             {
-                cmax = 0;
+                cmax--;
+                gcmax--;
             }
 
             // For each pixel that is within 1 row and column of the original pixel:
@@ -185,6 +189,14 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int c = cmin; c <= cmax; c++)
                 {
+                    // For each Gx & Gy matrix value:
+                    for (int gr = grmin; gr < grmax; gr++)
+                    {
+                        for (int gc = gcmin; gc < gcmax; gc++)
+                        {
+
+                        }
+                    }
                     // Calculate the sum of each RGB's Gx and Gy values within 1 row and column of the original pixel
                     GxRed += copy[i + r][j + c].rgbtRed;
                     GxGreen += copy[i + r][j + c].rgbtGreen;
