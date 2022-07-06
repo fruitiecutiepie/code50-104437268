@@ -138,7 +138,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
             // Initialize boundaries of each pixel & Gx and Gy matrix
             int rmin = -1, rmax = 1, cmin = -1, cmax = 1;
-            int grmin = 0, grmax = 3, gcmin = 0, gcmax = 3;
 
             // Define Gx matrix
             int Gx[3][3] =
@@ -160,28 +159,24 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             if (i == 0)
             {
                 rmin++;
-                grmin++;
             }
 
             // Determine if the corresponding pixel is at the very bottom of the image
             if (i == height - 1)
             {
                 rmax--;
-                grmax--;
             }
 
             // Determine if the corresponding pixel is at the very left of the image
             if (j == 0)
             {
                 cmin++;
-                gcmin++;
             }
 
             // Determine if the corresponding pixel is at the very right of the image
             if (j == width - 1)
             {
                 cmax--;
-                gcmax--;
             }
 
             // For each pixel that is within 1 row and column of the original pixel:
