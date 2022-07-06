@@ -52,7 +52,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             // Initialize the average of each RGB values & each addition of value
-            int avgRed = 0, avgGreen = 0, avgBlue = 0, counter = 0;
+            int avgRed = 0, avgGreen = 0, avgBlue = 0;
+            float counter = 0;
 
             // Initialize boundaries of the corresponding pixel
             int rmin = -1, rmax = 1, cmin = -1, cmax = 1;
