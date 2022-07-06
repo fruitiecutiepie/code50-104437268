@@ -148,7 +148,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 {-1, -2, -1},
                 {0, 0, 0},
-                {1, 2, 1},
+                {1, 2, -1},
             };
 
             // Determine if the corresponding pixel is at the very top of the image
