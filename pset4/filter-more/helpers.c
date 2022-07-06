@@ -136,9 +136,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int rmin = -1, rmax = 1, cmin = -1, cmax = 1;
 
             // Define Gx matrix
-            int Gx[3][3] = {{-1, 0, 1}
-                            {-2, 0, 2}
-                            {-1, 0, 1}};
+            int Gx[3][3] = {{-1, 0, 1},
+                            {-2, 0, 2},
+                            {-1, 0, 1},};
 
             // Determine if the corresponding pixel is at the very top of the image
             if (i == 0)
