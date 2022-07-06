@@ -177,14 +177,14 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
 
             // Calculate the average of each RGB values within 1 row and column of the original pixel
-            // Red = round(avgRed / counter);
-            // Green = round(avgGreen / counter);
-            // Blue = round(avgBlue / counter);
+            int Red = round(sqrt(GxRed) + sqrt(GyRed));
+            int Green = round(sqrt(GxGreen) + sqrt(GyGreen));
+            int Blue = round(sqrt(GxBlue) + sqrt(GyBlue));
 
             // // Assign each new RGB values to the original pixel
-            // image[i][j].rgbtRed = avgRed;
-            // image[i][j].rgbtGreen = avgGreen;
-            // image[i][j].rgbtBlue = avgBlue;
+            image[i][j].rgbtRed = Red;
+            image[i][j].rgbtGreen = Green;
+            image[i][j].rgbtBlue = Blue;
         }
     }
     return;
