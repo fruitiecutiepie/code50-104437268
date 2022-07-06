@@ -177,7 +177,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
 
             // Calculate the average of each RGB values within 1 row and column of the original pixel
-            // avgRed = round(avgRed / counter);
+            // GxGyRed = round(avgRed / counter);
             // avgGreen = round(avgGreen / counter);
             // avgBlue = round(avgBlue / counter);
 
