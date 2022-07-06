@@ -128,7 +128,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             // Initialize the average of each RGB values & each addition of value
-            int avgRed = 0, avgGreen = 0, avgBlue = 0;
+            int GxRed = 0, GxGreen = 0, GxBlue = 0;
+            int GyRed = 0, GyGreen = 0, GyBlue = 0;
             float counter = 0;
 
             // Initialize boundaries of the corresponding pixel
