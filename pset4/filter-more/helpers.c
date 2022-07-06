@@ -194,21 +194,21 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     {
                         for (int gc = gcmin; gc < gcmax; gc++)
                         {
-                            // Calculate the sum of each RGB's Gx and Gy values within 1 row and column of the original pixel
+                            // Calculate the sum of each RGB's Gx value within 1 row and column of the original pixel
                             GxRed += copy[i + r][j + c].rgbtRed * Gx[gr][gc];
-                            GyRed += copy[i + r][j + c].rgbtRed * Gy[gr][gc];
-
                             GxGreen += copy[i + r][j + c].rgbtGreen * Gx[gr][gc];
-                            GyGreen += copy[i + r][j + c].rgbtGreen * Gy[gr][gc];
-
                             GxBlue += copy[i + r][j + c].rgbtBlue * Gx[gr][gc];
+
+                            // Calculate the sum of each RGB's Gy value within 1 row and column of the original pixel
+                            GyRed += copy[i + r][j + c].rgbtRed * Gy[gr][gc];
+                            GyGreen += copy[i + r][j + c].rgbtGreen * Gy[gr][gc];
                             GyBlue += copy[i + r][j + c].rgbtBlue * Gy[gr][gc];
                         }
                     }
                 }
             }
 
-            // Calculate the average of each RGB values within 1 row and column of the original pixel
+            // Combine Gx and Gy into a final value
             int Red = round(sqrt(GxRed) + sqrt(GyRed));
             int Green = round(sqrt(GxGreen) + sqrt(GyGreen));
             int Blue = round(sqrt(GxBlue) + sqrt(GyBlue));
