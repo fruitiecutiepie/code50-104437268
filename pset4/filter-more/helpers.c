@@ -74,7 +74,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 rmax = 0;
             }
 
-            // Determine if the corresponding pixel is a the very left of the image
+            // Determine if the corresponding pixel is at the very left of the image
             if (j == 0)
             {
                 cmin = 0;
@@ -194,13 +194,17 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     {
                         for (int gc = gcmin; gc < gcmax; gc++)
                         {
+                            // Calculate the sum of each RGB's Gx and Gy values within 1 row and column of the original pixel
+                            GxRed += copy[i + r][j + c].rgbtRed * Gx[gr][gc];
+                            GyRed += copy[i + r][j + c].rgbtRed * Gy[gr][gc];
 
+                            GxGreen += copy[i + r][j + c].rgbtGreen * Gx[gr][gc];
+                            GyGreen += copy[i + r][j + c].rgbtGreen * Gy[gr][gc];
+
+                            GxBlue += copy[i + r][j + c].rgbtBlue * Gx[gr][gc];
+                            GyBlue += copy[i + r][j + c].rgbtBlue * Gy[gr][gc];
                         }
                     }
-                    // Calculate the sum of each RGB's Gx and Gy values within 1 row and column of the original pixel
-                    GxRed += copy[i + r][j + c].rgbtRed;
-                    GxGreen += copy[i + r][j + c].rgbtGreen;
-                    GxBlue += copy[i + r][j + c].rgbtBlue;
                 }
             }
 
