@@ -134,7 +134,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             // Initialize the average of each RGB values & each addition of value
             int GxRed = 0, GxGreen = 0, GxBlue = 0;
             int GyRed = 0, GyGreen = 0, GyBlue = 0;
-            float counter = 0;
 
             // Initialize boundaries of the corresponding pixel
             int rmin = -1, rmax = 1, cmin = -1, cmax = 1;
@@ -187,7 +186,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     GxRed += copy[i + r][j + c].rgbtRed;
                     GxGreen += copy[i + r][j + c].rgbtGreen;
                     GxBlue += copy[i + r][j + c].rgbtBlue;
-                    counter++;
                 }
             }
 
