@@ -59,7 +59,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int avgRed = 0, avgGreen = 0, avgBlue = 0;
             float counter = 0;
 
-            // Initialize boundaries of the corresponding pixel
+            // Initialize boundaries of each pixel
             int rmin = -1, rmax = 1, cmin = -1, cmax = 1;
 
             // Determine if the corresponding pixel is at the very top of the image
@@ -86,11 +86,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 cmax = 0;
             }
 
-            // Calculate the sum of each RGB values within 1 row and column of the original pixel
+            // For each pixel that is within 1 row and column of the original pixel:
             for (int r = rmin; r <= rmax; r++)
             {
                 for (int c = cmin; c <= cmax; c++)
                 {
+                    // Calculate the sum of each RGB values within 1 row and column of the original pixel
                     avgRed += copy[i + r][j + c].rgbtRed;
                     avgGreen += copy[i + r][j + c].rgbtGreen;
                     avgBlue += copy[i + r][j + c].rgbtBlue;
@@ -131,11 +132,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            // Initialize the sum of each RGB values
+            // Initialize the sum of each RGB's Gx and Gy values
             int GxRed = 0, GxGreen = 0, GxBlue = 0;
             int GyRed = 0, GyGreen = 0, GyBlue = 0;
 
-            // Initialize boundaries of the corresponding pixel
+            // Initialize boundaries of each pixel &
             int rmin = -1, rmax = 1, cmin = -1, cmax = 1;
             int
 
@@ -184,7 +185,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int c = cmin; c <= cmax; c++)
                 {
-                    // Calculate the sum of each RGB values within 1 row and column of the original pixel
+                    // Calculate the sum of each RGB's Gx and Gy values within 1 row and column of the original pixel
                     GxRed += copy[i + r][j + c].rgbtRed;
                     GxGreen += copy[i + r][j + c].rgbtGreen;
                     GxBlue += copy[i + r][j + c].rgbtBlue;
