@@ -136,9 +136,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int rmin = -1, rmax = 1, cmin = -1, cmax = 1;
 
             // Define Gx matrix
-            int Gx[3][3] = {
-                {
-            }
+            int Gx[3][3] = {{-1, 0, 1}
+                            {-2, 0, 2}
+                            {-1, 0, 1}};
 
             // Determine if the corresponding pixel is at the very top of the image
             if (i == 0)
@@ -177,14 +177,14 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
 
             // Calculate the average of each RGB values within 1 row and column of the original pixel
-            avgRed = round(avgRed / counter);
-            avgGreen = round(avgGreen / counter);
-            avgBlue = round(avgBlue / counter);
+            // avgRed = round(avgRed / counter);
+            // avgGreen = round(avgGreen / counter);
+            // avgBlue = round(avgBlue / counter);
 
-            // Assign each new RGB values to the original pixel
-            image[i][j].rgbtRed = avgRed;
-            image[i][j].rgbtGreen = avgGreen;
-            image[i][j].rgbtBlue = avgBlue;
+            // // Assign each new RGB values to the original pixel
+            // image[i][j].rgbtRed = avgRed;
+            // image[i][j].rgbtGreen = avgGreen;
+            // image[i][j].rgbtBlue = avgBlue;
         }
     }
     return;
