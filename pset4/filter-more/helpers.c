@@ -8,7 +8,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            int avg = (int) round((image[i][j].rgbtRed + image[i][j].rgbtGreen + image[i][j].rgbtBlue) / 3);
+            int avg = round((image[i][j].rgbtRed + image[i][j].rgbtGreen + image[i][j].rgbtBlue) / 3);
             image[i][j].rgbtRed = avg;
             image[i][j].rgbtGreen = avg;
             image[i][j].rgbtBlue = avg;
@@ -94,9 +94,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
 
             // Calculate the average of each RGB values within 1 row and column of the original pixel
-            avgRed = (int) round(avgRed / counter);
-            avgGreen = (int) round(avgGreen / counter);
-            avgBlue = (int) round(avgBlue / counter);
+            avgRed = round(avgRed / counter);
+            avgGreen = round(avgGreen / counter);
+            avgBlue = round(avgBlue / counter);
 
             // Assign each new RGB values to the original pixel
             image[i][j].rgbtRed = avgRed;
@@ -110,6 +110,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    
+
     return;
 }
