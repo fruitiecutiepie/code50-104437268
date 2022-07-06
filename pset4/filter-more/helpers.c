@@ -4,10 +4,12 @@
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
+    // For each pixel:
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
+            // Calculate average RGB value and assign it to each pixel
             float avg = (image[i][j].rgbtRed + image[i][j].rgbtGreen + image[i][j].rgbtBlue) / 3.0;
             image[i][j].rgbtRed = round(avg);
             image[i][j].rgbtGreen = round(avg);
@@ -20,10 +22,12 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
+    // For each pixel:
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width / 2; j++)
         {
+            // Swap each pixel value with 
             RGBTRIPLE tmp = image[i][j];
             image[i][j] = image[i][width - j - 1];
             image[i][width - j - 1] = tmp;
@@ -46,7 +50,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    // Blur each pixel according to the average RGB values of its adjacent pixels
+    // For each pixel: blur according to the average RGB values of its adjacent pixels
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -122,7 +126,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    // Blur each pixel according to the average RGB values of its adjacent pixels
+    // For each pixel: blur according to the average RGB values of its adjacent pixels
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -136,9 +140,18 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int rmin = -1, rmax = 1, cmin = -1, cmax = 1;
 
             // Define Gx matrix
-            int Gx[3][3] = {{-1, 0, 1},
-                            {-2, 0, 2},
-                            {-1, 0, 1},};
+            int Gx[3][3] = {
+                {-1, 0, 1},
+                {-2, 0, 2},
+                {-1, 0, 1},
+            };
+
+            // Define Gy matrix
+            int Gy[3][3] = {
+                {-1, -2, -1},
+                {0, 0, 0},
+                {1, 2, 1},
+            };
 
             // Determine if the corresponding pixel is at the very top of the image
             if (i == 0)
