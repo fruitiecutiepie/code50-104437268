@@ -1,5 +1,6 @@
 #include "helpers.h"
 #include <math.h>
+#include <stdlib.h>
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -176,7 +177,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
 
             // Initialize the sum of each RGB's Gx and Gy values
-            int GxRed = 0, GxGreen = 0, GxBlue = 0;
+            int *GxRed = malloc(sizeof(int)), GxGreen = 0, GxBlue = 0;
             int GyRed = 0, GyGreen = 0, GyBlue = 0;
 
             // For each pixel that is within 1 row and column of the original pixel:
@@ -185,7 +186,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 for (int c = cmin; c <= cmax; c++)
                 {
                     // Calculate the sum of each RGB's Gx value within 1 row and column of the original pixel
-                    GxRed += copy[i + r][j + c].rgbtRed * Gx[r][c];
+                    *GxRed += copy[i + r][j + c].rgbtRed * Gx[r][c];
                     GxGreen += copy[i + r][j + c].rgbtGreen * Gx[r][c];
                     GxBlue += copy[i + r][j + c].rgbtBlue * Gx[r][c];
 
@@ -200,6 +201,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int Red = round(sqrt(pow(GxRed, 2) + pow(GyRed, 2)));
             int Green = round(sqrt(pow(GxGreen, 2) + pow(GyGreen, 2)));
             int Blue = round(sqrt(pow(GxBlue, 2) + pow(GyBlue, 2)));
+
+            free(GyRed);
 
             // Limit each RGB final value to 255
             if (Red > 255)
