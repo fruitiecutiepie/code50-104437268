@@ -164,9 +164,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int c = cmin; c <= cmax; c++)
                 {
-                    avgRed += copy[i + r][j + c].rgbtRed;
-                    avgGreen += copy[i + r][j + c].rgbtGreen;
-                    avgBlue += copy[i + r][j + c].rgbtBlue;
+                    GxRed += copy[i + r][j + c].rgbtRed;
+                    GxGreen += copy[i + r][j + c].rgbtGreen;
+                    GxBlue += copy[i + r][j + c].rgbtBlue;
                     counter++;
                 }
             }
