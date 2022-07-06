@@ -184,16 +184,19 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 gcmax--;
             }
 
+            // For each Gx & Gy matrix value:
+            for (int gr = grmin; gr < grmax; gr++)
+            {
+                for (int gc = gcmin; gc < gcmax; gc++)
+                {
+                    int Gx = Gx
+
             // For each pixel that is within 1 row and column of the original pixel:
             for (int r = rmin; r <= rmax; r++)
             {
                 for (int c = cmin; c <= cmax; c++)
                 {
-                    // For each Gx & Gy matrix value:
-                    for (int gr = grmin; gr < grmax; gr++)
-                    {
-                        for (int gc = gcmin; gc < gcmax; gc++)
-                        {
+
                             // Calculate the sum of each RGB's Gx value within 1 row and column of the original pixel
                             GxRed += copy[i + r][j + c].rgbtRed * Gx[gr][gc];
                             GxGreen += copy[i + r][j + c].rgbtGreen * Gx[gr][gc];
