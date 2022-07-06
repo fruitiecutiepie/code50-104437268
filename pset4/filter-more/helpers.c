@@ -215,11 +215,17 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
             // Limit each RGB final value to 255
             if (Red > 255)
+            {
                 Red = 255;
+            }
             if (Green > 255)
+            {
                 Green = 255;
+            }
             if (Blue > 255)
+            {
                 Blue = 255;
+            }
 
             // // Assign each new RGB value to the original pixel
             image[i][j].rgbtRed = Red;
