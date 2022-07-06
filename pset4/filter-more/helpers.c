@@ -184,28 +184,15 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int c = cmin; c <= cmax; c++)
                 {
-                    // Copy indexes to get
-                    int gr = r, gc = c;
-
-                    // Change -1 to 2 to get the last item of the Gx & Gy array so that it won't be out of bounds
-                    if (r == -1)
-                    {
-                        gr = 2;
-                    }
-                    if (c == -1)
-                    {
-                        gc = 2;
-                    }
-
                     // Calculate the sum of each RGB's Gx value within 1 row and column of the original pixel
-                    GxRed += copy[i + r][j + c].rgbtRed * Gx[gr][gc];
-                    GxGreen += copy[i + r][j + c].rgbtGreen * Gx[gr][gc];
-                    GxBlue += copy[i + r][j + c].rgbtBlue * Gx[gr][gc];
+                    GxRed += copy[i + r][j + c].rgbtRed * Gx[r + 1][c + 1];
+                    GxGreen += copy[i + r][j + c].rgbtGreen * Gx[r + 1][c + 1];
+                    GxBlue += copy[i + r][j + c].rgbtBlue * Gx[r + 1][c + 1];
 
                     // Calculate the sum of each RGB's Gy value within 1 row and column of the original pixel
-                    GyRed += copy[i + r][j + c].rgbtRed * Gy[gr][gc];
-                    GyGreen += copy[i + r][j + c].rgbtGreen * Gy[gr][gc];
-                    GyBlue += copy[i + r][j + c].rgbtBlue * Gy[gr][gc];
+                    GyRed += copy[i + r][j + c].rgbtRed * Gy[r + 1][c + 1];
+                    GyGreen += copy[i + r][j + c].rgbtGreen * Gy[r + 1][c + 1];
+                    GyBlue += copy[i + r][j + c].rgbtBlue * Gy[r + 1][c + 1];
                 }
             }
 
