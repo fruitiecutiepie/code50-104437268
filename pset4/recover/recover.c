@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    // Close any remaining file
+    // Close any remaining files
     fclose(file);
     fclose(img);
 }
