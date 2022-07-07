@@ -18,6 +18,14 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    typedef uint8_t BYTE;
+
     int BLOCK_SIZE = 512;
-    
+    BYTE buffer[BLOCK_SIZE];
+
+    // Read input file until the end
+    while (fread(buffer, sizeof(uint8_t), BLOCK_SIZE, file) == BLOCK_SIZE)
+    {
+
+    }
 }
