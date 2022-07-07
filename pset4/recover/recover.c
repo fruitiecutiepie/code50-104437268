@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
             counter++;
 
             // Store output file name in filename
-            char *filename = malloc(sizeof(char) * 8);
+            char *filename = malloc(8);
             sprintf(filename, %03i.jpg, counter);
 
             // Open output file
