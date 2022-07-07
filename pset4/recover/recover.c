@@ -3,15 +3,18 @@
 
 int main(int argc, char *argv[])
 {
+    // Make sure there is only one command-line argument
     if (argc != 1)
     {
         printf("Usage: ./recover IMAGE\n");
         return 1;
     }
 
-    if (FILE *file = fopen(argv[1], "r") == NULL)
+    // Open input file
+    FILE *file = fopen(argv[1], "r")
+    if (file == NULL)
     {
-        printf("File cannot be opened.\n");
-        return 2;
+        printf("File could not be opened.\n");
+        return 1;
     }
 }
