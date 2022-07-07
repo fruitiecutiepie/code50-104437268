@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
     // Read input file until the end
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
     {
+        // If file header is JPEG
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
             // If not the first JPEG found, close it
@@ -50,6 +51,8 @@ int main(int argc, char *argv[])
             // Free filename memory
             free(filename);
         }
+
+        // If file header is not JPEG
         else
         {
             // If a JPEG file is opened for writing, keep writing to it
@@ -59,6 +62,8 @@ int main(int argc, char *argv[])
             }
         }
     }
+
+    // Close any remaining file
     fclose(file);
     fclose(img);
 }
