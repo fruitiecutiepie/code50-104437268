@@ -26,6 +26,9 @@ int main(int argc, char *argv[])
     // Read input file until the end
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
     {
-
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+        {
+            
+        }
     }
 }
