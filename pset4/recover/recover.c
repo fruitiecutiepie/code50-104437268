@@ -3,8 +3,8 @@
 
 int main(int argc, char *argv[])
 {
-    // Make sure there is only one command-line argument
-    if (argc != 1)
+    // Check for one command-line argument
+    if (argc != 2)
     {
         printf("Usage: ./recover IMAGE\n");
         return 1;
