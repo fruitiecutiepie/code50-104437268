@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
             else
             {
                 fclose(img);
-                
+
                 // Store formatted output file name in filename
                 char *filename = malloc(8);
                 sprintf(filename, "%03i.jpg", counter);
