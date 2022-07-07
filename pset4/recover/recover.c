@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
     BYTE buffer[BLOCK_SIZE];
 
     // Read input file until the end
-    while (fread(buffer, sizeof(uint8_t), BLOCK_SIZE, file) == BLOCK_SIZE)
+    while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
     {
 
     }
