@@ -35,11 +35,12 @@ int main(int argc, char *argv[])
             // Open output file
             FILE *img = fopen(filename, "w");
 
-            fwrite(buffer, )
+            fwrite(buffer, 1, BLOCK_SIZE, img);
 
             // Count found JPEGs
             counter++;
             free(filename);
         }
+        else
     }
 }
