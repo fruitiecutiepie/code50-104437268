@@ -31,12 +31,14 @@ int main(int argc, char *argv[])
             // Count found JPEGs
             counter++;
 
-            // Store output file name in filename
+            // Store formatted output file name in filename
             char *filename = malloc(8);
-            sprintf(filename, %03i.jpg, counter);
+            sprintf(filename, "%03i.jpg", counter);
 
             // Open output file
-            FILE *img = fopen(filename, 'w');
+            FILE *img = fopen(filename, "w");
+
+            fwrite(buffer, )
 
             free(filename);
         }
