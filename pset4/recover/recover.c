@@ -47,7 +47,10 @@ int main(int argc, char *argv[])
         }
         else
         {
-            fwrite(buffer, 1, BLOCK_SIZE, img);
+            if ()
+            {
+                fwrite(buffer, 1, BLOCK_SIZE, img);
+            }
         }
     }
     fclose(file);
