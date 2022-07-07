@@ -39,8 +39,13 @@ int main(int argc, char *argv[])
 
             // Count found JPEGs
             counter++;
+
+            // Free filename memory
             free(filename);
+
+            if
         }
         else
     }
+    fclose(img)
 }
