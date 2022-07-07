@@ -28,7 +28,10 @@ int main(int argc, char *argv[])
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            fclose(img);
+            if (img == true)
+            {
+                fclose(img);
+            }
 
             // Store formatted output file name in filename
             char *filename = malloc(8);
@@ -47,7 +50,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            if ()
+            if (img == true)
             {
                 fwrite(buffer, 1, BLOCK_SIZE, img);
             }
