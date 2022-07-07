@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
     int BLOCK_SIZE = 512;
     uint8_t buffer[BLOCK_SIZE];
     int counter = 0;
+    FILE *img;
 
     // Read input file until the end
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
