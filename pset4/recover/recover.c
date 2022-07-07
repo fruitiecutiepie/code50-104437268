@@ -18,10 +18,8 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    typedef uint8_t BYTE;
-
     int BLOCK_SIZE = 512;
-    BYTE buffer[BLOCK_SIZE];
+    uint8_t buffer[BLOCK_SIZE];
     int counter = 0;
 
     // Read input file until the end
@@ -29,10 +27,17 @@ int main(int argc, char *argv[])
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
+            // Count found JPEGs
             counter++;
+
+            // Store output file name in filename
             char *filename = malloc(sizeof(char) * 8);
             sprintf(filename, %03i.jpg, counter);
+
+            // Open output file
             FILE *img = fopen(filename, 'w');
+
+            free(filename);
         }
     }
 }
