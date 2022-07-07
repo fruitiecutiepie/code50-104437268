@@ -46,6 +46,10 @@ int main(int argc, char *argv[])
             if
         }
         else
+        {
+            fwrite(buffer, 1, BLOCK_SIZE, img);
+        }
     }
-    fclose(img)
+    fclose(file);
+    fclose(img);
 }
