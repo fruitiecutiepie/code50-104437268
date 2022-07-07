@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     }
 
     // Open input file
-    FILE *file = fopen(argv[1], "r")
+    FILE *file = fopen(argv[1], "r");
     if (file == NULL)
     {
         printf("File could not be opened.\n");
@@ -30,8 +30,9 @@ int main(int argc, char *argv[])
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
             counter++;
-            char *filename = malloc(sizeof())
+            char *filename = malloc(sizeof(char) * 8);
             sprintf(filename, %03i.jpg, counter);
+            FILE *img = fopen(filename, 'w');
         }
     }
 }
