@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef uint8_t BYTE;
+
 int main(int argc, char *argv[])
 {
     // Check for one command-line argument
@@ -19,7 +21,7 @@ int main(int argc, char *argv[])
     }
 
     int BLOCK_SIZE = 512;
-    uint8_t buffer[BLOCK_SIZE];
+    BYTE buffer[BLOCK_SIZE];
     int counter = 0;
 
     // Read input file until the end
