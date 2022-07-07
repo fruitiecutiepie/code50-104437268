@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            if (img == true)
+            if (counter > 0)
             {
                 fwrite(buffer, 1, BLOCK_SIZE, img);
             }
