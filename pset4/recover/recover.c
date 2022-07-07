@@ -17,4 +17,7 @@ int main(int argc, char *argv[])
         printf("File could not be opened.\n");
         return 1;
     }
+
+    int BLOCK_SIZE = 512;
+    
 }
