@@ -29,45 +29,30 @@ int main(int argc, char *argv[])
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            if (counter == 0)
-            {
-                // Store formatted output file name in filename
-                char *filename = malloc(8);
-                sprintf(filename, "%03i.jpg", counter);
-
-                // Open output file
-                FILE *img = fopen(filename, "w");
-
-                fwrite(buffer, 1, BLOCK_SIZE, img);
-
-                // Count found JPEGs
-                counter++;
-
-                // Free filename memory
-                free(filename);
-            }
-            else
+            // If not the first JPEG found, close it
+            if (counter > 0)
             {
                 fclose(img);
-
-                // Store formatted output file name in filename
-                char *filename = malloc(8);
-                sprintf(filename, "%03i.jpg", counter);
-
-                // Open output file
-                FILE *img = fopen(filename, "w");
-
-                fwrite(buffer, 1, BLOCK_SIZE, img);
-
-                // Count found JPEGs
-                counter++;
-
-                // Free filename memory
-                free(filename);
             }
+
+            // Store formatted output file name in filename
+            char *filename = malloc(8);
+            sprintf(filename, "%03i.jpg", counter);
+
+            // Open output file
+            img = fopen(filename, "w");
+
+            fwrite(buffer, 1, BLOCK_SIZE, img);
+
+            // Count found JPEGs
+            counter++;
+
+            // Free filename memory
+            free(filename);
         }
         else
         {
+            // If a JPEG file is opened for writing, keep writing to it
             if (counter > 0)
             {
                 fwrite(buffer, 1, BLOCK_SIZE, img);
