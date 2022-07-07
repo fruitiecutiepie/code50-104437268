@@ -30,23 +30,41 @@ int main(int argc, char *argv[])
         {
             if (counter == 0)
             {
+                // Store formatted output file name in filename
+                char *filename = malloc(8);
+                sprintf(filename, "%03i.jpg", counter);
+
+                // Open output file
+                FILE *img = fopen(filename, "w");
+
+                fwrite(buffer, 1, BLOCK_SIZE, img);
+
+                // Count found JPEGs
+                counter++;
+
+                // Free filename memory
+                free(filename);
+            }
+            else
+            {
                 fclose(img);
+                
+                // Store formatted output file name in filename
+                char *filename = malloc(8);
+                sprintf(filename, "%03i.jpg", counter);
+
+                // Open output file
+                FILE *img = fopen(filename, "w");
+
+                fwrite(buffer, 1, BLOCK_SIZE, img);
+
+                // Count found JPEGs
+                counter++;
+
+                // Free filename memory
+                free(filename);
             }
 
-            // Store formatted output file name in filename
-            char *filename = malloc(8);
-            sprintf(filename, "%03i.jpg", counter);
-
-            // Open output file
-            FILE *img = fopen(filename, "w");
-
-            fwrite(buffer, 1, BLOCK_SIZE, img);
-
-            // Count found JPEGs
-            counter++;
-
-            // Free filename memory
-            free(filename);
         }
         else
         {
