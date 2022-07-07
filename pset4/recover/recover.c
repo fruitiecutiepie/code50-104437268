@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-typedef uint8_t BYTE;
+#include <stdint.h>
 
 int main(int argc, char *argv[])
 {
@@ -21,7 +20,7 @@ int main(int argc, char *argv[])
     }
 
     int BLOCK_SIZE = 512;
-    BYTE buffer[BLOCK_SIZE];
+    uint8_t buffer[BLOCK_SIZE];
     int counter = 0;
 
     // Read input file until the end
