@@ -64,7 +64,6 @@ int main(int argc, char *argv[])
                 // Free filename memory
                 free(filename);
             }
-
         }
         else
         {
