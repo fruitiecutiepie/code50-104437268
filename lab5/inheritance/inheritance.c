@@ -42,7 +42,7 @@ person *create_family(int generations)
     // TODO: Allocate memory for new person
     for (int i = 0; i < generations; i++)
     {
-        person *person = malloc(sizeof(person));
+        person *p = malloc(sizeof(person));
     }
 
     // If there are still generations left to create
@@ -53,24 +53,24 @@ person *create_family(int generations)
         person *parent1 = create_family(generations - 1);
 
         // TODO: Set parent pointers for current person
-        person->parents[0] = parent0;
-        person->parents[1] = parent1;
+        p->parents[0] = parent0;
+        p->parents[1] = parent1;
 
         // TODO: Randomly assign current person's alleles based on the alleles of their parents
-        person.alleles[0] = person->parents[0].alleles[rand() % 2]
-        person.alleles[1] = person->parents[1].alleles[rand() % 2]
+        p.alleles[0] = p->parents[0].alleles[rand() % 2]
+        p.alleles[1] = p->parents[1].alleles[rand() % 2]
     }
 
     // If there are no generations left to create
     else
     {
         // TODO: Set parent pointers to NULL
-        person->parent[0] = NULL
-        person->parents[1] = NULL
+        p->parent[0] = NULL
+        p->parents[1] = NULL
 
         // TODO: Randomly assign alleles
-        person.alleles[0] = random_allele()
-        person.alleles[1] = random_allele()
+        p.alleles[0] = random_allele()
+        p.alleles[1] = random_allele()
     }
 
     // TODO: Return newly created person
