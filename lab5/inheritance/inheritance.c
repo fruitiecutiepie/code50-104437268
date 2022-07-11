@@ -42,7 +42,7 @@ person *create_family(int generations)
     // TODO: Allocate memory for new person
     for (int i = 0; i < generations; i++)
     {
-        person *
+        person *person = malloc(sizeof(person));
     }
 
     // If there are still generations left to create
