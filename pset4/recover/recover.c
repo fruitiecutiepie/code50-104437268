@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     int BLOCK_SIZE = 512;
     uint8_t buffer[BLOCK_SIZE];
     int counter = 0;
-    FILE *img;
+    FILE *img = NULL;
 
     // Read input file until the end
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
             }
 
             // Store formatted output file name in filename
-            char *filename = malloc(8);
+            char *filename = malloc(8 * sizeof(char));
             sprintf(filename, "%03i.jpg", counter);
 
             // Open output file
