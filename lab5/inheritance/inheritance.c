@@ -40,6 +40,10 @@ int main(void)
 person *create_family(int generations)
 {
     // TODO: Allocate memory for new person
+    for (int i = 0; i < generations; i++)
+    {
+        person *
+    }
 
     // If there are still generations left to create
     if (generations > 1)
