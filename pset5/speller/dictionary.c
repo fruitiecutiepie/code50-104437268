@@ -45,6 +45,13 @@ unsigned int hash(const char *word)
     }
     else
     {
+        for (int j = 0; j < 3; j++)
+        {
+            if (word[j] == '\'')
+            {
+                i[j] = '\0'
+            }
+        }
         i[0] = toupper(word[0]) - 'A';
         i[1] = toupper(word[1]) - 'A';
         i[2] = toupper(word[2]) - 'A';
