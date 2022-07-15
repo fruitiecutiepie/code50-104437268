@@ -57,6 +57,8 @@ bool load(const char *dictionary)
 
         // Retrieve table array index to put the word to
         int i = hash(n);
+
+        // Insert node into hash table
         n->next = table[i]->word;
         table[i]->word = n;
     }
