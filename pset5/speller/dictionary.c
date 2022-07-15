@@ -96,7 +96,7 @@ bool load(const char *dictionary)
         // Obtain a hash value
         hash(n->word);
 
-        // Insert node into hash table
+        // Insert node into hash table ??????
         if (strlen(word) == 1)
         {
             table[*i[0]]->word = n->word;
