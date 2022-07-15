@@ -2,6 +2,7 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -34,14 +35,14 @@ unsigned int hash(const char *word)
     if (strlen(word) == 1)
     {
         i[0] = toupper(word[0]) - 'A';
-        i[1] = '\0'
-        i[2] = '\0'
+        i[1] = '\0';
+        i[2] = '\0';
     }
-    elif (strlen(word) == 2)
+    else if (strlen(word) == 2)
     {
         i[0] = toupper(word[0]) - 'A';
         i[1] = toupper(word[1]) - 'A';
-        i[2] = '\0'
+        i[2] = '\0';
     }
     else
     {
@@ -49,7 +50,7 @@ unsigned int hash(const char *word)
         {
             if (word[j] == '\'')
             {
-                i[j] = '\0'
+                i[j] = '\0';
             }
             else
             {
@@ -96,7 +97,7 @@ bool load(const char *dictionary)
             n->next = table[i[0]]->word;
             table[i[0]]->next = n;
         }
-        elif (strlen(word) == 2)
+        else if (strlen(word) == 2)
         {
             n->next = table[i[0]][i[1]]->word;
             table[i[0]][i[1]]->next = n;
