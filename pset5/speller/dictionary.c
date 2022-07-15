@@ -18,6 +18,7 @@ node;
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
+int *i[3];
 
 // Hash table
 node *table[N][N][N];
@@ -33,18 +34,17 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    unsigned int i[3];
     if (strlen(word) == 1)
     {
-        i[0] = toupper(word[0]) - 'A';
-        i[1] = '\0';
-        i[2] = '\0';
+        *i[0] = toupper(word[0]) - 'A';
+        *i[1] = '\0';
+        *i[2] = '\0';
     }
     else if (strlen(word) == 2)
     {
-        i[0] = toupper(word[0]) - 'A';
-        i[1] = toupper(word[1]) - 'A';
-        i[2] = '\0';
+        *i[0] = toupper(word[0]) - 'A';
+        *i[1] = toupper(word[1]) - 'A';
+        *i[2] = '\0';
     }
     else
     {
@@ -52,15 +52,15 @@ unsigned int hash(const char *word)
         {
             if (word[j] == '\'')
             {
-                i[j] = '\0';
+                *i[j] = '\0';
             }
             else
             {
-                i[j] = toupper(word[j]) - 'A';
+                *i[j] = toupper(word[j]) - 'A';
             }
         }
     }
-    return i;
+    return *i;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
