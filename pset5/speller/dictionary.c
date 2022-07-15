@@ -52,8 +52,9 @@ bool load(const char *dictionary)
         {
             return false;
         }
-        
-        strcopy(n, word);
+
+        strcopy(n->word, word);
+        n->next = table[hash(n)]->word;
         table[hash(n)]->word = n;
     }
 }
