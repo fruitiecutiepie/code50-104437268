@@ -51,7 +51,7 @@ bool load(const char *dictionary)
         if (n != NULL)
         {
             strcopy(n, word);
-            hash(word)
+            table[hash(word)]
         }
     }
 }
