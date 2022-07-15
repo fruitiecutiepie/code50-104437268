@@ -99,9 +99,8 @@ bool load(const char *dictionary)
         // Insert node into hash table
         if (strlen(word) == 1)
         {
-            table[0]->word = "HI";
-            n->next = table[*i[0]]->word;
-            table[*i[0]]->next = n;
+            n->next = table[*i[0]]->next;
+            table[*i[0]]->word = n;
         }
         else if (strlen(word) == 2)
         {
