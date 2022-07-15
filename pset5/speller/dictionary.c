@@ -111,8 +111,8 @@ bool load(const char *dictionary)
         //     n->next = table[*i[0]][*i[1]][*i[2]]->word;
         //     table[*i[0]][*i[1]][*i[2]]->next = n;
         // }
-        table[i] = n->word;
-        table[i]->next = n->next;
+        strcpy(n->next, table[i]->next);
+        strcpy(table[i]->word, n->word);
 
         return true;
     }
