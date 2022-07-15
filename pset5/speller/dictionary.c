@@ -50,7 +50,8 @@ bool load(const char *dictionary)
         node *n = malloc(sizeof(node));
         if (n != NULL)
         {
-            strcopy(n, word)
+            strcopy(n, word);
+            hash(word)
         }
     }
 }
