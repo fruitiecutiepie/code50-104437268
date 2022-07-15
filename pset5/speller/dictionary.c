@@ -58,6 +58,7 @@ bool load(const char *dictionary)
 
         // Copy word into node
         strcopy(n->word, word);
+        n->next = NULL;
 
         // Obtain a hash value
         int i = hash(n);
