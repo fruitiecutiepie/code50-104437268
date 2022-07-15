@@ -37,7 +37,7 @@ unsigned int hash(const char *word)
         i[1] = '\0'
         i[2] = '\0'
     }
-    elif (strlen(word) == 2 && )
+    elif (strlen(word) == 2)
     {
         i[0] = toupper(word[0]) - 'A';
         i[1] = toupper(word[1]) - 'A';
