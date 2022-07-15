@@ -18,7 +18,7 @@ node;
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
-int *i[3];
+unsigned int *i[3];
 
 // Hash table
 node *table[N][N][N];
@@ -60,7 +60,7 @@ unsigned int hash(const char *word)
             }
         }
     }
-    return *i;
+    return i;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
