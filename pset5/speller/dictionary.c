@@ -31,8 +31,24 @@ unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
     unsigned int i[3];
-    i[0] = toupper(word[0]) - 'A';
-    if (strlen(word) )
+    if (strlen(word) == 1)
+    {
+        i[0] = toupper(word[0]) - 'A';
+        i[1] = '\0'
+        i[2] = '\0'
+    }
+    elif (strlen(word) == 2 && )
+    {
+        i[0] = toupper(word[0]) - 'A';
+        i[1] = toupper(word[1]) - 'A';
+        i[2] = '\0'
+    }
+    else
+    {
+        i[0] = toupper(word[0]) - 'A';
+        i[1] = toupper(word[1]) - 'A';
+        i[2] = toupper(word[2]) - 'A';
+    }
     return i;
 }
 
