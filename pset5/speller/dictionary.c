@@ -31,7 +31,7 @@ bool check(const char *word)
 }
 
 // Hashes word to a number
-unsigned int hash(const char *word)
+void hash(const char *word)
 {
     // TODO: Improve this hash function
     if (strlen(word) == 1)
@@ -60,7 +60,7 @@ unsigned int hash(const char *word)
             }
         }
     }
-    return i;
+    return;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -94,23 +94,23 @@ bool load(const char *dictionary)
         n->next = NULL;
 
         // Obtain a hash value
-        unsigned int i = hash(n->word);
+        unsigned int j = hash(n->word);
 
         // Insert node into hash table
         if (strlen(word) == 1)
         {
             n->next = table[i[0]]->word;
-            table[i[0]]->next = n;
+            table[j[0]]->next = n;
         }
         else if (strlen(word) == 2)
         {
-            n->next = table[i[0]][i[1]]->word;
-            table[i[0]][i[1]]->next = n;
+            n->next = table[j[0]][j[1]]->word;
+            table[j[0]][j[1]]->next = n;
         }
         else
         {
-            n->next = table[i[0]][i[1]][i[2]]->word;
-            table[i[0]][i[1]][i[2]]->next = n;
+            n->next = table[j[0]][j[1]][j[2]]->word;
+            table[j[0]][j[1]][j[2]]->next = n;
         }
     }
 }
