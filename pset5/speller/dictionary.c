@@ -54,8 +54,11 @@ bool load(const char *dictionary)
         }
 
         strcopy(n->word, word);
-        n->next = table[hash(n)]->word;
-        table[hash(n)]->word = n;
+
+        // Retrieve table array index to put the word to
+        int i = hash(n);
+        n->next = table[i]->word;
+        table[i]->word = n;
     }
 }
 
