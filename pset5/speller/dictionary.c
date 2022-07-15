@@ -61,7 +61,7 @@ bool load(const char *dictionary)
         n->next = NULL;
 
         // Obtain a hash value
-        int i = hash(n);
+        unsigned int i = hash(n);
 
         // Insert node into hash table
         n->next = table[i]->word;
