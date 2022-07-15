@@ -53,6 +53,7 @@ bool load(const char *dictionary)
             return false;
         }
 
+        // Copy word into node
         strcopy(n->word, word);
 
         // Retrieve table array index to put the word to
