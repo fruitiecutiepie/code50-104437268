@@ -1,5 +1,7 @@
 // Implements a dictionary's functionality
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
 #include <stdbool.h>
 #include <string.h>
@@ -85,11 +87,11 @@ bool load(const char *dictionary)
         }
 
         // Copy word into node
-        strcopy(n->word, word);
+        strcpy(n->word, word);
         n->next = NULL;
 
         // Obtain a hash value
-        unsigned int i = hash(n);
+        unsigned int i = hash(n->word);
 
         // Insert node into hash table
         if (strlen(word) == 1)
