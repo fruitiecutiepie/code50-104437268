@@ -71,6 +71,7 @@ bool load(const char *dictionary)
     FILE *file = fopen(dictionary, "r");
     if (file == NULL)
     {
+        free(file);
         return false;
     }
 
@@ -83,6 +84,7 @@ bool load(const char *dictionary)
         node *n = malloc(sizeof(node));
         if (n == NULL)
         {
+            free(n);
             return false;
         }
 
