@@ -99,18 +99,19 @@ bool load(const char *dictionary)
         // Insert node into hash table
         if (strlen(word) == 1)
         {
+            *table[0]->word = "HI";
             n->next = table[*i[0]]->word;
-            table[i[0]]->next = n;
+            table[*i[0]]->next = n;
         }
         else if (strlen(word) == 2)
         {
-            n->next = table[i[0]][i[1]]->word;
-            table[i[0]][i[1]]->next = n;
+            n->next = table[*i[0]][*i[1]]->word;
+            table[*i[0]][*i[1]]->next = n;
         }
         else
         {
-            n->next = table[i[0]][i[1]][i[2]]->word;
-            table[i[0]][i[1]][i[2]]->next = n;
+            n->next = table[*i[0]][*i[1]][*i[2]]->word;
+            table[*i[0]][*i[1]][*i[2]]->next = n;
         }
     }
 }
