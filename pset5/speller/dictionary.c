@@ -37,6 +37,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
+    // Open dictionary file
     FILE *file = fopen(dictionary, "r");
     if (file == NULL)
     {
@@ -58,7 +59,7 @@ bool load(const char *dictionary)
         // Copy word into node
         strcopy(n->word, word);
 
-        // Retrieve table array index to put the word to
+        // Obtain a hash value
         int i = hash(n);
 
         // Insert node into hash table
