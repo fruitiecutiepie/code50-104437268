@@ -83,6 +83,7 @@ bool load(const char *dictionary)
         unsigned int i = hash(n);
 
         // Insert node into hash table
+        if (strlen )
         n->next = table[i]->word;
         table[i]->next = n;
     }
