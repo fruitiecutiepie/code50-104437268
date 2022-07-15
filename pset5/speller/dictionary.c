@@ -18,10 +18,10 @@ node;
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
-unsigned int *i[3];
+// unsigned int *i[3];
 
 // Hash table
-node *table[N][N][N];
+node *table[N];
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -31,36 +31,37 @@ bool check(const char *word)
 }
 
 // Hashes word to a number
-void hash(const char *word)
+unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    if (strlen(word) == 1)
-    {
-        *i[0] = toupper(word[0]) - 'A';
-        *i[1] = '\0';
-        *i[2] = '\0';
-    }
-    else if (strlen(word) == 2)
-    {
-        *i[0] = toupper(word[0]) - 'A';
-        *i[1] = toupper(word[1]) - 'A';
-        *i[2] = '\0';
-    }
-    else
-    {
-        for (int j = 0; j < 3; j++)
-        {
-            if (word[j] == '\'')
-            {
-                *i[j] = '\0';
-            }
-            else
-            {
-                *i[j] = toupper(word[j]) - 'A';
-            }
-        }
-    }
-    return;
+    // if (strlen(word) == 1)
+    // {
+    //     *i[0] = toupper(word[0]) - 'A';
+    //     *i[1] = '\0';
+    //     *i[2] = '\0';
+    // }
+    // else if (strlen(word) == 2)
+    // {
+    //     *i[0] = toupper(word[0]) - 'A';
+    //     *i[1] = toupper(word[1]) - 'A';
+    //     *i[2] = '\0';
+    // }
+    // else
+    // {
+    //     for (int j = 0; j < 3; j++)
+    //     {
+    //         if (word[j] == '\'')
+    //         {
+    //             *i[j] = '\0';
+    //         }
+    //         else
+    //         {
+    //             *i[j] = toupper(word[j]) - 'A';
+    //         }
+    //     }
+    // }
+    // return;
+    return toupper(word[0]) - 'A';
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -74,8 +75,6 @@ bool load(const char *dictionary)
         free(file);
         return false;
     }
-
-    return false;
 
     // Read strings from file one at a time
     char word[LENGTH + 1];
@@ -94,24 +93,28 @@ bool load(const char *dictionary)
         n->next = NULL;
 
         // Obtain a hash value
-        hash(n->word);
+        unsigned int i = hash(n->word);
 
         // Insert node into hash table ??????
-        if (strlen(word) == 1)
-        {
-            table[*i[0]]->word = n->word;
-            n->next = table[*i[0]]->next;
-        }
-        else if (strlen(word) == 2)
-        {
-            n->next = table[*i[0]][*i[1]]->word;
-            table[*i[0]][*i[1]]->next = n;
-        }
-        else
-        {
-            n->next = table[*i[0]][*i[1]][*i[2]]->word;
-            table[*i[0]][*i[1]][*i[2]]->next = n;
-        }
+        // if (strlen(word) == 1)
+        // {
+        //     table[*i[0]]->word = n->word;
+        //     n->next = table[*i[0]]->next;
+        // }
+        // else if (strlen(word) == 2)
+        // {
+        //     n->next = table[*i[0]][*i[1]]->word;
+        //     table[*i[0]][*i[1]]->next = n;
+        // }
+        // else
+        // {
+        //     n->next = table[*i[0]][*i[1]][*i[2]]->word;
+        //     table[*i[0]][*i[1]][*i[2]]->next = n;
+        // }
+        table[i]->word = n->word;
+        n->next = table[i]->next;
+
+        return true;
     }
 }
 
