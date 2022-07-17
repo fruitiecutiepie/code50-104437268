@@ -131,20 +131,28 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    // Make room for cursor
+    // Make room for cursor & tmp
     node *cursor = malloc(sizeof(node));
+    node *tmp = malloc(sizeof(node));
     if (cursor == NULL)
     {
         free(cursor);
         return false;
     }
+    if (tmp == NULL)
+    {
+        free(tmp);
+        return false;
+    }
 
+    // For every array in the dictionary table:
     for (int i = 0; i < N; i++)
     {
-        // Set cursor and tmp to first word in dictionary
+        // Set cursor & tmp to first word in dictionary
         cursor = table[i]->next;
         tmp = table[i]->next;
 
+        // Free any memory allocated in load
         while (cursor->next != NULL)
         {
             cursor = cursor->next;
@@ -152,5 +160,7 @@ bool unload(void)
             tmp = cursor;
         }
     }
+    free(tmp);
+    free(cursor);
     return true;
 }
