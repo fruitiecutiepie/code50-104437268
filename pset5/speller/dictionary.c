@@ -34,7 +34,14 @@ bool check(const char *word)
 
     while (table[i]->next != NULL)
     {
-
+        if (strcasecmp(table[i]->word, word) == 0)
+        {
+            return true;
+        }
+        else
+        {
+            
+        }
     }
     return false;
 }
