@@ -139,11 +139,17 @@ bool unload(void)
         return false;
     }
 
-    // Set cursor and tmp to first word in dictionary
-
-    while (cursor)
+    for (int i = 0; i < N; i++)
     {
+        // Set cursor and tmp to first word in dictionary
+        cursor = table[i]->next;
+        tmp = table[i]->next;
 
+        while (cursor->next != NULL)
+        {
+            cursor = cursor->next;
+            free(tmp);
+        }
     }
     return false;
 }
