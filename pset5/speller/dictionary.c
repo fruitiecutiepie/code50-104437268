@@ -19,6 +19,9 @@ node;
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 17576;
 
+// Initialize number of words in dictionary
+int s = 0;
+
 // Hash table
 node *table[N];
 
@@ -88,6 +91,9 @@ bool load(const char *dictionary)
             n->next = table[i]->next;
             strcpy(table[i]->word, n->word);
         }
+
+        // Count number of words in dictionary
+        s++;
     }
     return true;
 }
@@ -96,7 +102,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    return 0;
+    return s;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
