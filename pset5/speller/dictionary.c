@@ -131,9 +131,19 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    while ()
+    // Make room for cursor
+    node *cursor = malloc(sizeof(node));
+    if (cursor == NULL)
     {
-        
+        free(cursor);
+        return false;
+    }
+
+    // Set cursor and tmp to first word in dictionary
+
+    while (cursor)
+    {
+
     }
     return false;
 }
