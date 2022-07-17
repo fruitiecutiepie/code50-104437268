@@ -5,6 +5,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <string.h>
+#include <strings.h>
 
 #include "dictionary.h"
 
@@ -31,16 +32,17 @@ bool check(const char *word)
     // TODO
     // Obtain a hash value
     unsigned int i = hash(word);
+    char *cursor = table[i]->word;
 
     while (table[i]->next != NULL)
     {
-        if (strcasecmp(table[i]->word, word) == 0)
+        if (strcasecmp(cursor, word) == 0)
         {
             return true;
         }
         else
         {
-            
+            cursor = cursor->next;
         }
     }
     return false;
