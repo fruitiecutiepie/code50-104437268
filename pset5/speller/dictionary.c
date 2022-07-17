@@ -17,7 +17,7 @@ typedef struct node
 node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 17576;
+const unsigned int N = 676;
 
 // Initialize number of words in dictionary
 int s = 0;
@@ -40,13 +40,9 @@ unsigned int hash(const char *word)
     {
         return (toupper(word[0]) - 'A');
     }
-    else if (strlen(word) == 2)
-    {
-        return (toupper(word[0]) - 'A') * 26 + (toupper(word[1]) - 'A');
-    }
     else
     {
-        return (toupper(word[0]) - 'A') * 26 + (toupper(word[1]) - 'A') * 26 + (toupper(word[2]) - 'A');
+        return (toupper(word[0]) - 'A') * 26 + (toupper(word[1]) - 'A');
     }
 }
 
@@ -111,6 +107,6 @@ bool unload(void)
     // TODO
     // Obtain a hash value
     unsigned int i = hash(n->word);
-    
+
     return false;
 }
