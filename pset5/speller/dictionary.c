@@ -124,12 +124,8 @@ bool unload(void)
     // For every array in the dictionary table:
     for (int i = 0; i < N; i++)
     {
-        // Set cursor & tmp to first word in dictionary
-        node *cursor = table[i];
-        node *tmp = cursor;
-
         // Free any memory allocated in load
-        while (cursor != NULL)
+        for (node *cursor = table[i]; cursor != NULL; cursor = cursor->next)
         {
             cursor = cursor->next;
             free(tmp);
