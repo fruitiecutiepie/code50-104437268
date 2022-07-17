@@ -149,8 +149,11 @@ bool unload(void)
     for (int i = 0; i < N; i++)
     {
         // Set cursor & tmp to first word in dictionary
-        cursor = table[i]->next;
-        tmp = table[i]->next;
+        if (table[i]->next != NULL)
+        {
+            cursor = table[i]->next;
+            tmp = table[i]->next;
+        }
 
         // Free any memory allocated in load
         while (cursor != NULL)
