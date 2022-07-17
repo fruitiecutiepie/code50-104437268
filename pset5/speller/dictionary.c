@@ -32,7 +32,8 @@ bool check(const char *word)
     // TODO
     // Obtain a hash value
     unsigned int i = hash(word);
-    char *cursor = table[i]->word;
+    node *cursor = malloc(sizeof(node));
+    cursor = table[i]->word;
 
     while (table[i]->next != NULL)
     {
@@ -42,7 +43,7 @@ bool check(const char *word)
         }
         else
         {
-            cursor = table[i]->next;
+            cursor = cursor->next;
         }
     }
     return false;
