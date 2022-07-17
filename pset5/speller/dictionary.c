@@ -41,8 +41,8 @@ bool check(const char *word)
         return false;
     }
 
-    // Copy word to cursor
-    strcpy(cursor->word, table[i]->word);
+    // Set cursor to first time in the linked list
+    cursor = table[i];
 
     while (cursor->next != NULL)
     {
