@@ -34,14 +34,14 @@ unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
     for (int i = 0, n = strlen(word); i < n; i++)
-    if (i == strlen(word) - 1)
-    {
-        return (toupper(word[i]) - 'A');
-    }
-    else
-    {
-        return (toupper(word[i]) - 'A') * 26 + hash();
-    }
+        if (i == strlen(word) - 1)
+        {
+            return (toupper(word[i]) - 'A');
+        }
+        else
+        {
+            return (toupper(word[i]) - 'A') * 26 + hash();
+        }
 }
 
 // Loads dictionary into memory, returning true if successful, else false
