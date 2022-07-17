@@ -41,7 +41,7 @@ bool check(const char *word)
         return false;
     }
 
-    // Set cursor to first time in the linked list
+    // Set cursor to first item in the linked list
     cursor = table[i];
 
     while (cursor != NULL)
