@@ -30,9 +30,9 @@ bool check(const char *word)
 {
     // TODO
     // Obtain a hash value
-    unsigned int i = hash(n->word);
+    unsigned int i = hash(word);
 
-    while (table->next != NULL)
+    while (table[i]->next != NULL)
     {
 
     }
