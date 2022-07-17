@@ -156,7 +156,7 @@ bool unload(void)
         }
 
         // Free any memory allocated in load
-        while (cursor != NULL)
+        while (cursor->next != NULL)
         {
             cursor = cursor->next;
             free(tmp);
