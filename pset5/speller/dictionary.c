@@ -125,11 +125,8 @@ bool unload(void)
     for (int i = 0; i < N; i++)
     {
         // Set cursor & tmp to first word in dictionary
-        if (table[i]->next != NULL)
-        {
-            node *cursor = table[i]->next;
-            node *tmp = table[i]->next;
-        }
+        node *cursor = table[i];
+        node *tmp = table[i];
 
         // Free any memory allocated in load
         while (cursor != NULL)
@@ -139,6 +136,5 @@ bool unload(void)
             tmp = cursor;
         }
     }
-    free(cursor);
     return true;
 }
