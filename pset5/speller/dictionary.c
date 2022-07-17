@@ -5,7 +5,6 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <string.h>
-#include <math.h>
 
 #include "dictionary.h"
 
@@ -18,7 +17,7 @@ typedef struct node
 node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned long long int N = 4718464138887781265096578966839724454613845983270182302747983872;
+const unsigned int N = 17576;
 
 // Hash table
 node *table[N];
@@ -34,19 +33,18 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    int i = 0, n = strlen(word);
-    while (i < n)
+    if (strlen(word) == 1)
     {
-        if (i == strlen(word) - 1)
-        {
-            return (toupper(word[i]) - 'A');
-        }
-        else
-        {
-            return (toupper(word[i]) - 'A') * 26 + hash(&word[i+1]);
-        }
+        return (toupper(word[0]) - 'A');
     }
-    return 0;
+    else if (strlen(word) == 2)
+    {
+        return (toupper(word[0]) - 'A') * 26 + (toupper(word[1]) - 'A');
+    }
+    else
+    {
+        return (toupper(word[0]) - 'A') * 26 + (toupper(word[1]) - 'A') * 26 + (toupper(word[2]) - 'A');
+    }
 }
 
 // Loads dictionary into memory, returning true if successful, else false
