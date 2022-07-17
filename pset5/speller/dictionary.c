@@ -38,12 +38,12 @@ bool check(const char *word)
     {
         if (strcasecmp(cursor->word, word) == 0)
         {
-            free(cursor);
+            // free(cursor);
             return true;
         }
         cursor = cursor->next;
     }
-    free(cursor);
+    // free(cursor);
     return false;
 }
 
@@ -69,7 +69,7 @@ bool load(const char *dictionary)
     FILE *file = fopen(dictionary, "r");
     if (file == NULL)
     {
-        free(file);
+        // free(file);
         return false;
     }
 
@@ -81,7 +81,7 @@ bool load(const char *dictionary)
         node *n = malloc(sizeof(node));
         if (n == NULL)
         {
-            free(n);
+            // free(n);
             return false;
         }
 
@@ -102,7 +102,7 @@ bool load(const char *dictionary)
             n->next = table[i];
             table[i] = n;
         }
-        free(n);
+        // free(n);
 
         // Count number of words in dictionary
         s++;
@@ -127,14 +127,14 @@ bool unload(void)
     {
         // Set cursor & tmp to first word in dictionary
         node *cursor = table[i];
-        // node *tmp = table[i];
+        node *tmp = table[i];
 
         // Free any memory allocated in load
         while (cursor != NULL)
         {
             cursor = cursor->next;
-            // free(tmp);
-            // tmp = cursor;
+            free(tmp);
+            tmp = cursor;
         }
     }
     return true;
