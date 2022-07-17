@@ -29,6 +29,13 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    // Obtain a hash value
+    unsigned int i = hash(n->word);
+
+    while (table->next != NULL)
+    {
+
+    }
     return false;
 }
 
@@ -105,12 +112,5 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    // Obtain a hash value
-    unsigned int i = hash(n->word);
-
-    while (table->next != NULL)
-    {
-
-    }
     return false;
 }
