@@ -99,7 +99,7 @@ bool load(const char *dictionary)
         }
         else
         {
-            n->next = table[i]->next;
+            n = table[i]->next;
             table[i]->next = n;
         }
         free(n);
@@ -124,8 +124,12 @@ bool unload(void)
     // For every array in the dictionary table:
     for (int i = 0; i < N; i++)
     {
+        // Set cursor & tmp to first word in dictionary
+        node *cursor = table[i];
+        node *tmp = cursor;
+
         // Free any memory allocated in load
-        for (node *cursor = table[i]; cursor != NULL; cursor = cursor->next)
+        while (cursor != NULL)
         {
             cursor = cursor->next;
             free(tmp);
