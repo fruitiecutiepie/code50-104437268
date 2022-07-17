@@ -126,7 +126,7 @@ bool unload(void)
     {
         // Set cursor & tmp to first word in dictionary
         node *cursor = table[i];
-        node *tmp = table[i];
+        node *tmp = cursor;
 
         // Free any memory allocated in load
         while (cursor != NULL)
