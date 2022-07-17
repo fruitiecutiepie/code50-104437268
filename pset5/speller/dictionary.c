@@ -108,5 +108,9 @@ bool unload(void)
     // Obtain a hash value
     unsigned int i = hash(n->word);
 
+    while (table->next != NULL)
+    {
+
+    }
     return false;
 }
