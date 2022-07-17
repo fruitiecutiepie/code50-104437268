@@ -80,8 +80,15 @@ bool load(const char *dictionary)
         unsigned int i = hash(n->word);
 
         // Insert node into hash table
-        n->next = table[i]->next;
-        strcpy(table[i]->word, n->word);
+        if (table[i] == NULL)
+        {
+            table[i] = n;
+        }
+        else
+        {
+            n->next = table[i]->next;
+            strcpy(table[i]->word, n->word);
+        }
     }
     return true;
 }
