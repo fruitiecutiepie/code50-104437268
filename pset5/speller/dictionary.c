@@ -153,7 +153,7 @@ bool unload(void)
         tmp = table[i]->next;
 
         // Free any memory allocated in load
-        while (cursor->next != NULL)
+        while (cursor != NULL)
         {
             cursor = cursor->next;
             free(tmp);
