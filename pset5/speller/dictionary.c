@@ -46,12 +46,12 @@ bool check(const char *word)
 
     while (cursor != NULL)
     {
-        while (strcasecmp(cursor->word, word) != 0)
+        if (strcasecmp(cursor->word, word) == 0)
         {
-            cursor = cursor->next;
+            free(cursor);
+            return true;
         }
-        free(cursor);
-        return true;
+        cursor = cursor->next;
     }
     free(cursor);
     return false;
