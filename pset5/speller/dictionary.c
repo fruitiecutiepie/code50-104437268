@@ -33,7 +33,7 @@ bool check(const char *word)
     // Obtain a hash value
     unsigned int i = hash(word);
 
-
+    // Make room for cursor
     node *cursor = malloc(sizeof(node));
     if (cursor == NULL)
     {
@@ -41,20 +41,19 @@ bool check(const char *word)
         return false;
     }
 
+    // Copy word to cursor
     strcpy(cursor->word, table[i]->word);
 
     while (cursor->next != NULL)
     {
-        if (strcasecmp(cursor->word, word) == 0)
-        {
-            return true;
-        }
-        else
+        while (strcasecmp(cursor->word, word) != 0)
         {
             cursor = cursor->next;
-            
         }
+        free(cursor);
+        return true;
     }
+    free(cursor);
     return false;
 }
 
