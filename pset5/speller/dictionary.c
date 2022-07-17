@@ -33,11 +33,11 @@ bool check(const char *word)
     // Obtain a hash value
     unsigned int i = hash(word);
     node *cursor = malloc(sizeof(node));
-    cursor = table[i]->word;
+    strcpy(cursor->word, table[i]->word);
 
     while (table[i]->next != NULL)
     {
-        if (strcasecmp(cursor, word) == 0)
+        if (strcasecmp(cursor->word, word) == 0)
         {
             return true;
         }
@@ -104,6 +104,7 @@ bool load(const char *dictionary)
             n->next = table[i]->next;
             strcpy(table[i]->word, n->word);
         }
+        free(n);
 
         // Count number of words in dictionary
         s++;
