@@ -42,7 +42,7 @@ bool check(const char *word)
         }
         else
         {
-            cursor = cursor->next;
+            cursor = table[i]->next;
         }
     }
     return false;
