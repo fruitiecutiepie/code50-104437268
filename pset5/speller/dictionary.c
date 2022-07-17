@@ -100,7 +100,7 @@ bool load(const char *dictionary)
         else
         {
             n->next = table[i]->next;
-            table[i] = n;
+            table[i]->next = n;
         }
         free(n);
 
