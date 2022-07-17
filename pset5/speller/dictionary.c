@@ -31,7 +31,8 @@ bool check(const char *word)
 {
     // TODO
     // Set cursor to first item in linked list
-    node *cursor = table[hash(word)];
+    node *cursor = malloc(sizeof(node));
+    strcpy(cursor->word, table[hash(word)]->word);
 
     // Check for word in dictionary
     while (cursor != NULL)
