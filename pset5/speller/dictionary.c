@@ -110,7 +110,7 @@ bool load(const char *dictionary)
         else
         {
             n = table[i]->next;
-            strcpy(table[i]->word, n->word);
+            table[i]->next = n;
         }
         free(n);
 
