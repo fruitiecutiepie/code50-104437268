@@ -33,13 +33,14 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    if (strlen(word) == 1)
+    for (int i = 0, n = strlen(word); i < n; i++)
+    if (i == strlen(word) - 1)
     {
-        return (toupper(word[0]) - 'A') * 26;
+        return (toupper(word[i]) - 'A');
     }
     else
     {
-        return (toupper(word[0]) - 'A') * 26 + (toupper(word[1]) - 'A');
+        return (toupper(word[i]) - 'A') * 26 + hash();
     }
 }
 
