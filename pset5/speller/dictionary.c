@@ -152,5 +152,5 @@ bool unload(void)
             tmp = cursor;
         }
     }
-    return false;
+    return true;
 }
