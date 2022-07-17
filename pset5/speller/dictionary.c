@@ -44,7 +44,7 @@ bool check(const char *word)
     // Set cursor to first time in the linked list
     cursor = table[i];
 
-    while (cursor->next != NULL)
+    while (cursor != NULL)
     {
         while (strcasecmp(cursor->word, word) != 0)
         {
