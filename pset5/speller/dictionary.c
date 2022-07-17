@@ -45,7 +45,7 @@ unsigned int hash(const char *word)
             return (toupper(word[i]) - 'A') * 26 + hash(&word[i+1]);
         }
     }
-    return 
+    return 0;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
