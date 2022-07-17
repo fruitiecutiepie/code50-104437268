@@ -109,5 +109,8 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+    // Obtain a hash value
+    unsigned int i = hash(n->word);
+    
     return false;
 }
