@@ -30,20 +30,10 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
-    // Obtain a hash value
-    unsigned int i = hash(word);
+    // Set cursor to first item in linked list
+    node *cursor = table[hash(word)];
 
-    // Make room for cursor
-    node *cursor = malloc(sizeof(node));
-    if (cursor == NULL)
-    {
-        free(cursor);
-        return false;
-    }
-
-    // Set cursor to first item in the linked list
-    cursor = table[i];
-
+    // Check for word in dictionary
     while (cursor != NULL)
     {
         if (strcasecmp(cursor->word, word) == 0)
