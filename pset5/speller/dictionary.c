@@ -17,8 +17,7 @@ typedef struct node
 node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 26;
-// unsigned int *i[3];
+const unsigned int N = 676;
 
 // Hash table
 node *table[N];
@@ -34,34 +33,11 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    // if (strlen(word) == 1)
-    // {
-    //     *i[0] = toupper(word[0]) - 'A';
-    //     *i[1] = '\0';
-    //     *i[2] = '\0';
-    // }
-    // else if (strlen(word) == 2)
-    // {
-    //     *i[0] = toupper(word[0]) - 'A';
-    //     *i[1] = toupper(word[1]) - 'A';
-    //     *i[2] = '\0';
-    // }
-    // else
-    // {
-    //     for (int j = 0; j < 3; j++)
-    //     {
-    //         if (word[j] == '\'')
-    //         {
-    //             *i[j] = '\0';
-    //         }
-    //         else
-    //         {
-    //             *i[j] = toupper(word[j]) - 'A';
-    //         }
-    //     }
-    // }
-    // return;
-    return toupper(word[0]) - 'A';
+    if (strlen(word) == 1)
+    {
+        return (toupper(word[0]) - 'A') * 26;
+    }
+    return (toupper(word[0]) - 'A') * 26 + (toupper(word[1]) - 'A');
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -95,23 +71,7 @@ bool load(const char *dictionary)
         // Obtain a hash value
         unsigned int i = hash(n->word);
 
-        // Insert node into hash table ??????
-        // if (strlen(word) == 1)
-        // {
-        //     table[*i[0]]->word = n->word;
-        //     n->next = table[*i[0]]->next;
-        // }
-        // else if (strlen(word) == 2)
-        // {
-        //     n->next = table[*i[0]][*i[1]]->word;
-        //     table[*i[0]][*i[1]]->next = n;
-        // }
-        // else
-        // {
-        //     n->next = table[*i[0]][*i[1]][*i[2]]->word;
-        //     table[*i[0]][*i[1]][*i[2]]->next = n;
-        // }
-
+        // Insert node into hash table
         n->next = table[i]->next;
         strcpy(table[i]->word, n->word);
     }
