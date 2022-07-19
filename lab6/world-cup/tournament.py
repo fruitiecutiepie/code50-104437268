@@ -31,8 +31,7 @@ def main():
 
     # Append winning team's win count
     for n in range(N):
-        for name in simulate_tournament(teams):
-            counts[name["team"]] += 1
+            counts[simulate_tournament(teams)] += 1
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
@@ -64,9 +63,9 @@ def simulate_round(teams):
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
-    for n in range(int((sqrt(len(teams))))):
+    while len(teams) > 1:
         winner = simulate_round(teams)
-    return winner
+    return winner[0]["team"]
 
 
 if __name__ == "__main__":
