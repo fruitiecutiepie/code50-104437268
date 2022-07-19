@@ -3,7 +3,6 @@
 import csv
 import sys
 import random
-from math import sqrt
 
 # Number of simluations to run
 N = 1000
