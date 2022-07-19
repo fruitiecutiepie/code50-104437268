@@ -3,6 +3,7 @@
 import csv
 import sys
 import random
+from math import sqrt
 
 # Number of simluations to run
 N = 1000
@@ -66,7 +67,7 @@ def simulate_round(teams):
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
-    while len(simulate_round(teams)) != 1:
+    for n in sqrt(len(teams)):
         winner = simulate_round(teams)
     return winner
 
