@@ -20,8 +20,8 @@ def main():
         reader = csv.DictReader(file)
         for row in reader:
             dict = {
-                "team": row[team],
-                "rating": row[rating]
+                "team": row["team"],
+                "rating": row["rating"]
             }
             teams.append(dict)
 
