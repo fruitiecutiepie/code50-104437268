@@ -23,9 +23,11 @@ def main():
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
+
+    # Input each team
     for team in teams:
-        
-    for i in range(N):
+        counts[team] = 0
+    for n in range(N):
         counts[simulate_tournament(teams)] += 1
 
     # Print each team's chances of winning, according to simulation
