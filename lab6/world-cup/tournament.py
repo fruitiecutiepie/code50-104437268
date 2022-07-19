@@ -18,10 +18,9 @@ def main():
     # TODO: Read teams into memory from file
     with open("{sys.argv[1]}", "a") as file:
         reader = csv.DictReader(file)
-        next(reader)
         for row in reader:
             dict = {
-                "team": row[team]
+                "team": row[team],
                 "rating": row[rating]
             }
             teams.append(dict)
