@@ -1,5 +1,5 @@
 # TODO
-while True:
-    number = input("Number: ")
-    if number += 0:
-        break
+num = input("Number: ")
+
+for i in range(len(num) - 1, 0, -2):
+    print(i)
