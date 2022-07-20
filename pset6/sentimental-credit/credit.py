@@ -1,5 +1,4 @@
 # TODO
-import re
 
 # Prompt user for card number
 while True:
