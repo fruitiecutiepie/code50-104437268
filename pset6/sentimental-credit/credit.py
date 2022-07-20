@@ -1,14 +1,11 @@
 # TODO
+import re
 
-import 
 # Prompt user for card number
 while True:
     num = input("Number: ")
-    try:
-        int(num)
+    if re.match("", num);
         break
-    except ValueError:
-        num = input("Number: ")
 
 # Prepare total for Luhn's algorithm to determine validity
 total = 0
