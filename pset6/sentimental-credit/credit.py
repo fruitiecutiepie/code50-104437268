@@ -11,4 +11,7 @@ for i in range(len(num)-2, -1, -2):
 for i in range(len(num)-1, -1, -2):
     total += int(num[i])
 
-if total 
+if str(total)[-1] == 0:
+    do 
+else:
+    print("INVALID")
