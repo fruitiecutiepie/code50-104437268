@@ -7,7 +7,7 @@ while True:
     except ValueError:
         num = input("Number: ")
 
-#
+# Prepare total for Luhn's algorithm to determine validity
 total = 0
 
 # Multiply every other digit by 2,
