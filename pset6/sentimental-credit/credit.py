@@ -1,3 +1,5 @@
 # TODO
-# while True:
-number = input("Number: ")
+while True:
+    number = input("Number: ")
+    if number == int:
+        break
