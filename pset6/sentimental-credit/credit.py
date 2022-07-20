@@ -12,6 +12,8 @@ for i in range(len(num)-1, -1, -2):
     total += int(num[i])
 
 if str(total)[-1] == 0:
-    do 
+    if len(num) == 15 and num[:2] == '34' or num[:2] == '37':
+        print("VISA")
+    if
 else:
     print("INVALID")
