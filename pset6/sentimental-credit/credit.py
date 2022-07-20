@@ -1,5 +1,5 @@
 # TODO
 while True:
     number = input("Number: ")
-    if number == int:
+    if number.is_integer():
         break
