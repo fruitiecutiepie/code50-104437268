@@ -3,7 +3,7 @@
 # Prompt user for card number
 while True:
     num = input("Number: ")
-    if re.match("", num);
+    if num.isdigit() == True:
         break
 
 # Prepare total for Luhn's algorithm to determine validity
