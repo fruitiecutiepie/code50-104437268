@@ -10,4 +10,6 @@ sentences = 0
 for i in text:
     if text[i].isalpha():
         letters += 1
-    if 
+    if text[i].isspace():
+        words += 1
+    if text[i]
