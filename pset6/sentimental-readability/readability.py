@@ -20,7 +20,12 @@ for i in text:
     if text[i] == '.' or text[i] == '!' or text[i] == '?':
         sentences += 1
 
+# Average number of letters per 100 words
+L = letters / words * 100
+# Average number of sentences per 100 words
+S = sentences / words * 100
 
+# Calculate readability based on the Coleman-Liau index
 index = 0.0588 * L - 0.296 * S - 15.8
 grade = round(index)
 
