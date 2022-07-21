@@ -9,15 +9,15 @@ sentences = 0
 
 for i in text:
     # Count letters
-    if text[i].isalpha():
+    if i.isalpha():
         letters += 1
 
     # Count words
-    if text[i].isspace():
+    if i.isspace():
         words += 1
 
     # Count sentences
-    if text[i] == '.' or text[i] == '!' or text[i] == '?':
+    if i == '.' or i == '!' or i == '?':
         sentences += 1
 
 # Average number of letters per 100 words
