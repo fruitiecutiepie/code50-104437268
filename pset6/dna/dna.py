@@ -10,7 +10,7 @@ def main():
 
     # TODO: Read database file into a variable
     with open(sys.argv[1], 'r') as database:
-        csv.reader
+        database = csv.reader(database)
 
 
     # TODO: Read DNA sequence file into a variable
