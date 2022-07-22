@@ -16,7 +16,7 @@ def main():
 
     # TODO: Read DNA sequence file into a variable
     # dna = open(sys.argv[2], 'r')
-    dna = open("/workspaces/104437268/pset6/dna/sequences/3.txt", 'r')
+    dna = open("/workspaces/104437268/pset6/dna/sequences/18.txt", 'r')
     dna = dna.read()
 
     # TODO: Find longest match of each STR in DNA sequence
