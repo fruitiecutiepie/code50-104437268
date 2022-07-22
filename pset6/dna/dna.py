@@ -21,17 +21,16 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
     profile = {}
-    for row in database[0]:
-        for str in row:
-            if str != 'name':
-                profile[str] = longest_match(dna, str)
+    for str in database.fieldnames:
+        if str != 'name':
+            profile[str] = longest_match(dna, str)
     print(profile)
 
     # TODO: Check database for matching profiles
 
 
-    close(database)
-    close(dna)
+    database.close()
+    dna.close()
 
     return
 
