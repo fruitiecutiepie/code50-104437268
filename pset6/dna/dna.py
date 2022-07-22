@@ -3,7 +3,7 @@ import sys
 
 
 def main():
-    'args': ['databases/small.csv', 'sequences/1.txt']
+    "args": ['databases/small.csv', 'sequences/1.txt']
 
     # TODO: Check for command-line usage
     if len(sys.argv) != 3:
