@@ -29,6 +29,7 @@ def main():
     match = 0
     for row in database:
         for str in profile:
+            row[str] = int(row[str])
             if row[str] == profile[str]:
                 match += 1
             if match == len(profile):
