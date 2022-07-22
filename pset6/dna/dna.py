@@ -26,11 +26,16 @@ def main():
             profile[str] = longest_match(dna, str)
 
     # TODO: Check database for matching profiles
+    match = 0
     for row in database:
         for str in profile:
             if row[str] == profile[str]:
+                match += 1
+            if match == len(profile):
                 print(row['name'])
+                return
 
+    print('No match')
     return
 
 
