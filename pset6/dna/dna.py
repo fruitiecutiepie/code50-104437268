@@ -21,9 +21,10 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
     profile = {}
-    for str in database:
-        if str != 'name':
-            profile[str] = longest_match(dna, str)
+    for row in database[0]:
+        for str in row:
+            if str != 'name':
+                profile[str] = longest_match(dna, str)
     print(profile)
 
     # TODO: Check database for matching profiles
