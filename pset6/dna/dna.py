@@ -27,7 +27,9 @@ def main():
 
     # TODO: Check database for matching profiles
     for row in database:
-        if row
+        for str in profile:
+            if row[str] == profile[str]:
+                print()
 
     return
 
