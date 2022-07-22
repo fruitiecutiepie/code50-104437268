@@ -21,6 +21,7 @@ def main():
     profile = {}
     for str in database:
         if str != 'name':
+            print(profile[str])
             profile[str] = longest_match(dna, str)
     print(profile)
 
