@@ -7,16 +7,14 @@ def main():
     # TODO: Check for command-line usage
     if len(sys.argv) != 3:
         print('Usage: python dna.py data.csv sequence.txt')
-        # return
+        return
 
     # TODO: Read database file into a variable
-    # database = open(sys.argv[1], 'r')
-    database = open("/workspaces/104437268/pset6/dna/databases/large.csv", 'r')
+    database = open(sys.argv[1], 'r')
     database = csv.DictReader(database)
 
     # TODO: Read DNA sequence file into a variable
-    # dna = open(sys.argv[2], 'r')
-    dna = open("/workspaces/104437268/pset6/dna/sequences/18.txt", 'r')
+    dna = open(sys.argv[2], 'r')
     dna = dna.read()
 
     # TODO: Find longest match of each STR in DNA sequence
@@ -26,8 +24,8 @@ def main():
             profile[str] = longest_match(dna, str)
 
     # TODO: Check database for matching profiles
-    match = 0
     for row in database:
+        match = 0
         for str in profile:
             row[str] = int(row[str])
             if row[str] == profile[str]:
