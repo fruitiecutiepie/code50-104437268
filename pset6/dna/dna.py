@@ -24,13 +24,8 @@ def main():
     for str in database.fieldnames:
         if str != 'name':
             profile[str] = longest_match(dna, str)
-    print(profile)
 
     # TODO: Check database for matching profiles
-
-
-    database.close()
-    dna.close()
 
     return
 
