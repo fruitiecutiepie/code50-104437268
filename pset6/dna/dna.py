@@ -29,7 +29,7 @@ def main():
     for row in database:
         for str in profile:
             if row[str] == profile[str]:
-                print()
+                print(row['name'])
 
     return
 
