@@ -1,5 +1,5 @@
-SELECT DISTINCT(title), name FROM movies
+SELECT title, name FROM movies
 JOIN stars JOIN people
-ON stars.movie_id = movies.id
-AND stars.person_id = (SELECT id FROM people WHERE name = 'Johnny Depp')
-AND (SELECT id FROM people WHERE name = 'Helena Bonham Carter');
+ON stars.movie_id = movies.id AND stars.person_id = people.id
+WHERE name = 'Johnny Depp'
+INTERSECT name = 'Helena Bonham Carter';
