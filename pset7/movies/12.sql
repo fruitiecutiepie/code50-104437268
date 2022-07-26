@@ -1,4 +1,4 @@
-SELECT DISTINCT(title) FROM movies
+SELECT DISTINCT(title), name FROM movies
 JOIN stars JOIN people
 ON stars.movie_id = movies.id
 AND stars.person_id = ((SELECT id FROM people WHERE name = 'Johnny Depp')
