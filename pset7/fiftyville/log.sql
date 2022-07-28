@@ -106,7 +106,7 @@ WHERE account_number IN
 AND year = 2021
 AND month = 7
 AND day = 28
-AND transaction_type = 'deposit';
+;
 
 -- Look for earliest flight out of Fiftyville tomorrow -> 29-7-21
 SELECT id, destination_airport_id
