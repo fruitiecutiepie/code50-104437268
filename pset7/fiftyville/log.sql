@@ -165,4 +165,6 @@ WHERE phone_number =
 );
 -- Found thief: Sofia [ANSWER]
 
--- 
+-- Comments on exercise:
+-- Very interesting, intriguing, and exciting. Done within one sitting with full focus.
+-- Unfortunately, the result of ATM transactions the thief made was not used in the process of solving the mystery.
