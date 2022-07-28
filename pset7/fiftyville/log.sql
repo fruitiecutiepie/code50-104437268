@@ -66,6 +66,36 @@ AND phone_number IN
 );
 -- Found possible thief: Sofia or Bruce; passport number: 1695452385 or 5773159633, respectively.
 
+-- Look for earliest flight out of Fiftyville tomorrow -> 29-7-21
+SELECT id, destination_airport_id
+FROM flights
+WHERE origin_airport_id =
+(
+    -- Get origin airport ID
+    SELECT id
+    FROM airports
+    WHERE city = 'Fiftyville'
+)
+AND year = 2021
+AND month = 7
+AND day = 29
+ORDER BY hour
+LIMIT 1;
+-- Found destination airport ID: 4; flight ID: 36.
+
+-- Look for city the thief escaped to
+SELECT city
+FROM airports
+WHERE id = 4;
+-- Found city: New York City [ANSWER]
+
+-- Look for passengers in the flight that matches aforementioned passport numbers
+SELECT *
+FROM passengers
+WHERE flight_id = 36
+AND passport_number IN (1695452385, 5773159633);
+-- Both Sofia and Bruce are in the same flight.
+
 -- Look for the people who Sofia and Bruce called
 SELECT *
 FROM people
@@ -95,7 +125,7 @@ WHERE phone_number IN
 -- Found possible accomplice: Jack or Robin; ID: 567218 or 864400, respectively.
 
 -- Look for the ATM transactions Jack and Robin made that day to book the flight.
-SELECT person_id, account_number
+SELECT *
 FROM atm_transactions
 WHERE account_number IN
 (
@@ -107,35 +137,17 @@ AND year = 2021
 AND month = 7
 AND day = 28
 AND transaction_type = 'deposit';
+-- Found account number: 69638157; ATM location: Humphrey Lane.
 
--- Look for earliest flight out of Fiftyville tomorrow -> 29-7-21
-SELECT id, destination_airport_id
-FROM flights
-WHERE origin_airport_id =
-(
-    -- Get origin airport ID
-    SELECT id
-    FROM airports
-    WHERE city = 'Fiftyville'
-)
-AND year = 2021
-AND month = 7
-AND day = 29
-ORDER BY hour
-LIMIT 1;
--- Found destination airport ID: 4; flight ID: 36.
-
--- ASNWER: Look for city the thief escaped to
-SELECT city
-FROM airports
-WHERE id = 4;
--- Found city: New York City
-
--- Look for passengers in the flight that matches aforementioned passport numbers
+-- Look for people with the aforementioned account number
 SELECT *
-FROM passengers
-WHERE flight_id = 36
-AND passport_number IN (1695452385, 5773159633);
--- Both Sofia and Bruce are in the same flight.
+FROM people
+WHERE id =
+(
+    SELECT person_id
+    FROM bank_accounts
+    WHERE account_number = 69638157
+);
+-- Found accomplice: Jack [ANSWER]; phone number = (996) 555-8899
 
--- Look for
+-- Look for people
