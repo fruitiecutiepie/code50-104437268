@@ -64,7 +64,7 @@ AND phone_number IN
     AND day = 28
     AND duration < 60
 );
--- Found possible thief: Sofia or Bruce; passport number: 1695452385 or 5773159633; ID: 398010 or 686048, respectively.
+-- Found possible thief: Sofia or Bruce; passport number: 1695452385 or 5773159633, respectively.
 
 -- Look for earliest flight out of Fiftyville tomorrow -> 29-7-21
 SELECT id, destination_airport_id
@@ -177,8 +177,31 @@ WHERE phone_number =
 -- 😱 what? it's incorrect?! there must be something I missed here. hm.
 
 -- Match the bank account number of Sofia and Bruce with the ATM transactions on Leggett Street
-
-SELECT account_number
-FROM bank_accounts
-WHERE person_id IN (398010, 686048);
+SELECT name
+FROM people
+WHERE id IN
+(
+    SELECT person_id
+    FROM bank_accounts
+    WHERE account_number IN
+    (
+        SELECT account_number
+        FROM bank_accounts
+        WHERE person_id IN
+        (
+            SELECT id
+            FROM people
+            WHERE name IN ('Sofia', 'Bruce')
+        )
+            INTERSECT
+        SELECT account_number
+        FROM atm_transactions
+        WHERE year = 2021
+        AND month = 7
+        AND day = 28
+        AND atm_location = 'Leggett Street'
+        AND transaction_type = 'withdraw'
+    )
+);
 -- Turns out only Bruce had a bank account.
+-- Found thief: Bruce [NEW ANSWER]
