@@ -18,11 +18,12 @@ AND day = 28;
 -- Found witnesses: Ruth, Eugene, and Raymond
 
 -- Look for cars that exited the bakery within ten minutes of the theft
-SELECT *
+SELECT license_plate
 FROM bakery_security_logs
 WHERE year = 2021
 AND month = 7
 AND day = 28
 AND hour = 10
-AND minute BETWEEN 15 AND 25
+AND minute BETWEEN 10 AND 20
 AND activity = 'exit';
+-- Found possible license plate:
