@@ -47,7 +47,7 @@ AND day = 28
 AND duration < 60;
 -- Found 8 possible phone calls.
 
--- Look for people with aforementioned license plates
+-- Look for people with matching license plates and phone numbers
 SELECT *
 FROM people
 WHERE license_plate IN ('5P2BI95', '94KL13X', '6P58WS2', '4328GD8', 'G412CB7')
@@ -64,5 +64,6 @@ AND phone_number IN
     AND day = 28
     AND duration < 60
 );
+-- Thief is either Sofia or Bruce.
 
 -- Look for earliest flight out of Fiftyville tomorrow -> 29-7-21
