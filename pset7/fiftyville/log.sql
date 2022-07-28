@@ -17,6 +17,7 @@ AND month = 7
 AND day = 28;
 -- Found witnesses: Ruth, Eugene, and Raymond
 
+-- Look for cars that exited the bakery within ten minutes of the theft
 SELECT *
 FROM bakery_security_logs
 WHERE year = 2021
