@@ -7,7 +7,7 @@ WHERE year = 2021
 AND month = 7
 AND day = 28
 AND street = 'Humphrey Street';
--- Found: Humphrey Street bakery; 10:15 AM; interviews with three witnesses.
+-- Found: Humphrey Street bakery; 10:15 AM; interviews with three witnesses, each mentioned the bakery.
 
 -- Look for interviews that matches the date and the location of the crime
 SELECT *
