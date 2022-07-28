@@ -12,7 +12,6 @@ WHERE movies.id IN
     AND birth = 1958
 )
 EXCEPT
-
 SELECT name FROM movies
 JOIN stars JOIN people
 ON stars.movie_id = movies.id
