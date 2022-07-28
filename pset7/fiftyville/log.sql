@@ -87,4 +87,6 @@ LIMIT 1;
 SELECT *
 FROM airports
 WHERE id = 4;
--- Found cityL 
+-- Found city: New York City
+
+-- Look f
