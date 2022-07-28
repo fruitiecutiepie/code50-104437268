@@ -67,3 +67,7 @@ AND phone_number IN
 -- Thief is either Sofia or Bruce.
 
 -- Look for earliest flight out of Fiftyville tomorrow -> 29-7-21
+-- Get origin airport ID
+SELECT id
+FROM airports
+WHERE city = 'Fiftyville';
