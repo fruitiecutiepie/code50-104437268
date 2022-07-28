@@ -64,34 +64,34 @@ AND phone_number IN
     AND day = 28
     AND duration < 60
 );
--- Found possible thief: Sofia or Bruce; possible passport number: 1695452385 or 5773159633.
+-- Found possible thief: Sofia or Bruce; possible thief's passport number: 1695452385 or 5773159633.
 
--- Look for the phone numbers of whom Sofia and Bruce called
-SELECT receiver
-FROM phone_calls
-WHERE year = 2021
-AND month = 7
-AND day = 28
-AND duration < 60
-AND caller IN
+-- Look for the people who Sofia and Bruce called
+SELECT *
+FROM people
+WHERE phone_number IN
 (
-    SELECT phone_number
-    FROM people
-    WHERE name IN ('Sofia', 'Bruce')
-    INTERSECT
-    SELECT caller
+    SELECT receiver
     FROM phone_calls
     WHERE year = 2021
     AND month = 7
     AND day = 28
     AND duration < 60
+    AND caller IN
+    (
+        SELECT phone_number
+        FROM people
+        WHERE name IN ('Sofia', 'Bruce')
+        INTERSECT
+        SELECT caller
+        FROM phone_calls
+        WHERE year = 2021
+        AND month = 7
+        AND day = 28
+        AND duration < 60
+    )
 );
-
--- Look for the pople who Sofia and Bruce called
-SELECT *
-FROM people
-
--- Found possible accomplice:
+-- Found possible accomplice: Jack or Robin.
 
 -- Look for earliest flight out of Fiftyville tomorrow -> 29-7-21
 SELECT id, destination_airport_id
