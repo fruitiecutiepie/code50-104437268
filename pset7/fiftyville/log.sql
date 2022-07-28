@@ -80,4 +80,11 @@ AND year = 2021
 AND month = 7
 AND day = 29
 ORDER BY hour
-LIMIT 5;
+LIMIT 1;
+-- Found destination airport ID: 4
+
+-- Look for city the thief escaped to
+SELECT *
+FROM airports
+WHERE id = 4;
+-- Found cityL 
