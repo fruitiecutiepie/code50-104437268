@@ -174,5 +174,5 @@ WHERE phone_number =
 -- Definitely the best one I've had so far!
 
 
--- 😱 what? it's not correct.
+-- 😱 what? it's incorrect?! there must be something I missed here. hm.
 
