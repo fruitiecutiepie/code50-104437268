@@ -177,9 +177,8 @@ WHERE phone_number =
 -- 😱 what? it's incorrect?! there must be something I missed here. hm.
 
 -- Look for the bank account number of Sofia and Bruce
-SELECT name, account_number
+SELECT account_number
 FROM bank_accounts
-    JOIN people
     WHERE person_id IN
     (
         SELECT id
