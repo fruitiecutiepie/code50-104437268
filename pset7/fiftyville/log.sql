@@ -29,6 +29,13 @@ AND activity = 'exit';
 -- Found possible license plate: 5P2BI95, 94KL13X, 6P58WS2, 4328GD8, or G412CB7
 
 -- Look for ATM transactions on Leggett Street earlier that morning
+SELECT *
+FROM atm_transactions
+WHERE year = 2021
+AND month = 7
+AND day = 28
+AND atm_location = 'Leggett Street'
+AND transaction_type = 
 
 -- Look for phone calls for < 1 minute as the thief was leaving the bakery -> accomplice
 
