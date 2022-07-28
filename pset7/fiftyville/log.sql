@@ -93,4 +93,4 @@ WHERE id = 4;
 SELECT *
 FROM passengers
 WHERE flight_id = 36
-AND passport_number = 1695452385 OR 5773159633;
+AND passport_number IN (1695452385, 5773159633);
