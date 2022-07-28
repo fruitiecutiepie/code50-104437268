@@ -95,7 +95,7 @@ WHERE phone_number IN
 -- Found possible accomplice: Jack or Robin; ID: 567218 or 864400, respectively.
 
 -- Look for the ATM transactions Jack and Robin made that day to book the flight.
-SELECT *
+SELECT person_id, account_number
 FROM atm_transactions
 WHERE account_number IN
 (
@@ -106,7 +106,7 @@ WHERE account_number IN
 AND year = 2021
 AND month = 7
 AND day = 28
-;
+AND transaction_type = 'deposit';
 
 -- Look for earliest flight out of Fiftyville tomorrow -> 29-7-21
 SELECT id, destination_airport_id
