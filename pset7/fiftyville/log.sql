@@ -94,7 +94,7 @@ SELECT *
 FROM passengers
 WHERE flight_id = 36
 AND passport_number IN (1695452385, 5773159633);
--- Both Sofia and Bruce are in the same flight.
+-- Both Sofia and Bruce are in the same flight. (!)
 
 -- Look for the people who Sofia and Bruce called
 SELECT *
@@ -164,3 +164,5 @@ WHERE phone_number =
     AND duration < 60
 );
 -- Found thief: Sofia [ANSWER]
+
+-- 
