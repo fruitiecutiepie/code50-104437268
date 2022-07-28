@@ -67,7 +67,7 @@ AND phone_number IN
 -- Thief is either Sofia or Bruce.
 
 -- Look for earliest flight out of Fiftyville tomorrow -> 29-7-21
-SELECT *
+SELECT id, destination_airport_id
 FROM flights
 WHERE origin_airport_id =
 (
@@ -81,12 +81,29 @@ AND month = 7
 AND day = 29
 ORDER BY hour
 LIMIT 1;
--- Found destination airport ID: 4
+-- Found destination airport ID: 4; flight ID: 36.
 
 -- Look for city the thief escaped to
-SELECT *
+SELECT city
 FROM airports
 WHERE id = 4;
 -- Found city: New York City
 
--- Look f
+-- Look for passengers in the flight that matches aforementioned passport numbers
+SELECT *
+FROM passengers
+WHERE flight_id = 36
+AND passport_number =
+(
+    SELECT passport_number
+    FROM passengers
+    WHERE flight_id = 36
+        INTERSECT
+    SELECT account_number
+    FROM atm_transactions
+    WHERE year = 2021
+    AND month = 7
+    AND day = 28
+    AND atm_location = 'Leggett Street'
+    AND transaction_type = 'withdraw';
+)
