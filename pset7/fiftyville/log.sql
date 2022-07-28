@@ -124,7 +124,7 @@ WHERE phone_number IN
 );
 -- Found possible accomplice: Jack or Robin; ID: 567218 or 864400, respectively.
 
--- Look for the ATM transactions Jack and Robin made that day to book the flight.
+-- Look for the ATM transactions Jack and Robin made that day to book the flight (IF ANY).
 SELECT *
 FROM atm_transactions
 WHERE account_number IN
