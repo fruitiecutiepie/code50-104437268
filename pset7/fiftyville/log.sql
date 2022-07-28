@@ -176,8 +176,9 @@ WHERE phone_number =
 
 -- 😱 what? it's incorrect?! there must be something I missed here. hm.
 
--- Look for the bank account number of Sofia and Bruce
+-- Match the bank account number of Sofia and Bruce with the ATM transactions on Leggett Street
+
 SELECT account_number
 FROM bank_accounts
 WHERE person_id IN (398010, 686048);
--- Turns out 
+-- Turns out only Bruce had a bank account.
