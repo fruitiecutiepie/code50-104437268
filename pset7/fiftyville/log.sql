@@ -15,4 +15,4 @@ FROM interviews
 WHERE year = 2021
 AND month = 7
 AND day = 28;
--- Found: accomplice is either Ruth, Eugene, or Raymond
+-- Found witnesses: Ruth, Eugene, and Raymond
