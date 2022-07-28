@@ -174,7 +174,8 @@ WHERE phone_number =
 -- Definitely the best one I've had so far!
 
 
--- 😱 what? it's incorrect?! there must be something I missed here. hm.
+-- 😱 what? it's incorrect?! there must be something I missed here. interesting.
+
 
 -- Match the bank account number of Sofia and Bruce with the ATM transactions on Leggett Street
 SELECT name
@@ -229,5 +230,5 @@ WHERE phone_number =
 
 -- New additional comments:
 -- ok. WE GOT IT BABY
--- Clever. One small mistake (assumption) could lead to a whole different direction ().
--- Very interesting indeed.
+-- Clever. One small mistake (assumption) could lead to a whole different direction (result).
+-- Very interesting indeed. The danger and responsibilities of working as a detective
