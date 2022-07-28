@@ -150,11 +150,17 @@ WHERE id =
 );
 -- Found accomplice: Jack [ANSWER]; phone number = (996) 555-8899
 
--- Look for people 
-SELECT caller
-FROM phone_calls
-WHERE receiver = '(996) 555-8899'
-AND year = 2021
-AND month = 7
-AND day = 28
-AND duration < 60;
+-- Look for people who called Jack
+SELECT *
+FROM people
+WHERE phone_number =
+(
+    SELECT caller
+    FROM phone_calls
+    WHERE receiver = '(996) 555-8899'
+    AND year = 2021
+    AND month = 7
+    AND day = 28
+    AND duration < 60
+);
+-- Found thief: Sofia [ANSWER]
