@@ -64,7 +64,7 @@ AND phone_number IN
     AND day = 28
     AND duration < 60
 );
--- Thief is either Sofia or Bruce.
+-- Found possible thief: Sofia or Bruce; possible passport number: 1695452385 or 5773159633.
 
 -- Look for earliest flight out of Fiftyville tomorrow -> 29-7-21
 SELECT id, destination_airport_id
