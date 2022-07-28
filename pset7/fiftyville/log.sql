@@ -166,11 +166,10 @@ WHERE phone_number =
 -- Found thief: Sofia [ANSWER]
 
 
-
 -- Comments on exercise:
 -- Very interesting, intriguing, and exciting. Done within one sitting with full focus.
 -- Unfortunately, the result of ATM transactions the thief made was not used in the process of solving the mystery.
--- I'm curious as to why that was left as one of the trails in one of the interviews' transcripts.
+-- Am curious as to why that was left as one of the trails in one of the interviews' transcripts.
 -- Nevertheless, excellent exercise depicting a real use case of the SQL language.
 -- Thank you CS50 for this wonderful exercise (and course).
 -- Definitely the best one I've had so far!
