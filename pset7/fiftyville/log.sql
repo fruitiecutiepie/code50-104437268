@@ -28,3 +28,4 @@ AND minute BETWEEN 10 AND 20
 AND activity = 'exit';
 -- Found possible license plate: 5P2BI95, 94KL13X, 6P58WS2, 4328GD8, or G412CB7
 
+-- Look
