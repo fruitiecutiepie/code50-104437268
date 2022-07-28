@@ -229,4 +229,5 @@ WHERE phone_number =
 
 -- New additional comments:
 -- ok. WE GOT IT BABY
--- Clever. One small mistake (assumption) could lead to a whole different direction.
+-- Clever. One small mistake (assumption) could lead to a whole different direction ().
+-- Very interesting indeed.
