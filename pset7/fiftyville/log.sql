@@ -64,13 +64,14 @@ AND phone_number IN
     AND day = 28
     AND duration < 60
 );
--- Found possible thief: Sofia or Bruce; possible thief's passport number: 1695452385 or 5773159633.
+-- Found possible thief: Sofia or Bruce; passport number: 1695452385 or 5773159633, respectively.
 
 -- Look for the people who Sofia and Bruce called
 SELECT *
 FROM people
 WHERE phone_number IN
 (
+    -- Look for the phone numbers of whom Sofia and Bruce called
     SELECT receiver
     FROM phone_calls
     WHERE year = 2021
@@ -91,14 +92,15 @@ WHERE phone_number IN
         AND duration < 60
     )
 );
--- Found possible accomplice: Jack or Robin.
+-- Found possible accomplice: Jack or Robin; ID: 567218 or 864400, respectively.
 
 -- Look for the ATM transactions Jack and Robin made that day to book the flight.
 SELECT *
 FROM atm_transactions
 WHERE account_number IN
 (
-    SELECT 
+    SELECT account_number
+    WHERE person_id IN (567218, 864400)
 )
 AND year = 2021
 AND month = 7
