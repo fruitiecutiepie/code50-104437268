@@ -39,5 +39,11 @@ AND transaction_type = 'withdraw';
 -- Found 8 possible account numbers.
 
 -- Look for phone calls for < 1 minute as the thief was leaving the bakery -> accomplice
+SELECT *
+FROM phone_calls
+WHERE year = 2021
+AND month = 7
+AND day = 28
+AND duration < 60;
 
 -- Look for earliest flight out of Fiftyville tomorrow (29-7-21)
