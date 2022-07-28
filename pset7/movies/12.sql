@@ -10,4 +10,4 @@ JOIN stars JOIN people
 ON stars.movie_id = movies.id AND stars.person_id = people.id
 WHERE name = 'Helena Bonham Carter')
 
-WHERE title ;
+WHERE COUNT(title) = 2;
