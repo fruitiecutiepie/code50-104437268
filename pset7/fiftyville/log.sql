@@ -149,7 +149,7 @@ WHERE id =
 );
 -- Found accomplice: Jack [ANSWER]; phone number = (996) 555-8899
 
--- Look for people who called Jack
+-- Look for the person who called Jack
 SELECT *
 FROM people
 WHERE phone_number =
@@ -205,3 +205,28 @@ WHERE id IN
 );
 -- Turns out only Bruce had a bank account.
 -- Found thief: Bruce [NEW ANSWER]
+
+-- Look for the person Bruce called
+SELECT name
+FROM people
+WHERE phone_number =
+(
+    SELECT receiver
+    FROM phone_calls
+    WHERE caller =
+    (
+        SELECT phone_number
+        FROM people
+        WHERE name = 'Bruce'
+    )
+    AND year = 2021
+    AND month = 7
+    AND day = 28
+    AND duration < 60
+);
+-- Found thief: Robin [NEW ANSWER]
+
+
+-- New additional comments:
+-- ok. WE GOT IT BABY
+-- Clever. One small mistake (assumption) could lead to a whole different direction.
