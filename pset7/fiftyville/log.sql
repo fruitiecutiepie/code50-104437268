@@ -47,4 +47,4 @@ AND day = 28
 AND duration < 60;
 -- Found 8 possible phone calls.
 
--- Look for earliest flight out of Fiftyville tomorrow (29-7-21)
+-- Look for earliest flight out of Fiftyville tomorrow -> 29-7-21
