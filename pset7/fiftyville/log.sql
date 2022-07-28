@@ -228,10 +228,10 @@ WHERE phone_number =
 -- Found thief: Robin [NEW ANSWER]
 
 
--- New additional comments:
+-- Additional comments on exercise:
 -- ok. WE GOT IT BABY
 -- Clever. And tricky. One small mistake (simple assumption) could lead to a whole different direction (result).
 -- And that very same mistake was the very same one that I questioned in my last comment. Very interesting indeed.
 -- The danger and responsibilities of working as a detective--a meticulous person is required indeed.
--- Thanks to check50, innocent people were not 
--- Thank you for the unexpected plot twist, made it even more fun.
+-- Thanks to check50, innocent people were not mistreated.
+-- And thank you for the unexpected plot twist, made it even more fun.
