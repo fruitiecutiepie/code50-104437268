@@ -181,7 +181,7 @@ SELECT account_number
 FROM bank_accounts
     WHERE person_id IN
     (
-        SELECT id
+        SELECT id, name
         FROM people
         WHERE name IN ('Sofia', 'Bruce')
     );
