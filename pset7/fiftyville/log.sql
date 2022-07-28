@@ -179,6 +179,5 @@ WHERE phone_number =
 -- Look for the bank account number of Sofia and Bruce
 SELECT account_number
 FROM bank_accounts
-WHERE person_id = 398010;
-
-686048
+WHERE person_id IN (398010, 686048);
+-- Turns out 
