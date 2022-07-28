@@ -84,8 +84,8 @@ AND caller IN
     WHERE year = 2021
     AND month = 7
     AND day = 28
-    AND duration < 60;
-)
+    AND duration < 60
+);
 
 -- Look for earliest flight out of Fiftyville tomorrow -> 29-7-21
 SELECT id, destination_airport_id
