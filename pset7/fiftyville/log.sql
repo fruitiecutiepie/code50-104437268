@@ -1,7 +1,7 @@
 -- Keep a log of any SQL queries you execute as you solve the mystery.
 
 -- Look for a crime scene report that matches the date and the location of the crime
-SELECT *
+SELECT description
 FROM crime_scene_reports
 WHERE year = 2021
 AND month = 7
@@ -26,4 +26,5 @@ AND day = 28
 AND hour = 10
 AND minute BETWEEN 10 AND 20
 AND activity = 'exit';
--- Found possible license plate:
+-- Found possible license plate: 5P2BI95, 94KL13X, 6P58WS2, 4328GD8, or G412CB7
+
