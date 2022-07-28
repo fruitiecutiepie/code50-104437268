@@ -64,7 +64,7 @@ AND phone_number IN
     AND day = 28
     AND duration < 60
 );
--- Found possible thief: Sofia or Bruce; passport number: 1695452385 or 5773159633, respectively.
+-- Found possible thief: Sofia or Bruce; passport number: 1695452385 or 5773159633; ID: 398010 or 686048, respectively.
 
 -- Look for earliest flight out of Fiftyville tomorrow -> 29-7-21
 SELECT id, destination_airport_id
@@ -179,9 +179,6 @@ WHERE phone_number =
 -- Look for the bank account number of Sofia and Bruce
 SELECT account_number
 FROM bank_accounts
-    WHERE person_id IN
-    (
-        SELECT id, name
-        FROM people
-        WHERE name IN ('Sofia', 'Bruce')
-    );
+WHERE person_id = 398010;
+
+686048
