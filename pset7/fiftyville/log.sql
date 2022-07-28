@@ -93,17 +93,4 @@ WHERE id = 4;
 SELECT *
 FROM passengers
 WHERE flight_id = 36
-AND passport_number =
-(
-    SELECT passport_number
-    FROM passengers
-    WHERE flight_id = 36
-        INTERSECT
-    SELECT account_number
-    FROM atm_transactions
-    WHERE year = 2021
-    AND month = 7
-    AND day = 28
-    AND atm_location = 'Leggett Street'
-    AND transaction_type = 'withdraw';
-)
+AND passport_number = 1695452385 OR 5773159633;
