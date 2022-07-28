@@ -173,3 +173,7 @@ WHERE phone_number =
 -- Nevertheless, excellent exercise depicting a real use case of the SQL language.
 -- Thank you CS50 for this wonderful exercise (and course).
 -- Definitely the best one I've had so far!
+
+
+-- 😱 what? it's not correct.
+
