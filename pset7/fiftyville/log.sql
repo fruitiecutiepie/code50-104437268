@@ -83,7 +83,7 @@ ORDER BY hour
 LIMIT 1;
 -- Found destination airport ID: 4; flight ID: 36.
 
--- Look for city the thief escaped to
+-- ASNWER: Look for city the thief escaped to
 SELECT city
 FROM airports
 WHERE id = 4;
@@ -94,3 +94,5 @@ SELECT *
 FROM passengers
 WHERE flight_id = 36
 AND passport_number IN (1695452385, 5773159633);
+-- Both Sofia and Bruce are in the same flight.
+
