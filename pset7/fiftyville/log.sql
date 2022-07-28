@@ -96,7 +96,11 @@ WHERE phone_number IN
 -- Look for the ATM transactions Jack and Robin made that day to book the flight.
 SELECT *
 FROM atm_transactions
-WHERE year = 2021
+WHERE account_number IN
+(
+    SELECT 
+)
+AND year = 2021
 AND month = 7
 AND day = 28
 AND transaction_type = 'deposit'
