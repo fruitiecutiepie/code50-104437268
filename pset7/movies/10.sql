@@ -1,4 +1,5 @@
-SELECT DISTINCT(name) FROM people
+SELECT DISTINCT(name)
+FROM people
     JOIN directors JOIN ratings JOIN movies
     ON directors.movie_id = movies.id
     AND directors.person_id = people.id
