@@ -93,6 +93,14 @@ WHERE phone_number IN
 );
 -- Found possible accomplice: Jack or Robin.
 
+-- Look for the ATM transactions Jack and Robin made that day to book the flight.
+SELECT *
+FROM atm_transactions
+WHERE year = 2021
+AND month = 7
+AND day = 28
+AND transaction_type = 'deposit'
+
 -- Look for earliest flight out of Fiftyville tomorrow -> 29-7-21
 SELECT id, destination_airport_id
 FROM flights
@@ -123,3 +131,4 @@ WHERE flight_id = 36
 AND passport_number IN (1695452385, 5773159633);
 -- Both Sofia and Bruce are in the same flight.
 
+-- Look for
