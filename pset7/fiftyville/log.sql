@@ -230,7 +230,7 @@ WHERE phone_number =
 
 -- New additional comments:
 -- ok. WE GOT IT BABY
--- Clever. One small mistake (assumption) could lead to a whole different direction (result).
+-- Clever. And tricky. One small mistake (simple assumption) could lead to a whole different direction (result).
 -- And that very same mistake was the very same one that I questioned in my last comment. Very interesting indeed.
 -- The danger and responsibilities of working as a detective--a meticulous person is required indeed.
 -- Thank you for the unexpected plot twist, made it even more fun.
