@@ -100,12 +100,13 @@ FROM atm_transactions
 WHERE account_number IN
 (
     SELECT account_number
+    FROM bank_accounts
     WHERE person_id IN (567218, 864400)
 )
 AND year = 2021
 AND month = 7
 AND day = 28
-AND transaction_type = 'deposit'
+AND transaction_type = 'deposit';
 
 -- Look for earliest flight out of Fiftyville tomorrow -> 29-7-21
 SELECT id, destination_airport_id
