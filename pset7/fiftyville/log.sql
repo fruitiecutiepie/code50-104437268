@@ -135,8 +135,7 @@ WHERE account_number IN
 )
 AND year = 2021
 AND month = 7
-AND day = 28
-AND transaction_type = 'deposit';
+AND day = 28;
 -- Found account number: 69638157; ATM location: Humphrey Lane.
 
 -- Look for people with the aforementioned account number
