@@ -24,5 +24,5 @@ WHERE year = 2021
 AND month = 7
 AND day = 28
 AND hour = 10
-AND minute in (10,11,12,13,14,15,16,17,18,19,20)
+AND minute BETWEEN 15 AND 25
 AND activity = 'exit';
