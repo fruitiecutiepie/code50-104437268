@@ -2,7 +2,7 @@ body {
   background-color: #f8f1e7;
 }
 
-body:not(nav) {
+body:not(nav) > .sidenav {
   margin-left: 48px;
 }
 
