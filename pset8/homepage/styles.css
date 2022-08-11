@@ -25,14 +25,14 @@ nav {
     padding: 12px 12px 12px 40px;
     text-decoration: none;
     font-size: 25px;
-    color: #3d2b1f;
+    color: #240001;
     display: block;
     transition: 0.3s;
   }
 
   /* When you mouse over the navigation links, change their color */
   .sidenav a:hover {
-    background-color: #3d2b1f; /* try brown: #3d2b1f/#240001 & light brown: #c4a383 */
+    background-color: #240001; /* try brown: #3d2b1f/#240001 & light brown: #c4a383 */
     color: #f8f1e7;
     /* try red: #be132d */
   }
