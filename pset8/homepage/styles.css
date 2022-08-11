@@ -4,10 +4,9 @@ body {
 
 nav {
   display: block;
-  margin-left: 0px;
 }
 
-body:not(nav) > div{
+body:not(first-child) {
   margin-left: 48px;
 }
 
