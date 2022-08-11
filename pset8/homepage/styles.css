@@ -11,7 +11,7 @@ Brighter Green: #014421
 
 body {
   background-color: #f9f5ec;
-  color: #354230;
+  color: #014421;
 }
 
 nav {
@@ -31,7 +31,7 @@ p {
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: #f9f5ec; /* White */
+    background-color: #f9f5ec; /* Off-White */
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px; /* Place content 20px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -42,7 +42,7 @@ p {
     padding: 12px 12px 12px 38px;
     text-decoration: none;
     font-size: 16px;
-    color: #354230;
+    color: #014421;
     display: block;
     transition: 0.3s;
   }
