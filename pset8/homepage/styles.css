@@ -2,12 +2,13 @@ body {
   background-color: #f8f1e7;
 }
 
-body:not(nav) > .sidenav {
-  margin-left: 48px;
+nav {
+  display: block;
+  margin-left: 0px;
 }
 
-nav {
-    display: block;
+body{
+  margin-left: 48px;
 }
 
 /* The side navigation menu */
@@ -20,7 +21,7 @@ nav {
     left: 0;
     background-color: #f8f1e7; /* White */
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px; /* Place content 16px from the top */
+    padding-top: 20px; /* Place content 20px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
   }
 
