@@ -11,7 +11,7 @@ Brighter Green: #014421
 
 body {
   background-color: #f9f5ec;
-  color: #014421;
+  color: #014421; /* Green */
 }
 
 nav {
@@ -41,7 +41,7 @@ p {
     padding: 12px 12px 12px 38px;
     text-decoration: none;
     font-size: 16px;
-    color: #014421;
+    color: #014421; /* Green */
     display: block;
     transition: 0.3s;
   }
