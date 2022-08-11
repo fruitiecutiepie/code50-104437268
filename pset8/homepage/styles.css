@@ -6,7 +6,7 @@ nav {
   display: block;
 }
 
-body:not(first-child) {
+p {
   margin-left: 48px;
 }
 
