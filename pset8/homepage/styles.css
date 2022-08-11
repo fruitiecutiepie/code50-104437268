@@ -1,17 +1,18 @@
 /*
 Color Palette:
 Accent Red: #be132d
-Off-White: #faf0E6
+Off-White: #faf0e6
 Green: #354230
-Brighter Green: #014421
+Saturated Green: #014421
 Brown: #3d2b1f
 Dark Brown: #240001
 Blue: #1d4f9f
-Brighter Blue: #015cb8
+Light Blue: #56a0d3
+Saturated Blue: #015cb8
 */
 
 body {
-  background-color: #f9f5ec; /* Off-White */
+  background-color: #faf0e6; /* Off-White */
   color: #354230; /* Green */
 }
 
@@ -31,7 +32,7 @@ p {
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: #f9f5ec; /* Off-White */
+    background-color: #faf0e6; /* Off-White */
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px; /* Place content 20px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -50,7 +51,7 @@ p {
   /* When you mouse over the navigation links, change their color */
   .sidenav a:hover:not(.closebtn) {
     background-color: #3d2b1f; /* try brown: #3d2b1f/#240001 & light brown: #c4a383 */
-    color: #f9f5ec; /* Off-White */
+    color: #faf0e6; /* Off-White */
     /* try red: #be132d */
   }
 
