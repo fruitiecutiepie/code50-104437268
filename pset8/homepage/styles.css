@@ -36,7 +36,7 @@ p {
 
   /* When you mouse over the navigation links, change their color */
   .sidenav a:hover:not(.closebtn) {
-    background-color: #364a3c; /* try brown: #3d2b1f/#240001 & light brown: #c4a383 */
+    background-color: #354230; /* try brown: #3d2b1f/#240001 & light brown: #c4a383 */
     color: #f8f1e7;
     /* try red: #be132d */
   }
