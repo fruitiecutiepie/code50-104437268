@@ -1,7 +1,7 @@
 /*
 Color Palette:
 Accent Red: #be132d
-Off-White:
+Off-White: #f9f5ec
 Dark Brown: #240001
 Blue: #1d4f9f
 Green: #354230
@@ -10,7 +10,7 @@ Brighter Green: #014421
 */
 
 body {
-  background-color: #f8f1e7;
+  background-color: #f9f5ec;
 }
 
 nav {
@@ -18,7 +18,7 @@ nav {
 }
 
 p {
-  margin-left: 48px;
+  margin-left: 60px;
 }
 
 /* The side navigation menu */
@@ -29,7 +29,7 @@ p {
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: #f8f1e7; /* White */
+    background-color: #f9f5ec; /* White */
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px; /* Place content 20px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -48,7 +48,7 @@ p {
   /* When you mouse over the navigation links, change their color */
   .sidenav a:hover:not(.closebtn) {
     background-color: #354230; /* try brown: #3d2b1f/#240001 & light brown: #c4a383 */
-    color: #f8f1e7;
+    color: #f9f5ec;
     /* try red: #be132d */
   }
 
