@@ -28,7 +28,7 @@ nav {
 
   /* When you mouse over the navigation links, change their color */
   .sidenav a:hover {
-    background-color: #3d2b1f; /* try brown: #240001 & light brown: #c4a383 */
+    background-color: #240001; /* try brown: #240001 & light brown: #c4a383 */
     color: #f8f1e7;
     /* try red: #be132d */
   }
