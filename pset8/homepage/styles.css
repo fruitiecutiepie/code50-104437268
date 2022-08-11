@@ -2,11 +2,12 @@
 Color Palette:
 Accent Red: #be132d
 Off-White: #f9f5ec
+Green: #354230
+Brighter Green: #014421
+Brown: #3d2b1f
 Dark Brown: #240001
 Blue: #1d4f9f
-Green: #354230
 Brighter Blue: #015cb8
-Brighter Green: #014421
 */
 
 body {
@@ -48,7 +49,7 @@ p {
 
   /* When you mouse over the navigation links, change their color */
   .sidenav a:hover:not(.closebtn) {
-    background-color: #240001; /* try brown: #3d2b1f/#240001 & light brown: #c4a383 */
+    background-color: #3d2b1f; /* try brown: #3d2b1f/#240001 & light brown: #c4a383 */
     color: #f9f5ec; /* Off-White */
     /* try red: #be132d */
   }
