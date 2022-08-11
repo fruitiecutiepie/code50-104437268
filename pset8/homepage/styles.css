@@ -11,6 +11,7 @@ Brighter Green: #014421
 
 body {
   background-color: #f9f5ec;
+  color: #354230;
 }
 
 nav {
@@ -19,6 +20,7 @@ nav {
 
 p {
   margin-left: 60px;
+  margin-top: 60px;
 }
 
 /* The side navigation menu */
@@ -40,14 +42,14 @@ p {
     padding: 12px 12px 12px 38px;
     text-decoration: none;
     font-size: 16px;
-    color: #240001;
+    color: #354230;
     display: block;
     transition: 0.3s;
   }
 
   /* When you mouse over the navigation links, change their color */
   .sidenav a:hover:not(.closebtn) {
-    background-color: #354230; /* try brown: #3d2b1f/#240001 & light brown: #c4a383 */
+    background-color: #240001; /* try brown: #3d2b1f/#240001 & light brown: #c4a383 */
     color: #f9f5ec;
     /* try red: #be132d */
   }
