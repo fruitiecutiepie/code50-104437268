@@ -37,11 +37,12 @@ a:visited {
 /* mouse over link */
 a:hover {
   color: var(--blue);
+  text-decoration: underline;
 }
 
 /* selected link */
 a:active {
-  color: var(--green-saturated);
+  color: var(--blue-light);
   text-decoration: none;
 }
 
