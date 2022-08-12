@@ -12,10 +12,9 @@
   --blue-saturated: #015cb8;
 }
 
-body:not(.nav-color) {
+body {
   background-color: var(--white);
   color: var(--green);
-  margin-left: 60px;
 }
 
 ::selection {
