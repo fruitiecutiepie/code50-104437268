@@ -30,13 +30,13 @@ a:link {
 
 /* visited link */
 a:visited {
-  color: var(--blue);
+  color: var(--blue-light);
   text-decoration: none;
 }
 
 /* mouse over link */
 a:hover {
-  color: var(--blue-light);
+  color: var(--blue);
 }
 
 /* selected link */
