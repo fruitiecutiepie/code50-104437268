@@ -36,7 +36,7 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-  color: green;
+  color: orangered;
   text-decoration: underline;
 }
 
