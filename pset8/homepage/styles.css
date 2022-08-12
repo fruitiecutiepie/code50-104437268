@@ -12,6 +12,10 @@
   --blue-saturated: #015cb8;
 }
 
+html {
+  12px 12px 12px 36px;
+}
+
 body {
   background-color: var(--white);
   color: var(--green);
@@ -30,18 +34,18 @@ a:link {
 
 /* visited link */
 a:visited {
-  color: var(--blue-light);
+  color: var(--blue-saturated);
   text-decoration: none;
 }
 
 /* mouse over link */
 a:hover {
-  color: var(--yellow);
+  color: var(--blue-light);
 }
 
 /* selected link */
 a:active {
-  color: var(--brown);
+  color: var(--green);
   text-decoration: none;
 }
 
