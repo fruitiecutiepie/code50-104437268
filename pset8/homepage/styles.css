@@ -47,6 +47,7 @@ nav {
 
 /* Styling body so navbar */
 h3 {
+  justify-content: center;
   margin-left: 60px;
 }
 
