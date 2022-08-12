@@ -43,6 +43,7 @@ a:active {
 
 nav {
   display: block;
+  float: left;
 }
 
 /* Styling body so navbar */
