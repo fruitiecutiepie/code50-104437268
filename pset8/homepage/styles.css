@@ -13,14 +13,13 @@
 }
 
 body {
-  background-color: var(--white);
+  background-color: var(--red);
   color: var(--green);
 }
 
 .images {
   display: flex;
   justify-content: space-between;
-  overflow: auto;
 }
 
 .images img {
