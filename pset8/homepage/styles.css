@@ -48,6 +48,7 @@ a:active {
 nav {
   display: block;
   height: 100%;
+  padding-right: 100px;
 }
 
 /* Styling body so navbar */
