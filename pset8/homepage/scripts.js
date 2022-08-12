@@ -1,7 +1,6 @@
 function openNav() {
     document.getElementById("mySidenav").style.width = "300px";
-    if (document.body.offsetWidth < 450px)
-    {
+    if (document.body.offsetWidth < "450px") {
         document.getElementById("mySidenav").style.width = "100%";
     }
 }
