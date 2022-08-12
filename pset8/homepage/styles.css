@@ -30,7 +30,7 @@ a:link {
 
 /* visited link */
 a:visited {
-  color: var(--brown);
+  color: var(--blue-light);
   text-decoration: none;
 }
 
@@ -47,6 +47,7 @@ a:active {
 
 nav {
   display: block;
+  height: 100%;
 }
 
 /* Styling body so navbar */
