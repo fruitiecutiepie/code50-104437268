@@ -4,6 +4,7 @@
   --green: #354230;
   --green-saturated: #014421;
   --brown: #3d2b1f;
+  /* not sure --brown-light: #c4a383; */
   --brown-dark: #240001;
   --yellow: #ffd800;
   --blue: #1d4f9f;
@@ -13,12 +14,12 @@
 
 ::selection {
   background-color: var(--blue-light);
-  color: #3d2b1f; /* Brown */
+  color: var(--brown);
 }
 
 body {
-  background-color: #faf0e6; /* Off-White */
-  color: #354230; /* Green */
+  background-color: var(--white);
+  color: var(--green);
 }
 
 /* unvisited link */
@@ -59,7 +60,7 @@ p {
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: #faf0e6; /* Off-White */
+    background-color: var(--white);
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px; /* Place content 20px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -70,16 +71,15 @@ p {
     padding: 12px 12px 12px 38px;
     text-decoration: none;
     font-size: 16px;
-    color: #354230; /* Green */
+    color: var(--green);
     display: block;
     transition: 0.3s;
   }
 
   /* When you mouse over the navigation links, change their color */
   .sidenav a:hover:not(.closebtn) {
-    background-color: #3d2b1f; /* try brown: #3d2b1f/#240001 & light brown: #c4a383 */
-    color: #faf0e6; /* Off-White */
-    /* try red: #be132d */
+    background-color: var(--brown);
+    color: var(--white);
   }
 
   .sidenav .closebtn {
