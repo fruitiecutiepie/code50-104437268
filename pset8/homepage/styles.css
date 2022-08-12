@@ -20,6 +20,7 @@ body {
 .images {
   display: flex;
   justify-content: space-between;
+  overflow: auto;
 }
 
 .images img {
@@ -100,5 +101,5 @@ h3 {
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
-    .images {display: block; width: 100%;}
+    .images {width: 100%;}
   }
