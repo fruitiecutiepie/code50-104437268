@@ -11,6 +11,10 @@ Blue: #1d4f9f
 Light Blue: #56a0d3
 Saturated Blue: #015cb8
 */
+::selection {
+  background-color: #56a0d3; /* Light Blue */
+  color: #3d2b1f; /* Brown */
+}
 
 body {
   background-color: #faf0e6; /* Off-White */
