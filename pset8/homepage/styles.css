@@ -30,7 +30,7 @@ a:link {
 
 /* visited link */
 a:visited {
-  color: var(--blue-light);
+  color: lightcoral;
   text-decoration: none;
 }
 
