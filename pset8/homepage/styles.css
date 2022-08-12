@@ -46,9 +46,8 @@ a:active {
 }
 
 nav {
-  display: block;
+  display: table-column;
   height: 100%;
-  padding-right: 100px;
 }
 
 /* Styling body so navbar */
