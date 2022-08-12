@@ -12,7 +12,7 @@
 }
 
 ::selection {
-  background-color: #56a0d3; /* Light Blue */
+  background-color: var(--blue-light);
   color: #3d2b1f; /* Brown */
 }
 
