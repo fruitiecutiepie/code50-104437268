@@ -40,12 +40,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* selected link */
-a:active {
-  color: var(--green);
-  text-decoration: none;
-}
-
 nav {
   display: flex;
   height: 100%;
