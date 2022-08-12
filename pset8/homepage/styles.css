@@ -14,7 +14,7 @@
 
 ::selection {
   background-color: var(--blue-light);
-  color: var(--brown);
+  color: var(--white);
 }
 
 body {
@@ -24,12 +24,14 @@ body {
 
 /* unvisited link */
 a:link {
-  color: var(--green);
+  color: var(--blue);
+  text-decoration: none;
 }
 
 /* visited link */
 a:visited {
   color: var(--brown);
+  text-decoration: none;
 }
 
 /* mouse over link */
@@ -40,6 +42,7 @@ a:hover {
 /* selected link */
 a:active {
   color: var(--brown);
+  text-decoration: none;
 }
 
 nav {
