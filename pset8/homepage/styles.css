@@ -1,16 +1,16 @@
-/*
-Color Palette:
-Accent Red: #be132d
-Off-White: #faf0e6
-Green: #354230
-Saturated Green: #014421
-Brown: #3d2b1f
-Dark Brown: #240001
-Yellow: #ffd800
-Blue: #1d4f9f
-Light Blue: #56a0d3
-Saturated Blue: #015cb8
-*/
+:root {
+  Accent Red: #be132d
+  Off-White: #faf0e6
+  Green: #354230
+  Saturated Green: #014421
+  Brown: #3d2b1f
+  Dark Brown: #240001
+  Yellow: #ffd800
+  Blue: #1d4f9f
+  Light Blue: #56a0d3
+  Saturated Blue: #015cb8
+}
+
 ::selection {
   background-color: #56a0d3; /* Light Blue */
   color: #3d2b1f; /* Brown */
