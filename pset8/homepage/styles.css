@@ -18,7 +18,7 @@ body {
 }
 
 ::selection {
-  background-color: var(--blue-light);
+  background-color: var(--yellow);
   color: var(--white);
 }
 
@@ -30,7 +30,7 @@ a:link {
 
 /* visited link */
 a:visited {
-  color: var(--blue-saturated);
+  color: green;
   text-decoration: none;
 }
 
