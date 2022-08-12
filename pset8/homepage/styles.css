@@ -1,14 +1,14 @@
 :root {
-  Accent Red: #be132d
-  Off-White: #faf0e6
-  Green: #354230
-  Saturated Green: #014421
-  Brown: #3d2b1f
-  Dark Brown: #240001
-  Yellow: #ffd800
-  Blue: #1d4f9f
-  Light Blue: #56a0d3
-  Saturated Blue: #015cb8
+  --red: #be132d;
+  --white: #faf0e6;
+  --green: #354230;
+  --green-saturated: #014421;
+  --brown: #3d2b1f;
+  --brown-dark: #240001;
+  --yellow: #ffd800;
+  --blue: #1d4f9f;
+  --blue-light: #56a0d3;
+  --blue-saturated: #015cb8;
 }
 
 ::selection {
