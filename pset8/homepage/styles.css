@@ -13,7 +13,7 @@
 }
 
 html {
-  margin: 12px 12px 12px 36px;
+  margin: 16px 16px 16px 40px;
 }
 
 body {
@@ -45,7 +45,7 @@ a:hover {
 
 /* selected link */
 a:active {
-  color: var(--green);
+  color: var(--blue-saturated);
   text-decoration: none;
 }
 
