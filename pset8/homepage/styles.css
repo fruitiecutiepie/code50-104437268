@@ -12,10 +12,6 @@
   --blue-saturated: #015cb8;
 }
 
-html {
-  margin: 16px 16px 16px 40px;
-}
-
 body {
   background-color: var(--white);
   color: var(--green);
