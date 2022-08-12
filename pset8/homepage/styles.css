@@ -13,16 +13,16 @@
 }
 
 body {
-  background-color: var(--white);
+  background-color: var(--red);
   color: var(--green);
 }
 
 .images img {
-  border: var(--red);
+  border: 5px solid var(--white);
   margin-left: 60px;
   margin-top: 30px;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
 }
 
 ::selection {
