@@ -21,14 +21,31 @@ body {
   color: #354230; /* Green */
 }
 
-a {
-  
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
 }
 
 nav {
   display: block;
 }
 
+/* Styling body so nav  */
 p {
   margin-left: 60px;
 }
