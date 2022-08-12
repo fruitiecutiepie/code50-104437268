@@ -12,10 +12,6 @@
   --blue-saturated: #015cb8;
 }
 
-html {
-  margin: 
-}
-
 body {
   background-color: var(--white);
   color: var(--green);
@@ -52,7 +48,7 @@ a:active {
 nav {
   display: block;
   float: left;
-  width: 100%;
+  /* width: 100%; */
 }
 
 /* Styling body so navbar */
