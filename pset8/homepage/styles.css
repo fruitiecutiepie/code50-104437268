@@ -17,6 +17,10 @@ body {
   color: var(--green);
 }
 
+.images {
+  
+}
+
 ::selection {
   background-color: var(--yellow);
 }
