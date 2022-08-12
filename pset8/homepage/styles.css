@@ -19,9 +19,8 @@ body {
 
 .images {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 100%;
-  overflow-x: hidden;
 }
 
 .images img {
