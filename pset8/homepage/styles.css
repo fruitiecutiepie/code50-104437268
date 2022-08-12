@@ -45,6 +45,7 @@ a:active {
 nav {
   display: block;
   float: left;
+  width: 100%;
 }
 
 /* Styling body so navbar */
@@ -68,7 +69,7 @@ p {
 
   /* The navigation menu links */
   .sidenav a {
-    padding: 12px 12px 12px 38px;
+    padding: 12px 12px 12px 36px;
     text-decoration: none;
     font-size: 16px;
     color: var(--green);
@@ -83,7 +84,7 @@ p {
   }
 
   .sidenav .closebtn {
-    padding-left: 34px;
+    padding-left: 32px;
   }
 
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
