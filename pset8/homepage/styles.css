@@ -96,10 +96,10 @@ h3 {
     padding-left: 32px;
   }
 
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  /* On smaller screens, where width is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
   @media screen and (max-width: 450px) {
     .sidenav {padding-top: 15px; text-align: center; width: 100%;}
     .sidenav a {font-size: 18px;}
-    h3 {margin-left: 0;}
+    h3 {margin-left: 0px;}
     .images {width: 100%; height: 100%;}
   }
