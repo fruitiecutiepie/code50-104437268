@@ -24,22 +24,22 @@ body {
 
 /* unvisited link */
 a:link {
-  color: green;
+  color: var(--green);
 }
 
 /* visited link */
 a:visited {
-  color: brown;
+  color: var(--brown);
 }
 
 /* mouse over link */
 a:hover {
-  color: yellow;
+  color: var(--yellow);
 }
 
 /* selected link */
 a:active {
-  color: brown;
+  color: var(--brown);
 }
 
 nav {
