@@ -12,14 +12,18 @@
   --blue-saturated: #015cb8;
 }
 
-::selection {
-  background-color: var(--blue-light);
-  color: var(--white);
+html {
+  margin: 
 }
 
 body {
   background-color: var(--white);
   color: var(--green);
+}
+
+::selection {
+  background-color: var(--blue-light);
+  color: var(--white);
 }
 
 /* unvisited link */
