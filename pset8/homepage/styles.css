@@ -46,7 +46,7 @@ a:active {
 }
 
 nav {
-  display: block;
+  display: flex;
   height: 100%;
 }
 
