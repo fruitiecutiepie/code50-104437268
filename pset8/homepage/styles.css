@@ -19,7 +19,7 @@ body {
 
 .images {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .images img {
@@ -30,7 +30,7 @@ body {
   width: 500px;
   height: 500px;
   object-fit: cover;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
 }
 
 ::selection {
