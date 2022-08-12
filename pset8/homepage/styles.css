@@ -24,13 +24,13 @@ body {
 
 /* unvisited link */
 a:link {
-  color: var(--blue);
+  color: green;
   text-decoration: none;
 }
 
 /* visited link */
 a:visited {
-  color: green;
+  color: var(--blue);
   text-decoration: none;
 }
 
@@ -41,7 +41,7 @@ a:hover {
 
 /* selected link */
 a:active {
-  color: var(--blue-saturated);
+  color: var(--green-saturated);
   text-decoration: none;
 }
 
