@@ -30,19 +30,19 @@ a:link {
 
 /* visited link */
 a:visited {
-  color: lightcoral;
+  color: coral;
   text-decoration: none;
 }
 
 /* mouse over link */
 a:hover {
-  color: var(--blue);
+  color: green;
   text-decoration: underline;
 }
 
 /* selected link */
 a:active {
-  color: var(--blue-light);
+  color: var(--green);
   text-decoration: none;
 }
 
