@@ -25,12 +25,10 @@ body {
 .images img {
   /* border: 5px solid var(--white); */
   /* margin-left: 60px; */
-  display: flex;
   margin-top: 30px;
   width: 500px;
   height: 500px;
   object-fit: cover;
-  /* justify-content: space-evenly; */
 }
 
 ::selection {
