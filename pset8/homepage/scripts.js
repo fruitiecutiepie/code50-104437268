@@ -7,7 +7,8 @@ function closeNav() {
 }
 
 function openImage() {
-    document.getElementByTagName("div img").classList.add('position-fixed top-50 start-0 translate-middle');
+    document.getElementById("img").classList.add('position-fixed top-50 start-0 translate-middle');
+    document.getElementById("img").style.objectFit = "scale-down";
 }
 
 // document.addEventListener('DOMContentLoaded', function {
