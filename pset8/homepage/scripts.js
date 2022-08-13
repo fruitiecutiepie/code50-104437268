@@ -6,7 +6,7 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 
-//  Simulate modal image
+//  Simulate modal image — pending
 //  function openImage() {
 //     document.querySelector("img").classList.add('top-50', 'start-0', 'translate-middle');
 //     document.querySelector("img").style.objectFit = "scale-down";
