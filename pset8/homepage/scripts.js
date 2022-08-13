@@ -7,7 +7,7 @@ function closeNav() {
 }
 
 function openImage() {
-    document.getElementById("img").classList.add('position-fixed top-50 start-0 translate-middle');
-    document.getElementById("img").style.objectFit = "scale-down";
-    document.body.style.backgroundColor = hsl(0, 0%, 50%);
+    document.querySelector("img").classList.add('position-absolute', 'top-50', 'start-0', 'translate-middle');
+    document.querySelector("img").style.objectFit = "scale-down";
+    document.querySelector("body").style.backgroundColor = "#808080";
 }
