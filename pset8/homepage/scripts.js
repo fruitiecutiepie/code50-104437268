@@ -7,10 +7,7 @@ function closeNav() {
 }
 
 function openImage() {
-    document.getElementByTagName("img").style.textAlign = "center";
-    document.getElementByTagName("img").style.margin = "auto";
-    document.getElementByTagName("img").style.display = "block";
-    document.getElementByTagName("img").style.width = "60%";
+    document.getElementByTagName("img").classList.add = "center";
 }
 // document.addEventListener('DOMContentLoaded', function {
 //     document.querySelector('.images').addEventListener('click', function {
