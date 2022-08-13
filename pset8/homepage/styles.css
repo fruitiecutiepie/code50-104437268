@@ -21,6 +21,7 @@ body {
 .images {
   display: flex;
   justify-content: space-between;
+  overflow-x: auto;
 }
 
 .images img {
