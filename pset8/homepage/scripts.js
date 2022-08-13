@@ -6,8 +6,11 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 
-document.addEventListener('DOMContentLoaded', function {
-    document.querySelector('.images').addEventListener('click', function {
-        document.body.style.backgroundColor = hsl(0, 0%, 50%);
-    });
-});
+function openImage() {
+    
+}
+// document.addEventListener('DOMContentLoaded', function {
+//     document.querySelector('.images').addEventListener('click', function {
+//         document.body.style.backgroundColor = hsl(0, 0%, 50%);
+//     });
+// });
