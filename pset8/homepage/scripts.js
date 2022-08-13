@@ -7,7 +7,7 @@ function closeNav() {
 }
 
 function openImage() {
-    
+    document.getElementByTagName("img").style.
 }
 // document.addEventListener('DOMContentLoaded', function {
 //     document.querySelector('.images').addEventListener('click', function {
