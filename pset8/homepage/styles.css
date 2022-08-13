@@ -22,6 +22,7 @@ body {
   display: flex;
   justify-content: space-between;
   overflow-x: auto;
+  width: 4600px;
 }
 
 .images img {
