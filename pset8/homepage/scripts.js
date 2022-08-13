@@ -8,6 +8,6 @@ function closeNav() {
 
 document.addEventListener('DOMContentLoaded', function {
     document.querySelector('.images').addEventListener('click', function {
-        document.body.style.backgroundColor = 
+        document.body.style.backgroundColor = hsl(0, 0%, 50%);
     });
 });
