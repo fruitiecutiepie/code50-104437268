@@ -9,10 +9,5 @@ function closeNav() {
 function openImage() {
     document.getElementById("img").classList.add('position-fixed top-50 start-0 translate-middle');
     document.getElementById("img").style.objectFit = "scale-down";
+    document.body.style.backgroundColor = hsl(0, 0%, 50%);
 }
-
-// document.addEventListener('DOMContentLoaded', function {
-//     document.querySelector('.images').addEventListener('click', function {
-//         document.body.style.backgroundColor = hsl(0, 0%, 50%);
-//     });
-// });
