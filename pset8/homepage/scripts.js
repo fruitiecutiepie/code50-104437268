@@ -7,7 +7,7 @@ function closeNav() {
 }
 
 function openImage() {
-    document.getElementByTagName("img").classList.add('position-fixed top-50 start-0 translate-middle');
+    document.getElementByTagName("div img").classList.add('position-fixed top-50 start-0 translate-middle');
 }
 
 // document.addEventListener('DOMContentLoaded', function {
