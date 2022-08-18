@@ -150,7 +150,7 @@ def register():
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?);", request.form.get("username"), password)
 
         # Log user in
-        session["user_id"] = 
+        session["user_id"] = db.execute("SELECT id FROM users WHERE username = ?", request.form.get("username"))
         return render_template
 
     else:
