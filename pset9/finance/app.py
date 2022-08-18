@@ -118,10 +118,13 @@ def quote():
 def register():
     """Register user"""
 
+    if request.method == "POST":
+        
+
     return apology("TODO")
 
     else:
-        return redirect("/")
+        return render_template("login.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
