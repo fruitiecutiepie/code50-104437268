@@ -118,6 +118,8 @@ def quote():
         if not lookup(#):
             return apology("stock symbol not found", 403)
 
+        return render_template()
+
     else:
         return render_template("")
 
