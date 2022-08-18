@@ -121,10 +121,10 @@ def quote():
     #     if not lookup(#):
     #         return apology("stock symbol not found", 403)
 
-    #     return render_template("")
+    #     return render_template("quoted.html")
 
     # else:
-    #     return render_template("")
+    #     return render_template("quote.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
