@@ -113,8 +113,10 @@ def quote():
     """Get stock quote."""
 
     if request.method("POST"):
-        asda
-            return apology("TODO")
+
+        # Ensure stock symbol exists
+        if not lookup(#):
+            return apology("stock symbol not found", 403)
 
     else:
         return render_template("")
