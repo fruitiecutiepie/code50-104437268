@@ -4,5 +4,6 @@
         "string": "c",
         "cstdlib": "c",
         "cmath": "c"
-    }
+    },
+    "gitdoc.enabled": true
 }

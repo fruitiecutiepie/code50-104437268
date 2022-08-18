@@ -13,7 +13,7 @@
     "tomoki1207.pdf", 
     "vsls-contrib.gitdoc"
   ], 
-  "image": "ghcr.io/cs50/codespace:4ef1db0375af0f18c1336eb73c38433bb31df077", 
+  "image": "ghcr.io/cs50/codespace:c09711969f19a7a719d177419bf12822cc579728", 
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand", 
   "settings": {
     "C_Cpp.autocomplete": "Disabled", 
