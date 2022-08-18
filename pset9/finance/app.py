@@ -149,9 +149,11 @@ def register():
         # Add user to database
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?);", request.form.get("username"), password)
 
-        # Log user in
+        # Remember which user has logged in
         session["user_id"] = db.execute("SELECT id FROM users WHERE username = ?", request.form.get("username"))
-        return render_template
+
+        # Redirect user to look up stock quotes
+        return redirect("/quote")
 
     else:
         return render_template("register.html")
