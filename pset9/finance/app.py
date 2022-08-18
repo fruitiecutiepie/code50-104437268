@@ -146,6 +146,11 @@ def register():
         # Generate a hash of the password for security
         password = generate_password_hash(request.form.get("password"))
 
+        # Add user to database
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?);", request.form.get("username"), password)
+
+        # Log user in
+        session["user_id"] = 
         return render_template
 
     else:
