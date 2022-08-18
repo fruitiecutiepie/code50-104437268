@@ -25,6 +25,7 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///finance.db")
 
+# !!! DELETE WHEN SUBMITTING
 API_KEY = "pk_7fae8605ca2848c99c97f7fbfbac4acf"
 
 # Make sure API key is set
