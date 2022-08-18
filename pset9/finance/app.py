@@ -152,12 +152,12 @@ def register():
         # Ensure username has not been taken
         if len(rows) != 0:
             return apology("username has already been taken", 403)
-
+            
         # Generate a hash of the password for security
         hash = generate_password_hash(request.form.get("password"))
 
         # Add user to database
-        db.execute("INSERT INTO users (username, hash) VALUES (?, ?);", request.form.get("username"), password)
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?);", request.form.get("username"), hash)
 
         # Remember which user has logged in
         session["user_id"] = db.execute("SELECT id FROM users WHERE username = ?", request.form.get("username"))
