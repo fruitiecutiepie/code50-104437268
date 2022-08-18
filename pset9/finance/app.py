@@ -118,7 +118,7 @@ def quote():
         if not lookup(#):
             return apology("stock symbol not found", 403)
 
-        return render_template()
+        return render_template("")
 
     else:
         return render_template("")
@@ -139,12 +139,12 @@ def register():
             return apology("must provide password", 403)
 
         # Ensure password was confirmed
-        elif not request.form.get("password_confirm"):
+        elif not request.form.get("confirmation"):
             return apology("must provide password confirmation", 403)
 
         # Ensure password and password confirmation confirmed
-        elif request.form.get("password") != request.form.get("password_confirm"):
-            return apology("password must match", 403)
+        elif request.form.get("password") != request.form.get("confirmation"):
+            return apology("passwords must match", 403)
 
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
@@ -154,7 +154,7 @@ def register():
             return apology("username has already been taken", 403)
 
         # Generate a hash of the password for security
-        password = generate_password_hash(request.form.get("password"))
+        hash = generate_password_hash(request.form.get("password"))
 
         # Add user to database
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?);", request.form.get("username"), password)
