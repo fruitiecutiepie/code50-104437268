@@ -134,14 +134,19 @@ def register():
 
         # Ensure password and password confirmation confirmed
         elif request.form.get("password") != request.form.get("password_confirm"):
-            return apology("password ")
+            return apology("password must match", 403)
 
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
-        # Ensure username exists and password is correct
-        if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
-            return apology("invalid username and/or password", 403)
+        # Ensure username has not been taken
+        if len(rows) != 0:
+            return apology("username has already been taken", 403)
+
+        # Generate a hash of the password for security
+        password = generate_password_hash(request.form.get("password"))
+
+        return render_template
 
     else:
         return render_template("register.html")
