@@ -32,7 +32,7 @@
                         {{for birthday in birthdays}}
                         <tr>
                             <th>{% birthday['name'] %}</th>
-                            <th>{% birthday['name'] %}/</th>
+                            <th>{% birthday['month'] %}/{% birthday['day'] %}</th>
                         </tr>
                         {{endfor}}
                     </tbody>
