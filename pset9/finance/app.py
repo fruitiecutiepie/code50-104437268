@@ -124,15 +124,16 @@ def quote():
     # User reached route via POST (as by submitting a form via POST)
     if request.method("POST"):
 
-        # Get stock symbol from user
-        symbol = request.form.get("symbol")
+        # Ensure stock symbol was submitted
+        if not request.form.get("symbol"):
+            return apology("must provide symbol", 403)
 
         # Ensure stock symbol exists
-        if not lookup(symbol):
-            return apology("stock symbol not found", 403)
+        if not lookup(request.form.get("symbol")):
+            return apology("symbol not found", 403)
 
         # Display the results
-        return render_template("quoted.html", stock=lookup(symbol))
+        return render_template("quoted.html", stock=lookup(request.form.get("symbol")))
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
