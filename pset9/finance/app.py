@@ -115,18 +115,20 @@ def logout():
 def quote():
     """Get stock quote."""
 
+    # User reached route via POST (as by submitting a form via POST)
     if request.method("POST"):
 
-        # Get stock symbol 
+        # Get stock symbol from user
         symbol = request.form.get("symbol")
 
         # Ensure stock symbol exists
         if not lookup(symbol):
             return apology("stock symbol not found", 403)
 
-
+        # 
         return render_template("quoted.html")
 
+    # User reached route via GET (as by clicking a link or via redirect)
     else:
         return render_template("quote.html")
 
@@ -135,6 +137,7 @@ def quote():
 def register():
     """Register user"""
 
+    # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
 
         # Ensure username was submitted
@@ -172,6 +175,7 @@ def register():
         # Redirect user to look up stock quotes
         return redirect("/quote")
 
+    # User reached route via GET (as by clicking a link or via redirect)
     else:
         return render_template("register.html")
 
