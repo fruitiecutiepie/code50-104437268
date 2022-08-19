@@ -65,8 +65,8 @@ def buy():
             return apology("symbol not found", 403)
 
         # Ensure shares was submitted
-        if not request.form.get("shares"):
-            return apology("must provide symbol", 403)
+        if not request.form.get("shares") or request.form.get("shares") < 1:
+            return apology("must provide a positive number of shares", 403)
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
