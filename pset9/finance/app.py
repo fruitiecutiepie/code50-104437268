@@ -67,7 +67,7 @@ def buy():
         # Ensure shares was submitted
         if not request.form.get("shares") or request.form.get("shares") < 1:
             return apology("must provide a positive number of shares", 403)
-            
+
         db.execute()
 
     # User reached route via GET (as by clicking a link or via redirect)
@@ -101,7 +101,7 @@ def login():
             return apology("must provide password", 403)
 
         # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?;", request.form.get("username"))
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
         # Ensure username exists and password is correct
         if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
@@ -177,7 +177,7 @@ def register():
             return apology("passwords must match", 403)
 
         # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?;", request.form.get("username"))
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
         # Ensure username has not been taken
         if len(rows) != 0:
@@ -187,10 +187,10 @@ def register():
         hash = generate_password_hash(request.form.get("password"))
 
         # Add user to database
-        db.execute("INSERT INTO users (username, hash) VALUES (?, ?);", request.form.get("username"), hash)
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), hash)
 
         # Remember which user has logged in
-        session["user_id"] = db.execute("SELECT id FROM users WHERE username = ?;", request.form.get("username"))
+        session["user_id"] = db.execute("SELECT id FROM users WHERE username = ?", request.form.get("username"))
 
         # Redirect user to look up stock quotes
         return redirect("/quote")
