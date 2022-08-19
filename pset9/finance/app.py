@@ -56,8 +56,13 @@ def buy():
 
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
-        erewr
-            return apology("TODO")
+        # Ensure stock symbol was submitted
+        if not request.form.get("symbol"):
+            return apology("must provide symbol", 403)
+
+        # Ensure stock symbol exists
+        if not lookup(request.form.get("symbol")):
+            return apology("symbol not found", 403)
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
