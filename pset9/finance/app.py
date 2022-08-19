@@ -60,9 +60,13 @@ def buy():
         if not request.form.get("symbol"):
             return apology("must provide symbol", 403)
 
-        # Ensure stock symbol exists
+        # Ensure symbol exists
         if not lookup(request.form.get("symbol")):
             return apology("symbol not found", 403)
+
+        # Ensure shares was submitted
+        if not request.form.get("shares"):
+            return apology("must provide symbol", 403)
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
@@ -131,11 +135,11 @@ def quote():
     # User reached route via POST (as by submitting a form via POST)
     if request.method("POST"):
 
-        # Ensure stock symbol was submitted
+        # Ensure symbol was submitted
         if not request.form.get("symbol"):
             return apology("must provide symbol", 403)
 
-        # Ensure stock symbol exists
+        # Ensure symbol exists
         if not lookup(request.form.get("symbol")):
             return apology("symbol not found", 403)
 
