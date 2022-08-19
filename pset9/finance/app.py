@@ -125,8 +125,8 @@ def quote():
         if not lookup(symbol):
             return apology("stock symbol not found", 403)
 
-        # 
-        return render_template("quoted.html")
+        # Display the results
+        return render_template("quoted.html", stock=lookup(symbol))
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
