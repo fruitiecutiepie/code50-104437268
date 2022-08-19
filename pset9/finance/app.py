@@ -117,7 +117,9 @@ def quote():
 
     if request.method("POST"):
 
+        # Get stock symbol 
         symbol = request.form.get("symbol")
+
         # Ensure stock symbol exists
         if not lookup(symbol):
             return apology("stock symbol not found", 403)
