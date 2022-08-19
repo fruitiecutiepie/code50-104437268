@@ -67,7 +67,7 @@ def buy():
         # Ensure shares was submitted
         if not request.form.get("shares") or request.form.get("shares") < 1:
             return apology("must provide a positive number of shares", 403)
-
+            
         db.execute()
 
     # User reached route via GET (as by clicking a link or via redirect)
