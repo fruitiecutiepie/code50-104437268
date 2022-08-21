@@ -46,7 +46,9 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    return apology("TODO")
+    # return apology("TODO")
+    portfolios = db.execute("SELECT symbol, shares FROM portfolios WHERE user_id = ?", session["user_id"])
+    return render_template("index.html", portfolios=portfolios)
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -101,10 +103,8 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    # return apology("TODO")
+    return apology("TODO")
 
-    portfolios = db.execute("SELECT symbol, shares FROM portfolios WHERE user_id = ?", session["user_id"])
-    return render_template("index.html", portfolios=portfolios)
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
