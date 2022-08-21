@@ -102,7 +102,7 @@ def buy():
 def history():
     """Show history of transactions"""
     # return apology("TODO")
-    
+
     portfolios = db.execute("SELECT symbol, shares FROM portfolios WHERE user_id = ?", session["user_id"])
     return render_template("index.html", portfolios=portfolios)
 
@@ -205,7 +205,7 @@ def register():
 
         # Ensure username has not been taken
         if len(rows) != 0:
-            return apology("username has already been taken", 403)
+            return apology("username has been taken", 403)
 
         # Generate a hash of the password for security
         hash = generate_password_hash(request.form.get("password"))
