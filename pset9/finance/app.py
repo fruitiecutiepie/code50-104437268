@@ -81,7 +81,7 @@ def buy():
 
         # Ensure user has enough cash
         if cash < (quote["price"] * shares):
-            return apology("can't afford", 403)
+            return apology("must have enough cash", 403)
 
         # Add stock purchase to user portfolio
         db.execute('''
