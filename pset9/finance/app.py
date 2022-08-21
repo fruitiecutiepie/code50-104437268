@@ -73,6 +73,9 @@ def buy():
         if not shares or shares < 1:
             return apology("must provide a positive number of shares", 403)
 
+        # Look up quote for symbol
+        symbol = lookup(symbol)
+
         db.execute()
 
 
