@@ -89,10 +89,10 @@ def buy():
         # Add stock to user portfolio
         db.execute('''
         INSERT INTO portfolios
-        (user_id, symbol, name, shares, current_price)
+        (user_id, symbol, name, shares)
         VALUES
-        (?, ?, ?, ?, ?)
-        ''', session["user_id"], quote["symbol"], quote["name"], shares, quote["price"])
+        (?, ?, ?, ?)
+        ''', session["user_id"], quote["symbol"], quote["name"], shares)
 
         # Update user cash
         db.execute('''
