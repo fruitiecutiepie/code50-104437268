@@ -67,6 +67,9 @@ def buy():
         # Look up user cash
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
+        # Calculate total purchase
+        total = quote["price"] * shares
+
         # Ensure stock symbol was submitted
         if not symbol:
             return apology("must provide symbol", 403)
@@ -80,7 +83,7 @@ def buy():
             return apology("must provide a positive number of shares", 403)
 
         # Ensure user has enough cash
-        if cash < (quote["price"] * shares):
+        if cash < total:
             return apology("must have enough cash", 403)
 
         # Add stock to user portfolio
@@ -90,6 +93,9 @@ def buy():
         VALUES
         (?, ?, ?, ?, ?)
         ''', session["user_id"], quote["symbol"], quote["name"], shares, quote["price"])
+
+        # Update user cash
+        db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
