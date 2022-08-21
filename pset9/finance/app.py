@@ -78,10 +78,10 @@ def buy():
 
         db.execute('''
         INSERT INTO portfolios
-        ()
+        (symbol, name, shares, current_price)
         VALUES
-        ()
-        ''')
+        (?, ?, ?, ?)
+        ''', symbol["symbol"], symbol["name"], shares, symbol["price"])
 
 
     # User reached route via GET (as by clicking a link or via redirect)
