@@ -74,14 +74,14 @@ def buy():
             return apology("must provide a positive number of shares", 403)
 
         # Look up quote for symbol
-        symbol = lookup(symbol)
+        q = lookup(symbol)
 
         db.execute('''
         INSERT INTO portfolios
         (symbol, name, shares, current_price)
         VALUES
         (?, ?, ?, ?)
-        ''', symbol["symbol"], symbol["name"], shares, symbol["price"])
+        ''', q["symbol"], q["name"], shares, q["price"])
 
 
     # User reached route via GET (as by clicking a link or via redirect)
