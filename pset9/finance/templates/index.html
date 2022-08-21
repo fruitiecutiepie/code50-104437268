@@ -16,9 +16,9 @@
             </tr>
         </thead>
         <tbody>
+            {% set total = 0 %}
             {% for stock in portfolios %}
                 {% set quote = lookup(stock.symbol) %}
-                {% set total = 0 %}
                 {% set total = total + quote.price * stock.shares %}
             <tr>
                 <td>{{ quote.symbol }}</td>
