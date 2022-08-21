@@ -72,7 +72,7 @@ def buy():
             return apology("must provide symbol", 403)
 
         # Ensure symbol exists
-        if not lookup(symbol):
+        if not quote:
             return apology("symbol not found", 403)
 
         # Ensure shares was submitted
