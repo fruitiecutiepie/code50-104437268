@@ -102,7 +102,8 @@ def buy():
 def history():
     """Show history of transactions"""
     # return apology("TODO")
-    portfolios = db.execute("")
+    
+    portfolios = db.execute("SELECT symbol, shares FROM portfolios WHERE user_id = ?", session["user_id"])
     return render_template("index.html", portfolios=portfolios)
 
 @app.route("/login", methods=["GET", "POST"])
