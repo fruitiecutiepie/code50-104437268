@@ -87,19 +87,10 @@ def buy():
             return apology("must have enough cash", 403)
 
         # Add stock to user portfolio
-        db.execute('''
-        INSERT INTO portfolios
-        (user_id, symbol, shares)
-        VALUES
-        (?, ?, ?)
-        ''', session["user_id"], quote["symbol"], shares)
+        db.execute("INSERT INTO portfolios (user_id, symbol, shares) VALUES (?, ?, ?)", session["user_id"], quote["symbol"], shares)
 
         # Update user cash
-        db.execute('''
-        UPDATE users
-        SET cash = ?
-        WHERE id = ?
-        ''', (cash - total), session["user_id"])
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", (cash - total), session["user_id"])
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
@@ -110,8 +101,9 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    return apology("TODO")
-
+    # return apology("TODO")
+    portfolios = db.execute("")
+    return render_template("index.html", portfolios=portfolios)
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
