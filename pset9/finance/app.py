@@ -56,16 +56,20 @@ def buy():
 
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
+
+        symbol = request.form.get("symbol")
+        shares = request.form.get("shares")
+
         # Ensure stock symbol was submitted
-        if not request.form.get("symbol"):
+        if not symbol:
             return apology("must provide symbol", 403)
 
         # Ensure symbol exists
-        if not lookup(request.form.get("symbol")):
+        if not lookup(symbol):
             return apology("symbol not found", 403)
 
         # Ensure shares was submitted
-        if not request.form.get("shares") or request.form.get("shares") < 1:
+        if not shares or shares < 1:
             return apology("must provide a positive number of shares", 403)
 
         db.execute()
