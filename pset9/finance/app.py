@@ -76,7 +76,12 @@ def buy():
         # Look up quote for symbol
         symbol = lookup(symbol)
 
-        db.execute()
+        db.execute('''
+        INSERT INTO portfolios
+        ()
+        VALUES
+        ()
+        ''')
 
 
     # User reached route via GET (as by clicking a link or via redirect)
