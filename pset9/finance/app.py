@@ -91,7 +91,6 @@ def buy():
         (?, ?, ?, ?, ?)
         ''', session["user_id"], quote["symbol"], quote["name"], shares, quote["price"])
 
-
     # User reached route via GET (as by clicking a link or via redirect)
     else:
         return render_template("buy.html")
