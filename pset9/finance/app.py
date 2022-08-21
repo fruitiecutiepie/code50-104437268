@@ -69,17 +69,17 @@ def buy():
             return apology("must provide a positive number of shares", 403)
 
         db.execute()
-        CREATE TABLE history (
-   ...>     id INTEGER NOT NULL,
-   ...>     user_id INTEGER NOT NULL,
-   ...>     symbol TEXT NOT NULL,
-   ...>     shares INTEGER NOT NULL,
-   ...>     purchase_price NUMERIC,
-   ...>     sale_price NUMERIC,
-   ...>     datetime DATETIME NOT NULL DEFAULT GETDATE(),
-   ...>     PRIMARY KEY(id),
-   ...>   FOREIGN KEY(user_id) REFERENCES users(id)
-   ...> );
+CREATE TABLE history (
+     id INTEGER NOT NULL,
+     user_id INTEGER NOT NULL,
+     symbol TEXT NOT NULL,
+     shares INTEGER NOT NULL,
+     purchase_price NUMERIC,
+     sale_price NUMERIC,
+     datetime DATETIME NOT NULL DEFAULT NOW,
+     PRIMARY KEY(id),
+     FOREIGN KEY(user_id) REFERENCES users(id)
+);
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
