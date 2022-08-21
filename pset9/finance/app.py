@@ -46,8 +46,13 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
+
+    # Look up cash
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+
+    # Look up portfolio
     portfolios = db.execute("SELECT symbol, shares FROM portfolios WHERE user_id = ?", session["user_id"])
-    return render_template("index.html", portfolios=portfolios)
+    return render_template("index.html", cash=cash, portfolios=portfolios)
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -58,14 +63,14 @@ def buy():
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
 
-        # Get user response
+        # Get response
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
 
         # Look up quote for symbol
         quote = lookup(symbol)
 
-        # Look up user cash
+        # Look up cash
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
         # Calculate total purchase
@@ -87,10 +92,10 @@ def buy():
         if cash < total:
             return apology("must have enough cash", 403)
 
-        # Add stock to user portfolio
+        # Add stock to portfolio
         db.execute("INSERT INTO portfolios (user_id, symbol, shares) VALUES (?, ?, ?)", session["user_id"], quote["symbol"], shares)
 
-        # Update user cash
+        # Update cash
         db.execute("UPDATE users SET cash = ? WHERE id = ?", (cash - total), session["user_id"])
 
     # User reached route via GET (as by clicking a link or via redirect)

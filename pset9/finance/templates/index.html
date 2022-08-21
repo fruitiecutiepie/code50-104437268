@@ -18,6 +18,7 @@
         <tbody>
             {% for stock in portfolios %}
             {% set quote = lookup(stock.symbol) %}
+            
             <tr>
                 <td>{{ quote.symbol }}</td>
                 <td>{{ quote.name }}</td>
@@ -30,7 +31,11 @@
         <tfoot>
             <tr>
                 <td>Cash</td>
-                <td>Cash</td>
+                <td>{{ cash }}</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>{{ cash +  }}</td>
             </tr>
         </tfoot>
     </table>
