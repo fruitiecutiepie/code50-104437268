@@ -83,7 +83,7 @@ def buy():
         if cash < (quote["price"] * shares):
             return apology("must have enough cash", 403)
 
-        # Add stock purchase to user portfolio
+        # Add stock to user portfolio
         db.execute('''
         INSERT INTO portfolios
         (user_id, symbol, name, shares, current_price)
