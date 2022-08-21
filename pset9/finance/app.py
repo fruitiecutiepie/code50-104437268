@@ -78,7 +78,7 @@ def buy():
 
         db.execute('''
         INSERT INTO portfolios
-        (symbol, name, shares, current_price)
+        (user_id, symbol, name, shares, current_price)
         VALUES
         (?, ?, ?, ?)
         ''', q["symbol"], q["name"], shares, q["price"])
