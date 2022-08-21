@@ -95,7 +95,11 @@ def buy():
         ''', session["user_id"], quote["symbol"], quote["name"], shares, quote["price"])
 
         # Update user cash
-        db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        db.execute('''
+        UPDATE users
+        SET cash = ?
+        WHERE id = ?
+        ''', (cash - total), session["user_id"])
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
