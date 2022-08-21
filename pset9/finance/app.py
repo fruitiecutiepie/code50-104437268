@@ -76,7 +76,14 @@ def buy():
         # Look up quote for symbol
         quote = lookup(symbol)
 
+        # Look up user cash
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
+        # Ensure user has enough cash
+        if cash < (quote["price"] * shares):
+            return apology("can't afford", 403)
+
+        # Add stock purchase to user portfolio
         db.execute('''
         INSERT INTO portfolios
         (user_id, symbol, name, shares, current_price)
