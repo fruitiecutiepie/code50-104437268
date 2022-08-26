@@ -16,13 +16,18 @@
         </thead>
         <tbody>
             {% for stock in portfolios %}
-                {% set quote = lookup(stock.symbol) %}
             <tr>
-                <td>{{ quote.symbol }}</td>
+                <td>{{ stock.symbol }}</td>
+
                 {% if stock.sold %}
-                <td>{{ stock.shares }}</td>
-                <td>{{ quote.price }}</td>
-                <td>{{ quote.price * stock.shares }}</td>
+                <td>{{ stock.sold }}</td>
+                <td>{{ stock.sale_price }}</td>
+                {% else %}
+                <td>{{ stock.bought }}</td>
+                <td>{{ stock.purchase_price }}</td>
+                {% endif %}
+
+                <td>{{ stock.datetime }}</td>
             </tr>
             {% endfor %}
         </tbody>
