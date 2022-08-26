@@ -33,23 +33,3 @@
         </tbody>
     </table>
 {% endblock %}
-CREATE TABLE portfolios (
-     id INTEGER NOT NULL,
-     user_id INTEGER NOT NULL,
-     symbol TEXT NOT NULL,
-     shares INTEGER NOT NULL,
-     PRIMARY KEY(id),
-     FOREIGN KEY(user_id) REFERENCES users(id)
-);
-CREATE TABLE history (
-     id INTEGER NOT NULL,
-     user_id INTEGER NOT NULL,
-     symbol TEXT NOT NULL,
-     bought INTEGER,
-     sold INTEGER,
-     purchase_price NUMERIC,
-     sale_price NUMERIC,
-     datetime DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-     PRIMARY KEY(id),
-     FOREIGN KEY(user_id) REFERENCES users(id)
-);
