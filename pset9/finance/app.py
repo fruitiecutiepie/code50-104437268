@@ -272,7 +272,7 @@ def sell():
         db.execute("UPDATE portfolios SET shares = ? WHERE symbol = ? AND id = ?", (stock_shares - shares), symbol, session["user_id"])
 
         # Record purchase
-        db.execute("UPDATE portfolios SET bought = ? AND purchase_price = ? WHERE symbol = ? AND id = ?", shares, quote["price"], symbol, session["user_id"])
+        db.execute("UPDATE portfolios SET sold = ? AND sale_price = ? WHERE symbol = ? AND id = ?", -shares, quote["price"], symbol, session["user_id"])
 
         # Update cash
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
