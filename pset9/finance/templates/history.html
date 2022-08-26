@@ -15,19 +15,19 @@
             </tr>
         </thead>
         <tbody>
-            {% for stock in portfolios %}
+            {% for transaction in history %}
             <tr>
-                <td>{{ stock.symbol }}</td>
+                <td>{{ transaction.symbol }}</td>
 
-                {% if stock.bought %}
-                <td>{{ stock.bought }}</td>
-                <td>{{ stock.purchase_price }}</td>
+                {% if transaction.bought %}
+                <td>{{ transaction.bought }}</td>
+                <td>{{ transaction.purchase_price }}</td>
                 {% else %}
-                <td>{{ stock.sold }}</td>
-                <td>{{ stock.sale_price }}</td>
+                <td>{{ transaction.sold }}</td>
+                <td>{{ transaction.sale_price }}</td>
                 {% endif %}
 
-                <td>{{ stock.datetime }}</td>
+                <td>{{ transaction.datetime }}</td>
             </tr>
             {% endfor %}
         </tbody>
