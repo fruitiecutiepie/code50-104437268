@@ -90,7 +90,6 @@ def buy():
         stock_shares = db.execute("SELECT shares FROM portfolios WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
         if stock_shares:
             db.execute("UPDATE portfolios SET shares = ? WHERE user_id = ? AND symbol = ?", (stock_shares + shares), session["user_id"], symbol)
-            db.execute("INSERT INTO portfolios (user_id, symbol, shares) VALUES (?, ?, ?)", session["user_id"], symbol, shares)
         else:
             db.execute("INSERT INTO portfolios (user_id, symbol, shares) VALUES (?, ?, ?)", session["user_id"], symbol, shares)
 
