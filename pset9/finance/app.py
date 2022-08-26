@@ -102,7 +102,7 @@ def buy():
 
         # Record purchase
         db.execute("INSERT INTO history (user_id, symbol, bought, purchase_price) VALUES (?, ?, ?, ?)",
-                    session["user_id"], symbol, shares, quote["price"])
+                   session["user_id"], symbol, shares, quote["price"])
 
         # Show user portfolio
         return redirect("/")
@@ -275,11 +275,11 @@ def sell():
 
         # Sell specified stock
         db.execute("UPDATE portfolios SET shares = ? WHERE symbol = ? AND id = ?",
-                    (stock_shares - shares), symbol, session["user_id"])
+                   (stock_shares - shares), symbol, session["user_id"])
 
         # Record purchase
         db.execute("INSERT INTO history (user_id, symbol, sold, sale_price) VALUES (?, ?, -?, ?)",
-                    session["user_id"], symbol, shares, quote["price"])
+                   session["user_id"], symbol, shares, quote["price"])
 
         # Update cash
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
