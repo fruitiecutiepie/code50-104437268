@@ -232,4 +232,11 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    return apology("TODO")
+
+    # User reached route via POST (as by submitting a form via POST)
+    if request.method == "POST":
+        # do sth
+
+    # User reached route via GET (as by clicking a link or via redirect)
+    else:
+        return render_template("sell.html")
