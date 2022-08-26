@@ -88,20 +88,21 @@ def buy():
 
         # Add stock to portfolio
         stock_shares = db.execute("SELECT shares FROM portfolios WHERE user_id = ? AND symbol = ?",
-                        session["user_id"], symbol)
+                                   session["user_id"], symbol)
         if stock_shares:
             db.execute("UPDATE portfolios SET shares = ? WHERE user_id = ? AND symbol = ?",
-                        (stock_shares + shares), session["user_id"], symbol)
+                       (stock_shares + shares), session["user_id"], symbol)
         else:
             db.execute("INSERT INTO portfolios (user_id, symbol, shares) VALUES (?, ?, ?)",
                         session["user_id"], symbol, shares)
 
         # Update cash
         db.execute("UPDATE users SET cash = ? WHERE id = ?",
-                    (cash - total), session["user_id"])
+                   (cash - total), session["user_id"])
 
         # Record purchase
-        db.execute("INSERT INTO history (user_id, symbol, bought, purchase_price) VALUES (?, ?, ?, ?)", session["user_id"], symbol, shares, quote["price"])
+        db.execute("INSERT INTO history (user_id, symbol, bought, purchase_price) VALUES (?, ?, ?, ?)",
+                    session["user_id"], symbol, shares, quote["price"])
 
         # Show user portfolio
         return redirect("/")
