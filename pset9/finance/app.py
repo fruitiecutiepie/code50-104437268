@@ -257,7 +257,10 @@ def sell():
             return apology("number of shares overboard", 403)
 
         # Sell specified stock
-        db.execute("UPDATE portfolios SET shares FROM users WHERE symbol = ? AND id = ?", symbol, session["user_id"])
+        db.execute("UPDATE portfolios SET shares = ? WHERE symbol = ? AND id = ?", symbol, session["user_id"])
+
+        # Update cash
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", (cash - total), session["user_id"])
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
