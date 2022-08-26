@@ -97,7 +97,7 @@ def buy():
         db.execute("UPDATE users SET cash = ? WHERE id = ?", (cash - total), session["user_id"])
 
         # Record purchase
-        db.execute("INSERT INTO history (bought, purchase_price) VALUES (?, ?) WHERE symbol = ? AND id = ?", shares, quote["price"], symbol, session["user_id"])
+        db.execute("INSERT INTO history (user_id, symbol, bought, purchase_price) VALUES (?, ?, ?, ?)", session["user_id"], symbol, shares, quote["price"])
 
         # Show user portfolio
         return redirect("/")
