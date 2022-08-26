@@ -244,7 +244,7 @@ def sell():
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         stock_shares = db.execute("SELECT shares FROM portfolios WHERE symbol = ? AND id = ?", symbol, session["user_id"])
 
-        # Calculate total sell price
+        # Calculate total sale
         total = lookup(symbol)["price"] * shares
 
         # Ensure symbol was submitted
