@@ -19,6 +19,7 @@
                 {% set quote = lookup(stock.symbol) %}
             <tr>
                 <td>{{ quote.symbol }}</td>
+                {% if stock.sold %}
                 <td>{{ stock.shares }}</td>
                 <td>{{ quote.price }}</td>
                 <td>{{ quote.price * stock.shares }}</td>
