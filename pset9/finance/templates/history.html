@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transacted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% set portfolio = namespace(total=0) %}
+            {% for stock in portfolios %}
+                {% set quote = lookup(stock.symbol) %}
+                {% set portfolio.total = portfolio.total + quote.price * stock.shares %}
+            <tr>
+                <td>{{ quote.symbol }}</td>
+                <td>{{ stock.shares }}</td>
+                <td>{{ quote.price }}</td>
+                <td>{{ quote.price * stock.shares }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Cash</td>
+                <td>{{ cash }}</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>{{ cash + portfolio.total }}</td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}
