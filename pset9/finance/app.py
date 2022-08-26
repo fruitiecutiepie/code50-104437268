@@ -250,6 +250,10 @@ def sell():
         if not symbol:
             return apology("must provide symbol", 403)
 
+        # Ensure symbol exists
+        if not lookup(symbol):
+            return apology("symbol not found", 403)
+
         # Ensure symbol is in user's portfolio
         if not symbol in db.execute("SELECT symbol FROM portfolios WHERE id = ?", session["user_id"]):
             return apology("symbol must be in portfolio", 403)
