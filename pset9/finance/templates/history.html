@@ -15,10 +15,8 @@
             </tr>
         </thead>
         <tbody>
-            {% set portfolio = namespace(total=0) %}
             {% for stock in portfolios %}
                 {% set quote = lookup(stock.symbol) %}
-                {% set portfolio.total = portfolio.total + quote.price * stock.shares %}
             <tr>
                 <td>{{ quote.symbol }}</td>
                 <td>{{ stock.shares }}</td>
@@ -27,15 +25,5 @@
             </tr>
             {% endfor %}
         </tbody>
-        <tfoot>
-            <tr>
-                <td>Cash</td>
-                <td>{{ cash }}</td>
-            </tr>
-            <tr>
-                <td>Total</td>
-                <td>{{ cash + portfolio.total }}</td>
-            </tr>
-        </tfoot>
     </table>
 {% endblock %}

@@ -16,7 +16,9 @@
             </tr>
         </thead>
         <tbody>
+            <!-- Count total portfolio value -->
             {% set portfolio = namespace(total=0) %}
+            
             {% for stock in portfolios %}
                 {% set quote = lookup(stock.symbol) %}
                 {% set portfolio.total = portfolio.total + quote.price * stock.shares %}
