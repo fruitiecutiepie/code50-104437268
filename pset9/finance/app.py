@@ -240,8 +240,9 @@ def sell():
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
 
-        # Look up cash
+        # Look up cash & share of symbol
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        stock_shares = db.execute("SELECT shares FROM portfolios WHERE symbol = ? AND id = ?", symbol, session["user_id"])
 
         # Calculate total sell price
         total = lookup(symbol)["price"] * shares
@@ -263,11 +264,11 @@ def sell():
             return apology("must provide a positive number of shares", 403)
 
         # Ensure shares was valid
-        if shares > db.execute("SELECT shares FROM portfolios WHERE symbol = ? AND id = ?", symbol, session["user_id"]):
+        if shares > stock_shares:
             return apology("number of shares overboard", 403)
 
         # Sell specified stock
-        db.execute("UPDATE portfolios SET shares = ? WHERE symbol = ? AND id = ?", symbol, session["user_id"])
+        db.execute("UPDATE portfolios SET shares = ? WHERE symbol = ? AND id = ?", (stock_shares - shares), symbol, session["user_id"])
 
         # Update cash
         db.execute("UPDATE users SET cash = ? WHERE id = ?", (cash + total), session["user_id"])
