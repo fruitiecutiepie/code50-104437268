@@ -245,7 +245,7 @@ def sell():
             return apology("must provide symbol", 403)
 
         # Ensure symbol is in user's portfolio
-        if not symbol in db.execute("SELECT symbol FROM users WHERE id = ?", session["user_id"]):
+        if not symbol in db.execute("SELECT symbol FROM portfolios WHERE id = ?", session["user_id"]):
             return apology("symbol must be in portfolio", 403)
 
         # Ensure shares was submitted
@@ -253,7 +253,7 @@ def sell():
             return apology("must provide a positive number of shares", 403)
 
         # Ensure shares was valid
-        if shares > db.execute("SELECT shares FROM users WHERE symbol = ? AND id = ?", symbol, session["user_id"]):
+        if shares > db.execute("SELECT shares FROM portfolios WHERE symbol = ? AND id = ?", symbol, session["user_id"]):
             return apology("number of shares overboard", 403)
 
         # Sell specified stock
@@ -261,4 +261,4 @@ def sell():
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
-        return render_template("sell.html", symbols=db.execute("SELECT symbol FROM users WHERE id = ?", session["user_id"]))
+        return render_template("sell.html", symbols=db.execute("SELECT symbol FROM portfolios WHERE id = ?", session["user_id"]))
