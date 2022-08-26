@@ -87,7 +87,6 @@ def buy():
             return apology("must have enough cash", 403)
 
         # Add stock to portfolio
-        if 
         db.execute("INSERT INTO portfolios (user_id, symbol, shares) VALUES (?, ?, ?)", session["user_id"], quote["symbol"], shares)
 
         # Record purchase
