@@ -19,12 +19,12 @@
             <tr>
                 <td>{{ stock.symbol }}</td>
 
-                {% if stock.sold %}
-                <td>{{ stock.sold }}</td>
-                <td>{{ stock.sale_price }}</td>
-                {% else %}
+                {% if stock.bought %}
                 <td>{{ stock.bought }}</td>
                 <td>{{ stock.purchase_price }}</td>
+                {% else %}
+                <td>{{ stock.sold }}</td>
+                <td>{{ stock.sale_price }}</td>
                 {% endif %}
 
                 <td>{{ stock.datetime }}</td>
