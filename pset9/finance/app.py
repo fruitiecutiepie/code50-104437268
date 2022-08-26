@@ -90,7 +90,8 @@ def buy():
         db.execute("INSERT INTO portfolios (user_id, symbol, shares) VALUES (?, ?, ?)", session["user_id"], quote["symbol"], shares)
 
         # Record purchase
-        db.execute("UPDATE portfolios SET bought = ? AND purchase_price = ? WHERE symbol = ? AND id = ?", shares, session["user_id"])
+        db.execute("UPDATE portfolios SET bought = ? AND purchase_price = ? WHERE symbol = ? AND id = ?", shares, quote["price"], symbol, session["user_id"])
+        
         # Update cash
         db.execute("UPDATE users SET cash = ? WHERE id = ?", (cash - total), session["user_id"])
 
