@@ -87,7 +87,7 @@ def buy():
             return apology("must have enough cash", 403)
 
         # Add stock to portfolio
-        db.execute("INSERT INTO portfolios (user_id, symbol, shares) VALUES (?, ?, ?)", session["user_id"], quote["symbol"], shares)
+        db.execute("INSERT INTO portfolios (user_id, symbol, shares) VALUES (?, ?, ?) WHERE NOT EXISTS (SELECT *)", session["user_id"], quote["symbol"], shares)
 
         # Record purchase
         db.execute("UPDATE portfolios SET bought = ? AND purchase_price = ? WHERE symbol = ? AND id = ?", shares, quote["price"], symbol, session["user_id"])
