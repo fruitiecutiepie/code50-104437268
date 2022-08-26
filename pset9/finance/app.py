@@ -240,7 +240,7 @@ def sell():
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
 
-        # Look up cash & share of symbol
+        # Look up current cash & share of symbol
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         stock_shares = db.execute("SELECT shares FROM portfolios WHERE symbol = ? AND id = ?", symbol, session["user_id"])
 
