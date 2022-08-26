@@ -19,12 +19,12 @@
             <tr>
                 <td>{{ transaction.symbol }}</td>
 
-                {% if transaction.bought %}
-                <td>{{ transaction.bought }}</td>
-                <td>{{ transaction.purchase_price }}</td>
-                {% else %}
+                {% if transaction.sold.startswith("-") %}
                 <td>{{ transaction.sold }}</td>
                 <td>{{ transaction.sale_price }}</td>
+                {% else %}
+                <td>{{ transaction.bought }}</td>
+                <td>{{ transaction.purchase_price }}</td>
                 {% endif %}
 
                 <td>{{ transaction.datetime }}</td>
