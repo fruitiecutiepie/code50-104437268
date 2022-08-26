@@ -98,6 +98,9 @@ def buy():
         # Update cash
         db.execute("UPDATE users SET cash = ? WHERE id = ?", (cash - total), session["user_id"])
 
+        # Show user portfolio
+        return redirect("/")
+
     # User reached route via GET (as by clicking a link or via redirect)
     else:
         return render_template("buy.html")
@@ -272,6 +275,9 @@ def sell():
 
         # Update cash
         db.execute("UPDATE users SET cash = ? WHERE id = ?", (cash + total), session["user_id"])
+
+        # Show user portfolio
+        return redirect("/")
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
