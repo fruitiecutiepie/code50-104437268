@@ -240,6 +240,15 @@ def sell():
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
 
+        # Look up quote for symbol
+        quote = lookup(symbol)
+
+        # Look up cash
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+
+        # Calculate total purchase
+        total = quote["price"] * shares
+
         # Ensure symbol was submitted
         if not symbol:
             return apology("must provide symbol", 403)
