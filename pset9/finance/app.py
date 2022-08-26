@@ -249,7 +249,7 @@ def sell():
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
 
-        # Calculate total sale
+        # Calculate total sale  
         total = lookup(symbol)["price"] * shares
 
         # Ensure symbol was submitted
