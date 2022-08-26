@@ -76,7 +76,7 @@ def buy():
         # Calculate total purchase
         total = quote["price"] * shares
 
-        # Ensure stock symbol was submitted
+        # Ensure symbol was submitted
         if not symbol:
             return apology("must provide symbol", 403)
 
@@ -235,7 +235,22 @@ def sell():
 
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
-        # do sth
+
+        # Get response
+        symbol = request.form.get("symbol")
+        shares = request.form.get("shares")
+
+        # Ensure symbol was submitted
+        if not symbol:
+            return apology("must provide symbol", 403)
+
+        # Ensure symbol is in user's portfolio
+        if not symbol in db.execute("SELECT symbol FROM users WHERE id = ?", session["user_id"]):
+            return apology("symbol must be in portfolio", 403)
+
+        # Ensure shares was submitted
+        if not shares or shares < 1:
+            return apology("must provide a positive number of shares", 403)
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
