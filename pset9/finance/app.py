@@ -46,13 +46,7 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-
-    # Look up cash
-    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-
-    # Look up portfolio
-    portfolios = db.execute("SELECT symbol, shares FROM portfolios WHERE user_id = ?", session["user_id"])
-    return render_template("index.html", cash=cash, portfolios=portfolios)
+    return render_template("index.html", cash=db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"]), portfolios=db.execute("SELECT symbol, shares FROM portfolios WHERE user_id = ?", session["user_id"]))
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -110,10 +104,7 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-
-    # Look up portfolio
-    portfolios = db.execute("SELECT symbol, shares FROM portfolios WHERE user_id = ?", session["user_id"])
-    return render_template("index.html", cash=cash, portfolios=portfolios)
+    return render_template("index.html", portfolios=db.execute("SELECT * FROM portfolios WHERE user_id = ?", session["user_id"]))
 
 
 @app.route("/login", methods=["GET", "POST"])
