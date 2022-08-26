@@ -110,7 +110,10 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    return apology("TODO")
+
+    # Look up portfolio
+    portfolios = db.execute("SELECT symbol, shares FROM portfolios WHERE user_id = ?", session["user_id"])
+    return render_template("index.html", cash=cash, portfolios=portfolios)
 
 
 @app.route("/login", methods=["GET", "POST"])
