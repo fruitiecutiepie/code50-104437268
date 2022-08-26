@@ -243,7 +243,7 @@ def sell():
         # Look up cash
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
-        # Calculate total purchase
+        # Calculate total sell price
         total = lookup(symbol)["price"] * shares
 
         # Ensure symbol was submitted
@@ -266,7 +266,7 @@ def sell():
         db.execute("UPDATE portfolios SET shares = ? WHERE symbol = ? AND id = ?", symbol, session["user_id"])
 
         # Update cash
-        db.execute("UPDATE users SET cash = ? WHERE id = ?", (cash - total), session["user_id"])
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", (cash + total), session["user_id"])
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
