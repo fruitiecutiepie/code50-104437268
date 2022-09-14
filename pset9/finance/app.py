@@ -46,7 +46,7 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    return render_template("index.html", cash=db.execute("SELECT cash FROM users WHERE id = ?", 1)[0], portfolios=db.execute("SELECT symbol, shares FROM portfolios WHERE user_id = ?", 1))
+    return render_template("index.html", cash=db.execute("SELECT cash FROM users WHERE id = ?", 1), portfolios=db.execute("SELECT symbol, shares FROM portfolios WHERE user_id = ?", 1))
 
 
 @app.route("/buy", methods=["GET", "POST"])
