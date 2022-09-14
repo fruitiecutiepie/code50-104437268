@@ -46,7 +46,7 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    return render_template("index.html", cash=db.execute("SELECT cash FROM users WHERE id = ?", 1)[0]["cash"], portfolios=db.execute("SELECT symbol, shares FROM portfolios WHERE user_id = ?", 1))
+    return render_template("index.html", cash=db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"], portfolios=db.execute("SELECT symbol, shares FROM portfolios WHERE user_id = ?", session["user_id"]))
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -227,7 +227,7 @@ def register():
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), hash)
 
         # Remember which user has logged in
-        session["user_id"] = db.execute("SELECT id FROM users WHERE username = ?", request.form.get("username"))
+        session["user_id"] = db.execute("SELECT id FROM users WHERE username = ?", request.form.get("username"))[0]["id"]
 
         # Redirect user to look up stock quotes
         return redirect("/quote")
