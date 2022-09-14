@@ -172,7 +172,7 @@ def quote():
     """Get stock quote."""
 
     # User reached route via POST (as by submitting a form via POST)
-    if request.method("POST"):
+    if request.method == "POST":
 
         # Ensure symbol was submitted
         if not request.form.get("symbol"):
@@ -249,7 +249,7 @@ def sell():
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
 
-        # Calculate total sale  
+        # Calculate total sale
         total = lookup(symbol)["price"] * shares
 
         # Ensure symbol was submitted
