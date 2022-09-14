@@ -218,7 +218,7 @@ def register():
 
         # Ensure username has not been taken
         if len(rows) != 0:
-            return apology("username has been taken", 403)
+            return apology("username has been taken", 400)
 
         # Generate a hash of the password for security
         hash = generate_password_hash(request.form.get("password"))
