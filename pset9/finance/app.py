@@ -75,7 +75,7 @@ def buy():
             return apology("must provide symbol", 400)
 
         # Ensure symbol exists
-        if not quote:
+        if not lookup(request.form.get("symbol")):
             return apology("symbol not found", 400)
 
         # Ensure shares was submitted
