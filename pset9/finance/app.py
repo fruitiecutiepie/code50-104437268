@@ -76,7 +76,7 @@ def buy():
 
         # Ensure symbol exists
         if not quote:
-            return apology("symbol not found", 403)
+            return apology("symbol not found", 400)
 
         # Ensure shares was submitted
         if not shares or shares < 1:
@@ -84,7 +84,7 @@ def buy():
 
         # Ensure user has enough cash
         if cash < total:
-            return apology("must have enough cash", 403)
+            return apology("must have enough cash", 400)
 
         # Add stock to portfolio
         stock_shares = db.execute("SELECT shares FROM portfolios WHERE user_id = ? AND symbol = ?",
@@ -180,7 +180,7 @@ def quote():
 
         # Ensure symbol exists
         if not lookup(request.form.get("symbol")):
-            return apology("symbol not found", 403)
+            return apology("symbol not found", 400)
 
         # Display the results
         return render_template("quoted.html", stock=lookup(request.form.get("symbol")))
@@ -258,11 +258,11 @@ def sell():
 
         # Ensure symbol exists
         if not lookup(symbol):
-            return apology("symbol not found", 403)
+            return apology("symbol not found", 400)
 
         # Ensure symbol is in user's portfolio
         if not symbol in db.execute("SELECT symbol FROM portfolios WHERE id = ?", session["user_id"]):
-            return apology("symbol must be in portfolio", 403)
+            return apology("symbol must be in portfolio", 400)
 
         # Ensure shares was submitted
         if not shares or shares < 1:
@@ -271,7 +271,7 @@ def sell():
         # Ensure number of sold shares was valid
         stock_shares = db.execute("SELECT shares FROM portfolios WHERE symbol = ? AND id = ?", symbol, session["user_id"])
         if shares > stock_shares:
-            return apology("number of shares overboard", 403)
+            return apology("number of shares overboard", 400)
 
         # Sell specified stock
         db.execute("UPDATE portfolios SET shares = ? WHERE symbol = ? AND id = ?",
