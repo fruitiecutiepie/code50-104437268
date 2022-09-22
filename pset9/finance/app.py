@@ -299,7 +299,7 @@ def sell():
             return apology("number of shares overboard", 400)
 
         # Sell specified stock
-        if stock_shares == 0:
+        if stock_shares - shares == 0:
             db.execute("DELETE FROM portfolios WHERE symbol = ? AND user_id = ?", symbol, session["user_id"])
         else:
             db.execute("UPDATE portfolios SET shares = ? WHERE symbol = ? AND user_id = ?",
