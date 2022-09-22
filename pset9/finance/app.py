@@ -64,12 +64,6 @@ def buy():
         # Look up quote for symbol
         quote = lookup(symbol)
 
-        # Look up cash
-        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-
-        # Calculate total purchase
-        total = quote["price"] * shares
-
         # Ensure symbol was submitted
         if not symbol:
             return apology("must provide symbol", 400)
@@ -81,6 +75,12 @@ def buy():
         # Ensure shares was submitted
         if not shares or shares < 1:
             return apology("must provide a positive number of shares", 400)
+
+        # Look up cash
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+
+        # Calculate total purchase
+        total = quote["price"] * shares
 
         # Ensure user has enough cash
         if cash < total:
