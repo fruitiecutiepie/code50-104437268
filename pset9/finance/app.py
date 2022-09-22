@@ -298,6 +298,7 @@ def sell():
             stock_shares = db.execute("SELECT shares FROM portfolios WHERE symbol = ? AND user_id = ?", symbol, session["user_id"])[0]["shares"]
         except IndexError:
             return apology("symbol must be in portfolio", 400)
+            
         if shares > stock_shares:
             return apology("number of shares overboard", 400)
 
