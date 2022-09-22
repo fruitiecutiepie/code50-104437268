@@ -50,13 +50,14 @@ def index():
     # Count total portfolio value & quote each stock if any
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"]
     if db.execute("SELECT * FROM portfolios WHERE user_id = ?", session["user_id"]) != []:
-        portfolio=db.execute("SELECT symbol, shares FROM portfolios WHERE user_id = ?", session["user_id"])
+        portfolio = db.execute("SELECT symbol, shares FROM portfolios WHERE user_id = ?", session["user_id"])
         portfolio_value = 0
         portfolio_quote = []
         for stock in portfolio:
             quote = lookup(stock["symbol"])
             portfolio_value = portfolio_value + quote["price"] * stock["shares"]
-            portfolio_quote.append({"symbol": quote["symbol"], "name": quote["name"], "shares": stock["shares"], "price": usd(quote["price"]), "total_price": usd(quote["price"] * stock["shares"])})
+            portfolio_quote.append({"symbol": quote["symbol"], "name": quote["name"], "shares": stock["shares"], "price": usd(
+                quote["price"]), "total_price": usd(quote["price"] * stock["shares"])})
         total = cash + portfolio_value
         return render_template("index.html", portfolio_quote=portfolio_quote, cash=usd(cash), total=usd(total))
     else:
