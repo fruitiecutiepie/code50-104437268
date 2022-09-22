@@ -106,7 +106,7 @@ def buy():
         # Add stock to portfolio
         if db.execute("SELECT shares FROM portfolios WHERE user_id = ? AND symbol = ?", session["user_id"], symbol) != []:
             stock_shares = db.execute("SELECT shares FROM portfolios WHERE user_id = ? AND symbol = ?",
-                                    session["user_id"], symbol)[0]["shares"]
+                                      session["user_id"], symbol)[0]["shares"]
             db.execute("UPDATE portfolios SET shares = ? WHERE user_id = ? AND symbol = ?",
                        (stock_shares + shares), session["user_id"], symbol)
         else:
@@ -277,15 +277,6 @@ def sell():
         if not quote:
             return apology("symbol not found", 400)
 
-        # # Look up user portfolio
-        # symbols = []
-        # for symbol in db.execute("SELECT symbol FROM portfolios WHERE user_id = ?", session["user_id"]):
-        #     symbols.append(symbol["symbol"])
-
-        # # Ensure symbol is in user portfolio
-        # if not symbol in symbols:
-        #     return apology("symbol must be in portfolio", 400)
-
         # Ensure shares was submitted
         if not shares or shares == "0" or not shares.isdigit():
             return apology("must provide a positive number of shares", 400)
@@ -295,10 +286,11 @@ def sell():
 
         # Ensure number of sold shares was valid
         try:
-            stock_shares = db.execute("SELECT shares FROM portfolios WHERE symbol = ? AND user_id = ?", symbol, session["user_id"])[0]["shares"]
+            stock_shares = db.execute("SELECT shares FROM portfolios WHERE symbol = ? AND user_id = ?",
+                                      symbol, session["user_id"])[0]["shares"]
         except IndexError:
             return apology("symbol must be in portfolio", 400)
-            
+
         if shares > stock_shares:
             return apology("number of shares overboard", 400)
 
@@ -307,7 +299,7 @@ def sell():
             db.execute("DELETE FROM portfolios WHERE symbol = ? AND user_id = ?", symbol, session["user_id"])
         else:
             db.execute("UPDATE portfolios SET shares = ? WHERE symbol = ? AND user_id = ?",
-                      (stock_shares - shares), symbol, session["user_id"])
+                       (stock_shares - shares), symbol, session["user_id"])
 
         # Record purchase
         db.execute("INSERT INTO history (user_id, symbol, sold, sale_price) VALUES (?, ?, -?, ?)",
