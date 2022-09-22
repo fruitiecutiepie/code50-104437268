@@ -300,7 +300,7 @@ def sell():
 
         # Sell specified stock
         if stock_shares == 0:
-            db.execute()
+            db.execute("DELETE )
         else:
             db.execute("UPDATE portfolios SET shares = ? WHERE symbol = ? AND user_id = ?",
                       (stock_shares - shares), symbol, session["user_id"])
