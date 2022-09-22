@@ -277,18 +277,18 @@ def sell():
         if not quote:
             return apology("symbol not found", 400)
 
-        # Look up user portfolio
-        symbols = []
-        for symbol in db.execute("SELECT symbol FROM portfolios WHERE user_id = ?", session["user_id"]):
-            symbols.append(symbol["symbol"])
+        # # Look up user portfolio
+        # symbols = []
+        # for symbol in db.execute("SELECT symbol FROM portfolios WHERE user_id = ?", session["user_id"]):
+        #     symbols.append(symbol["symbol"])
 
         # # Ensure symbol is in user portfolio
         # if not symbol in symbols:
         #     return apology("symbol must be in portfolio", 400)
 
-        # # Ensure shares was submitted
-        # if not shares or shares == "0" or not shares.isdigit():
-        #     return apology("must provide a positive number of shares", 400)
+        # Ensure shares was submitted
+        if not shares or shares == "0" or not shares.isdigit():
+            return apology("must provide a positive number of shares", 400)
 
         # Convert shares to integer
         shares = int(shares)
@@ -296,7 +296,8 @@ def sell():
         # Ensure number of sold shares was valid
         try:
             stock_shares = db.execute("SELECT shares FROM portfolios WHERE symbol = ? AND user_id = ?", symbol, session["user_id"])[0]["shares"]
-        except 
+        except IndexError:
+            return apology("symbol must be in portfolio", 400)
         if shares > stock_shares:
             return apology("number of shares overboard", 400)
 
