@@ -77,7 +77,7 @@ def buy():
             return apology("must provide a positive number of shares", 400)
 
         # Look up cash
-        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"]
 
         # Calculate total purchase
         total = quote["price"] * int(shares)
