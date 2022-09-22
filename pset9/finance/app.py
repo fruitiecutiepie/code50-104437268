@@ -277,14 +277,14 @@ def sell():
         if not quote:
             return apology("symbol not found", 400)
 
-        # # Look up user portfolio
-        # symbols = []
-        # for symbol in db.execute("SELECT symbol FROM portfolios WHERE user_id = ?", session["user_id"]):
-        #     symbols.append(symbol["symbol"])
+        # Look up user portfolio
+        symbols = []
+        for symbol in db.execute("SELECT symbol FROM portfolios WHERE user_id = ?", session["user_id"]):
+            symbols.append(symbol["symbol"])
 
-        # # Ensure symbol is in user portfolio
-        # if not symbol in symbols:
-        #     return apology("symbol must be in portfolio", 400)
+        # Ensure symbol is in user portfolio
+        if not symbol in symbols:
+            return apology("symbol must be in portfolio", 400)
 
         # Ensure shares was submitted
         if not shares or shares == "0" or not shares.isdigit():
