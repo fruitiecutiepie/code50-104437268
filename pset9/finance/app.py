@@ -73,7 +73,7 @@ def buy():
             return apology("symbol not found", 400)
 
         # Ensure shares was submitted
-        if not shares or shares < 1:
+        if not shares or shares < 1 or not shares.isnumeric():
             return apology("must provide a positive number of shares", 400)
 
         # Look up cash
