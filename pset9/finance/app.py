@@ -299,7 +299,7 @@ def sell():
             return apology("number of shares overboard", 400)
 
         # Sell specified stock
-        db.execute("UPDATE portfolios SET shares = ? WHERE symbol = ? AND id = ?",
+        db.execute("UPDATE portfolios SET shares = ? WHERE symbol = ? AND user_id = ?",
                    (stock_shares - shares), symbol, session["user_id"])
 
         # Record purchase
