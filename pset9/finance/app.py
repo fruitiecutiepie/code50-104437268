@@ -46,7 +46,21 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    return render_template("index.html", cash=db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"], portfolios=db.execute("SELECT symbol, shares FROM portfolios WHERE user_id = ?", session["user_id"]))
+
+    # Count total portfolio value & quote each stock if any
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"]
+    if db.execute("SELECT * FROM portfolios WHERE user_id = ?", session["user_id"]) != []:
+        portfolio=db.execute("SELECT symbol, shares FROM portfolios WHERE user_id = ?", session["user_id"])
+        portfolio_value = 0
+        portfolio_quote = []
+        for stock in portfolio:
+            quote = lookup(stock["symbol"])
+            portfolio_value = portfolio_value + quote["price"] * stock["shares"]
+            portfolio_quote.append({"symbol": quote["symbol"], "name": quote["name"], "shares": stock["shares"], "price": usd(quote["price"]), "total_price": usd(quote["price"] * stock["shares"])})
+        total = cash + portfolio_value
+        return render_template("index.html", portfolio_quote=portfolio_quote, cash=usd(cash), total=usd(total))
+    else:
+        return render_template("index.html", portfolio_quote=[], cash=usd(cash), total=usd(cash))
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -76,20 +90,23 @@ def buy():
         if not shares or shares == "0" or not shares.isdigit():
             return apology("must provide a positive number of shares", 400)
 
+        # Convert shares to integer
+        shares = int(shares)
+
         # Look up cash
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"]
 
         # Calculate total purchase
-        total = quote["price"] * int(shares)
+        total = quote["price"] * shares
 
         # Ensure user has enough cash
         if cash < total:
             return apology("must have enough cash", 400)
 
         # Add stock to portfolio
-        stock_shares = db.execute("SELECT shares FROM portfolios WHERE user_id = ? AND symbol = ?",
-                                  session["user_id"], symbol)
-        if stock_shares:
+        if db.execute("SELECT shares FROM portfolios WHERE user_id = ? AND symbol = ?", session["user_id"], symbol) != []:
+            stock_shares = db.execute("SELECT shares FROM portfolios WHERE user_id = ? AND symbol = ?",
+                                    session["user_id"], symbol)[0]["shares"]
             db.execute("UPDATE portfolios SET shares = ? WHERE user_id = ? AND symbol = ?",
                        (stock_shares + shares), session["user_id"], symbol)
         else:
@@ -116,7 +133,7 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    return render_template("index.html", history=db.execute("SELECT * FROM history WHERE user_id = ?", session["user_id"]))
+    return render_template("history.html", history=db.execute("SELECT * FROM history WHERE user_id = ?", session["user_id"]))
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -249,27 +266,35 @@ def sell():
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
 
-        # Calculate total sale
-        total = lookup(symbol)["price"] * shares
+        # Look up quote for symbol
+        quote = lookup(symbol)
 
         # Ensure symbol was submitted
         if not symbol:
             return apology("must provide symbol", 400)
 
         # Ensure symbol exists
-        if not lookup(symbol):
+        if not quote:
             return apology("symbol not found", 400)
 
-        # Ensure symbol is in user's portfolio
-        if not symbol in db.execute("SELECT symbol FROM portfolios WHERE id = ?", session["user_id"]):
+        # Look up user portfolio
+        symbols = []
+        for symbol in db.execute("SELECT symbol FROM portfolios WHERE user_id = ?", session["user_id"]):
+            symbols.append(symbol["symbol"])
+
+        # Ensure symbol is in user portfolio
+        if not symbol in symbols:
             return apology("symbol must be in portfolio", 400)
 
         # Ensure shares was submitted
-        if not shares or shares < 1:
+        if not shares or shares == "0" or not shares.isdigit():
             return apology("must provide a positive number of shares", 400)
 
+        # Convert shares to integer
+        shares = int(shares)
+
         # Ensure number of sold shares was valid
-        stock_shares = db.execute("SELECT shares FROM portfolios WHERE symbol = ? AND id = ?", symbol, session["user_id"])
+        stock_shares = db.execute("SELECT shares FROM portfolios WHERE symbol = ? AND user_id = ?", symbol, session["user_id"])[0]["shares"]
         if shares > stock_shares:
             return apology("number of shares overboard", 400)
 
@@ -281,8 +306,11 @@ def sell():
         db.execute("INSERT INTO history (user_id, symbol, sold, sale_price) VALUES (?, ?, -?, ?)",
                    session["user_id"], symbol, shares, quote["price"])
 
+        # Calculate total sale
+        total = quote["price"] * shares
+
         # Update cash
-        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"]
         db.execute("UPDATE users SET cash = ? WHERE id = ?", (cash + total), session["user_id"])
 
         # Show user portfolio
@@ -290,4 +318,4 @@ def sell():
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
-        return render_template("sell.html", symbols=db.execute("SELECT symbol FROM portfolios WHERE id = ?", session["user_id"]))
+        return render_template("sell.html", symbols=db.execute("SELECT symbol FROM portfolios WHERE user_id = ?", session["user_id"]))

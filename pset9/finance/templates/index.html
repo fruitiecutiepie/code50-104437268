@@ -1,5 +1,3 @@
-{% from "../app.py" import lookup %}
-
 {% extends "layout.html" %}
 
 {% block title %}
@@ -18,18 +16,13 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Count total portfolio value -->
-            {% set portfolio = namespace(total=0) %}
-
-            {% for stock in portfolios %}
-                {% set quote = lookup(stock.symbol) %}
-                {% set portfolio.total = portfolio.total + quote.price * stock.shares %}
+            {% for stock in portfolio_quote %}
             <tr>
-                <td>{{ quote.symbol }}</td>
-                <td>{{ quote.name }}</td>
-                <td>{{ stock.shares }}</td>
-                <td>{{ quote.price }}</td>
-                <td>{{ quote.price * stock.shares }}</td>
+                <td>{{ stock["symbol"] }}</td>
+                <td>{{ stock["name"] }}</td>
+                <td>{{ stock["shares"] }}</td>
+                <td>{{ stock["price"] }}</td>
+                <td>{{ stock["total_price"] }}</td>
             </tr>
             {% endfor %}
         </tbody>
@@ -40,7 +33,7 @@
             </tr>
             <tr>
                 <td>Total</td>
-                <td>{{ cash + portfolio.total }}</td>
+                <td>{{ total }}</td>
             </tr>
         </tfoot>
     </table>
