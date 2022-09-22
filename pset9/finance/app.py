@@ -80,7 +80,7 @@ def buy():
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
         # Calculate total purchase
-        total = quote["price"] * shares
+        total = quote["price"] * int(shares)
 
         # Ensure user has enough cash
         if cash < total:
