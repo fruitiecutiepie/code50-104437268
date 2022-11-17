@@ -7,7 +7,7 @@ Spotify Search Bar is a console application that mimics a search bar by using Sp
 
 The program starts by checking the user's internet connection. This is done to ensure the program will be able to reach Spotify's server.
 
-Then, the program prompt the user for input of songs, artists, or albums. It then requests data from Spotify Web API and displays the first 5 output of each type. If there are no results, however, the program will let the user know and prompt them for another input.
+Then, the program prompt the user for input of songs, artists, or albums. It then requests data from Spotify Web API and displays the first 5 output of each type. If there are no results, the program will let the user know and prompt them for another input.
 
 After the results are displayed, the program asks the user whether they want to search for another keyword or not. If the user answers "y", the program will perform another search for the new keyword. If the user answers "n", the program will ask whether or not they want to know more about a specific track, artist, or album. Based on user's enquiries, the program might show them the details of the enquired track, artist, or album. This includes API-exclusive fun facts such as the genre, followers, and popularity of an artist.
 
