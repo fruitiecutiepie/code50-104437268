@@ -7,3 +7,6 @@ The program starts by checking the user's internet connection. Without functioni
 
 ## Confession
 This project is far from perfect. It does not cover every bug and it can be more optimised. Future improvements will have to be made. For example, there are too much iteration involving the process of extracting user inputs and displaying results. These problems should be solved by turning those processes into functions. For now, it will, at least, accomplish its promises successfully 90% of the time.
+
+## Real Confession
+Other than for curiosity purposes, this program is not really useful.
