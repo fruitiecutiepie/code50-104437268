@@ -4,4 +4,4 @@
 Spotify Search Bar is a program that mimics a search bar by using Spotify's API to perform data manipulation of songs, artists, and album details. It is written fully in Python.
 
 ## Confession
-This project is not perfect. It does not cover every bug and it can be more optimised. Future improvements will have to be made. For example, there are too much iteration involving the process of extracting user inputs and displaying results. These problems should be resolved by 
+This project is not perfect. It does not cover every bug and it can be more optimised. Future improvements will have to be made. For example, there are too much iteration involving the process of extracting user inputs and displaying results. These problems should be solved by turning those processes into functions.
