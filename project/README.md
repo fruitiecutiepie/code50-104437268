@@ -9,4 +9,4 @@ The program starts by checking the user's internet connection. Without functioni
 This project is far from perfect. It does not cover every bug and it can be more optimised. Future improvements will have to be made. For example, there are too much iteration involving the process of extracting user inputs and displaying results. These problems should be solved by turning those processes into functions. For now, it will, at least, accomplish its promises successfully 90% of the time.
 
 ## Real Confession
-This project took me about 24 hours in total. I could have done better, but Other than for curiosity purposes, this program is not really useful.
+This project took me about 24 hours in total. I could have done better, but currect circumstances and implications shifted my priority list. Other than for curiosity purposes, this program is not really useful.
