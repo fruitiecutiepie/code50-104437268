@@ -50,7 +50,7 @@ while True:
     print('\nSONGS')
 
     if query_info['tracks']['items'] == []:
-        print('n results found.')
+        print('No results found. Please try another keyword. ')
 
     t_track_name = []
     t_track_popularity = []
@@ -92,7 +92,7 @@ while True:
     print('\nARTISTS')
 
     if query_info['artists']['items'] == []:
-        print('n results found.')
+        print('No results found. Please try another keyword. ')
 
     a_artist_name = []
     a_artist_genre = []
@@ -117,7 +117,7 @@ while True:
     print('\nALBUMS')
 
     if query_info['albums']['items'] == []:
-        print('n results found.')
+        print('No results found. Please try another keyword. ')
 
     al_album_name = []
     al_album_total_tracks = []
@@ -169,12 +169,12 @@ while True:
             know_more_details = input('Which one do you want to know more about? [track/artist/album] ').lower()
 
 
-        # If all items have n results (REFER BACK TO THE BEGINNING)
+        # If all items have no results (REFER BACK TO THE BEGINNING)
         if query_info['tracks']['items'] == [] and query_info['artists']['items'] == [] and query_info['albums']['items'] == []:
             print('No results found. Please try another keyword.')
 
 
-        # If not all items have n results (TOO MUCH ITERATION, TURN TO DEFs)
+        # If not all items have no results (TOO MUCH ITERATION, TURN TO DEFs)
         if know_more_details == 'track':
             while query_info['tracks']['items'] == []:
                 know_more_details = input('No results found. Please try another keyword. ').lower()
