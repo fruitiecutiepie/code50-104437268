@@ -1,5 +1,5 @@
 # Spotify Search Bar
-#### Video Demo:  <URL HERE>
+#### Video Demo:  <https://youtu.be/nl9lprTRc6Q>
 #### Description:
 Spotify Search Bar is a console application that mimics a search bar by using Spotify Web API to perform data manipulation of songs, artists, and album details.
 
